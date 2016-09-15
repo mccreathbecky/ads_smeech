@@ -1,0 +1,2 @@
+vhdtdtfi -lib work ControlUnit.vhd -prj SMEECH2 -o ControlUnit.spl -module ControlUnit -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xc9500xl ControlUnit.spl C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/ControlUnit.sym 
