@@ -33,7 +33,7 @@
     <transform xil_pn:end_ts="1473908930" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1473908930">
       <status xil_pn:value="SuccessfullyRun"/>
     </transform>
-    <transform xil_pn:end_ts="1473913882" xil_pn:in_ck="-8744516342635153487" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1473913882">
+    <transform xil_pn:end_ts="1473917178" xil_pn:in_ck="-8744516342635153487" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1473917178">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ControlUnit.vhd"/>
