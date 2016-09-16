@@ -21,6 +21,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 use IEEE.NUMERIC_STD.ALL;
+--use IEEE.STD_LOGIC_ARITH.ALL;
 
 
 entity ControlUnit is
@@ -72,7 +73,7 @@ architecture Behavioral of ControlUnit is
    signal consumption_sum : INTEGER := 0;
    
    -- constant with the battery_max charge
-   constant battery_max : integer := 10000;
+   constant battery_max : INTEGER := 10000;
    -- signal representing the current energy stored in the battery
    -- max 10kWh = 14 bits
    -- initally set to 20% charge
@@ -101,11 +102,12 @@ begin
          -- DO THE MONITORING
          
          -- check first if battery is almost full : if so, take no input
-         IF battery_sum >= battery_max * 0.95 THEN
+         -- http://www.bitweenie.com/listings/vhdl-type-conversion/ MAY HAVE TO CHANGE TYPES
+         IF battery_sum >= (battery_max * 0.95) THEN
             current_source <= none;
          
          -- check if battery is below min threshold: if so, switch to grid
-         ELSIF battery_sum <= battery_max * 0.2 THEN
+         ELSIF battery_sum <= (battery_max * 0.2) THEN
             current_source <= grid; 
          
          -- if there is solar energy, use it
