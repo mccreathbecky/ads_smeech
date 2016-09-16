@@ -93,6 +93,7 @@ architecture Behavioral of ControlUnit is
 begin
 
    -- process which is triggered by sample rate clock [which will be set elsewhere to have a 2 minute frequency]
+   -- will need to add code here to account for ManualControl!!!
    monitoring : PROCESS (CLK_SampleRate)
    BEGIN
       -- check for sample rate interval
@@ -138,8 +139,13 @@ begin
             WHEN none => 
                -- battery sum is just the battery - consumption for this period
                battery_sum <= battery_sum - Consumption*sample_rate/60;
+               
+               -- battery sum is the current sum, take away the consumption and adding in the mains power produced
             WHEN grid =>
                battery_sum <= battery_sum - Consumption*sample_rate/60 + Mains*sample_rate/60;
+               
+               -- battery sum is the current sum, take away the consumption and adding in solar power produced
+               -- solar sum is also updated with the new input
             WHEN OTHERS =>
                battery_sum <= battery_sum - Consumption*sample_rate/60 + SolarIn*sample_rate/60;
                solar_sum <= solar_sum + SolarIn*sample_rate/60;
@@ -154,6 +160,7 @@ begin
    -- also needs a 1 hr timeout function
    override : PROCESS (ManualControl)
    BEGIN
+      -- make sure manualControl is active
       IF ManualControl = '1' THEN
          IF SourceSelect = '0' THEN
             current_source <= grid;
