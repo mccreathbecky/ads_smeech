@@ -15,71 +15,78 @@
 -- Revision: 
 -- Revision 0.01 - File Created
 -- Additional Comments: 
---
+-- http://www.doulos.com/knowhow/vhdl_designers_guide/numeric_std/
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
-use IEEE.NUMERIC_STD.ALL;
+USE IEEE.NUMERIC_STD.ALL;
 
 
-entity Monitoring_Comp is 
+ENTITY Monitoring_Comp IS 
    PORT(
- -- clock triggers the control unit monitoring
-           CLK_SampleRate : OUT STD_LOGIC;
+           -- clock triggers the control unit monitoring
+           CLK_SampleRate : IN STD_LOGIC;
 
            -- up to 5000Wh - 13 bit
-           solar_in : IN  STD_LOGIC_VECTOR (12 downto 0);
+           solar_in : IN  STD_LOGIC_VECTOR (12 DOWNTO 0);
            
-           -- a single bit, used to trigger the sum_monitoring block
-           sum_flag : OUT STD_LOGIC;
+           -- user may have manually overriden control
+           manual_control: IN STD_LOGIC;
            
            -- none/grid/solar
-           current_source : INOUT STD_LOGIC_VECTOR(1 downto 0);
+           current_source : INOUT STD_LOGIC_VECTOR(1 DOWNTO 0);
             
            -- up to 10000Wh - 14 bit
-           battery_sum : INOUT STD_LOGIC_VECTOR(13 downto 0));
-end Monitoring_Comp;
+           battery_sum : INOUT STD_LOGIC_VECTOR(13 DOWNTO 0);
 
-architecture Behavioral of Monitoring_Comp is
+           -- a single bit, used to trigger the sum_monitoring block
+           sum_flag : OUT STD_LOGIC);         
+END Monitoring_Comp;
 
+ARCHITECTURE Behavioral OF Monitoring_Comp IS
+
+   -- likely not used since current_source is an input signal
+   TYPE source_type IS (none, grid, solar);
    
+   -- constant with the battery_max charge
+   constant battery_max : STD_LOGIC_VECTOR(13 DOWNTO 0) := "10011100010000";
+   
+   constant battery_low: STD_LOGIC_VECTOR(13 DOWNTO 0) := battery_max/5;
+   constant battery_high: STD_LOGIC_VECTOR(13 DOWNTO 0) := battery_max*0.95;
 
-
-begin
+BEGIN
  -- process which is triggered by sample rate clock [which will be set elsewhere to have a 2 minute frequency]
    -- will need to add code here to account for ManualControl!!!
    switching_process : PROCESS (CLK_SampleRate)
    BEGIN
       -- check for sample rate interval
       IF CLK_SampleRate ' EVENT AND CLK_SampleRate = '1' THEN
-         -- DO THE MONITORING
-         
-         -- check first if battery is almost full : if so, take no input
-         -- http://www.bitweenie.com/listings/vhdl-type-conversion/ MAY HAVE TO CHANGE TYPES
-         IF battery_sum >= (battery_max * 0.95) THEN
-            current_source <= none;
-         
-         -- check if battery is below min threshold: if so, switch to grid
-         ELSIF battery_sum <= (battery_max * 0.2) THEN
-            current_source <= grid; 
-         
-         -- if there is solar energy, use it
-         ELSIF SolarIn > 0 THEN
-            current_source <= solar;
+         IF Manual_Control = 0 THEN
             
-         -- finally, if no other choice due to lack of solar, use grid
-         ELSE
-            current_source <= grid;
+            -- check first if battery is almost full : if so, take no input
+            -- http://www.bitweenie.com/listings/vhdl-type-conversion/ MAY HAVE TO CHANGE TYPES
+            IF battery_sum >= battery_high THEN
+               current_source <= "00";
+            
+            -- check if battery is below min threshold: if so, switch to grid
+            ELSIF battery_sum <= battery_low THEN
+               current_source <= "01"; 
+            
+            -- if there is solar energy, use it
+            ELSIF SolarIn > 0 THEN
+               current_source <= "10";
+               
+            -- finally, if no other choice due to lack of solar, use grid
+            ELSE
+               current_source <= "01";
+            END IF;
+            
+            -- solar, battery, consumption now need to be summed- 
+            -- but signals won't update until end of process
+            -- [this summing is performed in another component]
+            sum_flag <= '1';
          END IF;
-         
-         -- solar, battery, consumption now need to be summed- 
-         -- but signals won't update until end of process
-         sum_flag <= '1';
-         
       END IF;
    END PROCESS;
-end Behavioral;
+END Behavioral;
 
