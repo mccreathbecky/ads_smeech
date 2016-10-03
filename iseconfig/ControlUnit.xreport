@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2016-09-15T12:24:44</DateModified>
+  <DateModified>2016-09-28T11:37:12</DateModified>
   <ModuleName>ControlUnit</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/iseconfig/ControlUnit.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2\</ImplementationReportsDirectory>
   <DateInitialized>2016-09-15T12:24:43</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

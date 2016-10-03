@@ -37,16 +37,16 @@ entity ControlUnit is
            SourceSelect : in  STD_LOGIC;
            
            -- up to 5000Wh - 13 bit
---           SolarIn : in  STD_LOGIC_VECTOR (12 downto 0);
-           SolarIn : in INTEGER;
+           SolarIn : in  STD_LOGIC_VECTOR (12 downto 0);
+--           SolarIn : in INTEGER;
            
            -- assume 5000Wh - 13 bit
---           Mains : in  STD_LOGIC_VECTOR (12 downto 0);
-           Mains: in INTEGER;
+           Mains : in  STD_LOGIC_VECTOR (12 downto 0);
+--           Mains: in INTEGER;
            
            -- power consumption for house - assume no greater than 3kWh  = 12 bit
---           Consumption : in STD_LOGIC_VECTOR (11 downto 0);
-           Consumption: in INTEGER; 
+           Consumption : in STD_LOGIC_VECTOR (11 downto 0);
+--           Consumption: in INTEGER; 
            
            -- '1'/on when solar is chosen input
            SolarLED : out  STD_LOGIC;
@@ -71,6 +71,8 @@ architecture Behavioral of ControlUnit is
    
    -- signal representing the sum of energy consumption for the day
    signal consumption_sum : INTEGER := 0;
+   
+   -- ADD GENERATED SUM
    
    -- constant with the battery_max charge
    constant battery_max : INTEGER := 10000;
@@ -198,6 +200,6 @@ begin
       -- output to the correct FPGA SSD
    END PROCESS;
    
-
+   
 end Behavioral;
 
