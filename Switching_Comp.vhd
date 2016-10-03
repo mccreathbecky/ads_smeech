@@ -49,10 +49,10 @@ ARCHITECTURE Behavioral OF Monitoring_Comp IS
    TYPE source_type IS (none, grid, solar);
    
    -- constant with the battery_max charge
-   constant battery_max : STD_LOGIC_VECTOR(13 DOWNTO 0) := "10011100010000";
+   constant battery_max : UNSIGNED(13 DOWNTO 0) := "10011100010000";
    
-   constant battery_low: STD_LOGIC_VECTOR(13 DOWNTO 0) := battery_max/5;
-   constant battery_high: STD_LOGIC_VECTOR(13 DOWNTO 0) := battery_max*0.95;
+   constant battery_low: UNSIGNED(13 DOWNTO 0) := battery_max/5;
+   constant battery_high: UNSIGNED(13 DOWNTO 0) := battery_max*0.95;
 
 BEGIN
  -- process which is triggered by sample rate clock [which will be set elsewhere to have a 2 minute frequency]
@@ -65,15 +65,15 @@ BEGIN
             
             -- check first if battery is almost full : if so, take no input
             -- http://www.bitweenie.com/listings/vhdl-type-conversion/ MAY HAVE TO CHANGE TYPES
-            IF battery_sum >= battery_high THEN
+            IF unsigned(battery_sum) >= battery_high THEN
                current_source <= "00";
             
             -- check if battery is below min threshold: if so, switch to grid
-            ELSIF battery_sum <= battery_low THEN
+            ELSIF unsigned(battery_sum) <= battery_low THEN
                current_source <= "01"; 
             
             -- if there is solar energy, use it
-            ELSIF SolarIn > 0 THEN
+            ELSIF unsigned(solar_in) > 0 THEN
                current_source <= "10";
                
             -- finally, if no other choice due to lack of solar, use grid
