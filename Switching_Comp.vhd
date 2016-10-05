@@ -52,7 +52,7 @@ ARCHITECTURE Behavioral OF Monitoring_Comp IS
    constant battery_max : UNSIGNED(13 DOWNTO 0) := "10011100010000";
    
    constant battery_low: UNSIGNED(13 DOWNTO 0) := battery_max/5;
-   constant battery_high: UNSIGNED(13 DOWNTO 0) := battery_max*0.95;
+   constant battery_high: UNSIGNED(13 DOWNTO 0) := battery_max*95/100;
 
 BEGIN
  -- process which is triggered by sample rate clock [which will be set elsewhere to have a 2 minute frequency]
@@ -61,7 +61,7 @@ BEGIN
    BEGIN
       -- check for sample rate interval
       IF CLK_SampleRate ' EVENT AND CLK_SampleRate = '1' THEN
-         IF Manual_Control = 0 THEN
+         IF Manual_Control = '0' THEN
             
             -- check first if battery is almost full : if so, take no input
             -- http://www.bitweenie.com/listings/vhdl-type-conversion/ MAY HAVE TO CHANGE TYPES
