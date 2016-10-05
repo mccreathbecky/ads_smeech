@@ -1,0 +1,19 @@
+ISim log file
+Running: C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\SMEECH2\Switching_Comp_TB_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Switching_Comp_TB_isim_beh.wdb 
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 100s
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+at 60 s(1), Instance /switching_comp_tb/uut/ : Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+at 60 s(1), Instance /switching_comp_tb/uut/ : Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+# isim force add /switching_comp_tb/current_source 00 -radix bin
+# isim force add /switching_comp_tb/current_source[1] 0 -radix bin
+# isim force add /switching_comp_tb/current_source[1] 0 -radix bin
+# isim force add /switching_comp_tb/current_source[0] 0 -radix bin

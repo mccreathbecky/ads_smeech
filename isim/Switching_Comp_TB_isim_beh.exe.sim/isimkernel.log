@@ -1,0 +1,10 @@
+Command line:
+   Switching_Comp_TB_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50060
+
+Wed Oct 05 12:38:25 2016
+
+
+ Elaboration Time: 0.0625 sec

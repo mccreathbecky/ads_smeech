@@ -1,0 +1,2 @@
+vhdl isim_temp "Switching_Comp.vhd"
+vhdl isim_temp "Switching_Comp_TB.vhd"
