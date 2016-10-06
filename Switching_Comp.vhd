@@ -27,17 +27,17 @@ USE IEEE.NUMERIC_STD.ALL;
 ENTITY Monitoring_Comp IS 
    PORT(
             CLK_SampleRate : IN STD_LOGIC;                                 -- clock triggers the control unit monitoring
-            solar_in : IN  STD_LOGIC_VECTOR (9 DOWNTO 0);                 -- up to 5000Wh - 13 bit
+            solar_in : IN  STD_LOGIC_VECTOR (9 DOWNTO 0);                 -- up to 1000Wh - 10 bit
             manual_control: IN STD_LOGIC;                                  -- user may have manually overriden control      
-            battery_sum : IN STD_LOGIC_VECTOR(13 DOWNTO 0);             -- up to 10000Wh - 14 bit
+            battery_sum : IN STD_LOGIC_VECTOR(10 DOWNTO 0);                -- up to 1500Wh - 14 bit
             current_source : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);             -- none/grid/solar
             sum_flag : OUT STD_LOGIC);                                     -- a single bit, used to trigger the sum_monitoring block        
 END Monitoring_Comp;
 
 ARCHITECTURE Behavioral OF Monitoring_Comp IS   
-   CONSTANT battery_max : UNSIGNED(13 DOWNTO 0) := "10011100010000";                   -- 10 000Wh
-   CONSTANT battery_low: UNSIGNED(13 DOWNTO 0) := battery_max/5;                       -- 20%
-   CONSTANT battery_high: UNSIGNED(13 DOWNTO 0) := RESIZE((battery_max/100)*95, 14);   -- 95%
+   CONSTANT battery_max : UNSIGNED(10 DOWNTO 0) := "10111011100";                      -- 1500Wh
+   CONSTANT battery_low: UNSIGNED(10 DOWNTO 0) := battery_max/5;                       -- 20%
+   CONSTANT battery_high: UNSIGNED(10 DOWNTO 0) := RESIZE((battery_max/100)*95, 11);   -- 95%
 
 BEGIN 
    -- process which is triggered by sample rate clock [which will be set elsewhere to have a 2 minute frequency]

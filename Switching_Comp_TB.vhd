@@ -36,7 +36,7 @@ ARCHITECTURE behavior OF Switching_Comp_TB IS
          CLK_SampleRate : IN  std_logic;
          solar_in : IN  std_logic_vector(9 downto 0);
          manual_control : IN  std_logic;
-         battery_sum : IN  std_logic_vector(13 downto 0);
+         battery_sum : IN  std_logic_vector(10 downto 0);
          current_source : OUT  std_logic_vector(1 downto 0);
          sum_flag : OUT  std_logic
         );
@@ -47,7 +47,8 @@ ARCHITECTURE behavior OF Switching_Comp_TB IS
    signal CLK_SampleRate : std_logic := '0';
    signal solar_in : std_logic_vector(9 downto 0) := (others => '0');
    signal manual_control : std_logic := '0';
-   signal battery_sum : std_logic_vector(13 downto 0) := "00011111010000";
+   signal battery_sum : std_logic_vector(10 downto 0) := "00100101100";
+
 
  	--Outputs
    signal current_source : std_logic_vector(1 downto 0);

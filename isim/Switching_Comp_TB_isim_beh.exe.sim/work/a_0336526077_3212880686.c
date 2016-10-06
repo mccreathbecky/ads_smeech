@@ -116,7 +116,7 @@ LAB15:    t2 = (t0 + 1192U);
         goto LAB16;
 
 LAB17:    xsi_set_current_line(64, ng0);
-    t2 = (t0 + 6414);
+    t2 = (t0 + 6402);
     t5 = (t0 + 3752);
     t8 = (t5 + 56U);
     t11 = *((char **)t8);
@@ -136,7 +136,7 @@ LAB12:    xsi_set_current_line(70, ng0);
     goto LAB9;
 
 LAB11:    xsi_set_current_line(52, ng0);
-    t15 = (t0 + 6408);
+    t15 = (t0 + 6396);
     t17 = (t0 + 3752);
     t18 = (t17 + 56U);
     t19 = *((char **)t18);
@@ -147,7 +147,7 @@ LAB11:    xsi_set_current_line(52, ng0);
     goto LAB12;
 
 LAB14:    xsi_set_current_line(56, ng0);
-    t11 = (t0 + 6410);
+    t11 = (t0 + 6398);
     t13 = (t0 + 3752);
     t15 = (t13 + 56U);
     t16 = *((char **)t15);
@@ -158,7 +158,7 @@ LAB14:    xsi_set_current_line(56, ng0);
     goto LAB12;
 
 LAB16:    xsi_set_current_line(60, ng0);
-    t5 = (t0 + 6412);
+    t5 = (t0 + 6400);
     t11 = (t0 + 3752);
     t12 = (t11 + 56U);
     t13 = *((char **)t12);
