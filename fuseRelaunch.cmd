@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Switching_Comp_TB_isim_beh.exe" -prj "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Switching_Comp_TB_beh.prj" "work.Switching_Comp_TB" 
