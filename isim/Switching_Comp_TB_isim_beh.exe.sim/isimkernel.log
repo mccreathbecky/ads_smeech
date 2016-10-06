@@ -2,9 +2,30 @@ Command line:
    Switching_Comp_TB_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  50060
+     -socket  54690
 
-Wed Oct 05 12:38:25 2016
+Thu Oct 06 18:32:13 2016
 
 
- Elaboration Time: 0.0625 sec
+ Elaboration Time: 0.03125 sec
+
+ Current Memory Usage: 843.784 Meg
+
+ Total Signals          : 12
+ Total Nets             : 29
+ Total Signal Drivers   : 6
+ Total Blocks           : 4
+ Total Primitive Blocks : 3
+ Total Processes        : 4
+ Total Traceable Variables  : 17
+ Total Scalar Nets and Variables : 555
+Total Line Count : 527
+In process Switching_Comp_TB.vhd:solar_sim 
+ FATAL ERROR:ISim: This application has discovered an exceptional condition from which it cannot recover. Process will terminate. To search for possible resolutions to this issue, refer to the Xilinx answer database by going to http://www.xilinx.com/support/answers/index.htm and search with keywords 'ISim' and 'FATAL ERROR'. For technical support on this issue, please open a WebCase with this project attached at http://www.xilinx.com/support.
+
+ Total Simulation Time: 0.5 sec
+
+ Current Memory Usage: 721.912 Meg
+
+Thu Oct 06 18:36:48 2016
+
