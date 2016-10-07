@@ -1,0 +1,24 @@
+Command line:
+   Switching_Comp_TB_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  55329
+
+Thu Oct 06 19:03:56 2016
+
+
+ Elaboration Time: 0.046875 sec
+
+ Current Memory Usage: 843.862 Meg
+
+ Total Signals          : 12
+ Total Nets             : 26
+ Total Signal Drivers   : 3
+ Total Blocks           : 4
+ Total Primitive Blocks : 3
+ Total Processes        : 2
+ Total Traceable Variables  : 17
+ Total Scalar Nets and Variables : 543
+Total Line Count : 12
+In process Switching_Comp_TB.vhd:CLK_SampleRate_process 
+ FATAL ERROR:ISim: This application has discovered an exceptional condition from which it cannot recover. Process will terminate. To search for possible resolutions to this issue, refer to the Xilinx answer database by going to http://www.xilinx.com/support/answers/index.htm and search with keywords 'ISim' and 'FATAL ERROR'. For technical support on this issue, please open a WebCase with this project attached at http://www.xilinx.com/support.

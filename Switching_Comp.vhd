@@ -16,6 +16,8 @@
 -- Revision 0.01 - File Created
 -- Additional Comments: 
 -- http://www.doulos.com/knowhow/vhdl_designers_guide/numeric_std/
+-- http://www.bitweenie.com/listings/vhdl-type-conversion/ 
+--https://www.altera.com/support/support-resources/design-examples/design-software/vhdl/v_bidir.tablet.highResolutionDisplay.html
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -24,39 +26,21 @@ USE IEEE.NUMERIC_STD.ALL;
 
 ENTITY Monitoring_Comp IS 
    PORT(
-           -- clock triggers the control unit monitoring
-           CLK_SampleRate : IN STD_LOGIC;
-
-           -- up to 5000Wh - 13 bit
-           solar_in : IN  STD_LOGIC_VECTOR (12 DOWNTO 0);
-           
-           -- user may have manually overriden control
-           manual_control: IN STD_LOGIC;
-           
-           -- none/grid/solar
-           current_source : INOUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-            
-           -- up to 10000Wh - 14 bit
-           battery_sum : INOUT STD_LOGIC_VECTOR(13 DOWNTO 0);
-
-           -- a single bit, used to trigger the sum_monitoring block
-           sum_flag : OUT STD_LOGIC);         
+            CLK_SampleRate : IN STD_LOGIC;                                 -- clock triggers the control unit monitoring
+            solar_in : IN  STD_LOGIC_VECTOR (9 DOWNTO 0);                 -- up to 1000Wh - 10 bit
+            manual_control: IN STD_LOGIC;                                  -- user may have manually overriden control      
+            battery_sum : IN STD_LOGIC_VECTOR(10 DOWNTO 0);                -- up to 1500Wh - 14 bit
+            current_source : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);             -- none/grid/solar
+            sum_flag : OUT STD_LOGIC);                                     -- a single bit, used to trigger the sum_monitoring block        
 END Monitoring_Comp;
 
-ARCHITECTURE Behavioral OF Monitoring_Comp IS
+ARCHITECTURE Behavioral OF Monitoring_Comp IS   
+   CONSTANT battery_max : UNSIGNED(10 DOWNTO 0) := "10111011100";                      -- 1500Wh
+   CONSTANT battery_low: UNSIGNED(10 DOWNTO 0) := battery_max/5;                       -- 20%
+   CONSTANT battery_high: UNSIGNED(10 DOWNTO 0) := RESIZE((battery_max/100)*95, 11);   -- 95%
 
-   -- likely not used since current_source is an input signal
-   TYPE source_type IS (none, grid, solar);
-   
-   -- constant with the battery_max charge
-   constant battery_max : UNSIGNED(13 DOWNTO 0) := "10011100010000";
-   
-   constant battery_low: UNSIGNED(13 DOWNTO 0) := battery_max/5;
-   constant battery_high: UNSIGNED(13 DOWNTO 0) := battery_max*95/100;
-
-BEGIN
- -- process which is triggered by sample rate clock [which will be set elsewhere to have a 2 minute frequency]
-   -- will need to add code here to account for ManualControl!!!
+BEGIN 
+   -- process which is triggered by sample rate clock [which will be set elsewhere to have a 2 minute frequency]
    switching_process : PROCESS (CLK_SampleRate)
    BEGIN
       -- check for sample rate interval
@@ -64,16 +48,15 @@ BEGIN
          IF Manual_Control = '0' THEN
             
             -- check first if battery is almost full : if so, take no input
-            -- http://www.bitweenie.com/listings/vhdl-type-conversion/ MAY HAVE TO CHANGE TYPES
-            IF unsigned(battery_sum) >= battery_high THEN
+            IF UNSIGNED(battery_sum) >= battery_high THEN
                current_source <= "00";
             
             -- check if battery is below min threshold: if so, switch to grid
-            ELSIF unsigned(battery_sum) <= battery_low THEN
+            ELSIF UNSIGNED(battery_sum) <= battery_low THEN
                current_source <= "01"; 
             
             -- if there is solar energy, use it
-            ELSIF unsigned(solar_in) > 0 THEN
+            ELSIF UNSIGNED(solar_in) > 0 THEN
                current_source <= "10";
                
             -- finally, if no other choice due to lack of solar, use grid
