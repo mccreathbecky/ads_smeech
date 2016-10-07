@@ -15,7 +15,7 @@
 -- Revision: 
 -- Revision 0.01 - File Created
 -- Additional Comments: 
---
+--https://www.altera.com/support/support-resources/design-examples/design-software/vhdl/v_bidir.tablet.highResolutionDisplay.html
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -36,11 +36,12 @@ end Sum_MonitorINg;
 
 ARCHITECTURE Behavioral OF Sum_Monitoring IS
    
-   CONSTANT sample_rate : STD_LOGIC_VECTOR(1 DOWNTO 0) := "10";        -- 2 minute interval
+   CONSTANT sample_rate : UNSIGNED(1 DOWNTO 0) := "10";        -- 2 minute interval
+   CONSTANT mains : UNSIGNED(9 DOWNTO 0) := "1111101000";      -- 1000Wh constant
    
-   SIGNAL new_batterysum : STD_LOGIC_VECTOR(10 DOWNTO 0);
-   SIGNAL new_consumptionsum : STD_LOGIC_VECTOR (12 DOWNTO 0);
-   SIGNAL new_solarsum : STD_LOGIC_VECTOR(11 DOWNTO 0);
+   SIGNAL new_batterysum : UNSIGNED(10 DOWNTO 0);
+   SIGNAL new_consumptionsum : UNSIGNED (12 DOWNTO 0);
+   SIGNAL new_solarsum : UNSIGNED(11 DOWNTO 0);
    
 
 
@@ -53,22 +54,22 @@ BEGIN
       IF sum_flag ' EVENT AND sum_flag = '1' THEN
          
          -- consumption sum will be the same regardless of energy source
-         consumption_sum <= consumption_sum + consumption*sample_rate/60;
+         new_consumptionsum <= UNSIGNED(consumption_sum) + UNSIGNED(consumption)*sample_rate/60;
          
          CASE current_source IS
             WHEN "00" => 
                -- battery sum is just the battery - consumption for this period
-               battery_sum <= battery_sum - consumption*sample_rate/60;
+               new_batterysum <= UNSIGNED(battery_sum) - UNSIGNED(consumption)*sample_rate/60;
                
                -- battery sum is the current sum, take away the consumption and addINg IN the maINs power produced
             WHEN "01" =>
-               battery_sum <= battery_sum - consumption*sample_rate/60 + MaINs*sample_rate/60;
+               new_batterysum <= UNSIGNED(battery_sum) - UNSIGNED(consumption)*sample_rate/60 + mains*sample_rate/60;
                
                -- battery sum is the current sum, take away the consumption and addINg IN solar power produced
                -- solar sum is also updated with the new INput
             WHEN OTHERS =>
-               battery_sum <= battery_sum - consumption*sample_rate/60 + solar_in*sample_rate/60;
-               solar_sum <= solar_sum + solar_in*sample_rate/60;
+               new_batterysum <= UNSIGNED(battery_sum) - UNSIGNED(consumption)*sample_rate/60 + UNSIGNED(solar_in)*sample_rate/60;
+               new_solarsum <= UNSIGNED(solar_sum) + UNSIGNED(solar_in)*sample_rate/60;
          END CASE;
       END IF;
       
