@@ -30,6 +30,8 @@ ENTITY Monitoring_Comp IS
             solar_in : IN  STD_LOGIC_VECTOR (9 DOWNTO 0);                 -- up to 1000Wh - 10 bit
             manual_control: IN STD_LOGIC;                                  -- user may have manually overriden control      
             battery_sum : IN STD_LOGIC_VECTOR(10 DOWNTO 0);                -- up to 1500Wh - 14 bit
+            switching_flag : IN STD_LOGIC;                                 -- flag from sum_monitoring to indicate sums have updated
+            
             current_source : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);             -- none/grid/solar
             sum_flag : OUT STD_LOGIC);                                     -- a single bit, used to trigger the sum_monitoring block        
 END Monitoring_Comp;
@@ -71,5 +73,13 @@ BEGIN
          END IF;
       END IF;
    END PROCESS;
+   
+   reset_flag : PROCESS (switching_flag)
+   BEGIN
+      IF switching_flag ' EVENT AND switching_flag = '1' THEN
+         sum_flag <= '0';
+      END IF;
+   END PROCESS;
+   
 END Behavioral;
 
