@@ -33,7 +33,7 @@ char *ieee_p_1242562249_sub_1922276087_1035706684(char *, char *, char *, char *
 char *ieee_p_1242562249_sub_2053728113_1035706684(char *, char *, char *, char *, char *, char *);
 
 
-static void work_a_2551063614_3212880686_p_0(char *t0)
+static void work_a_4264605606_3212880686_p_0(char *t0)
 {
     char t12[16];
     char t13[16];
@@ -363,7 +363,7 @@ LAB27:    xsi_size_not_matching(13U, t19, 0);
 
 }
 
-static void work_a_2551063614_3212880686_p_1(char *t0)
+static void work_a_4264605606_3212880686_p_1(char *t0)
 {
     char t11[16];
     char t12[16];
@@ -475,9 +475,9 @@ LAB2:    xsi_set_current_line(96, ng0);
 }
 
 
-extern void work_a_2551063614_3212880686_init()
+extern void work_a_4264605606_3212880686_init()
 {
-	static char *pe[] = {(void *)work_a_2551063614_3212880686_p_0,(void *)work_a_2551063614_3212880686_p_1};
-	xsi_register_didat("work_a_2551063614_3212880686", "isim/sum_tb_isim_beh.exe.sim/work/a_2551063614_3212880686.didat");
+	static char *pe[] = {(void *)work_a_4264605606_3212880686_p_0,(void *)work_a_4264605606_3212880686_p_1};
+	xsi_register_didat("work_a_4264605606_3212880686", "isim/Sum_Monitoring_isim_beh.exe.sim/work/a_4264605606_3212880686.didat");
 	xsi_register_executes(pe);
 }

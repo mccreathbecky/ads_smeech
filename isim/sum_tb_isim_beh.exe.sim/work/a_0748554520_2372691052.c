@@ -80,7 +80,7 @@ LAB2:    xsi_set_current_line(97, ng0);
     memcpy(t8, t2, 10U);
     xsi_driver_first_trans_fast(t4);
     xsi_set_current_line(102, ng0);
-    t9 = (0.10000000000000001 * 1000000000000LL);
+    t9 = (2 * 1000LL);
     t2 = (t0 + 3280);
     xsi_process_wait(t2, t9);
 
@@ -96,7 +96,7 @@ LAB4:    xsi_set_current_line(104, ng0);
     *((unsigned char *)t6) = (unsigned char)3;
     xsi_driver_first_trans_fast(t2);
     xsi_set_current_line(105, ng0);
-    t9 = (0.10000000000000001 * 1000000000000LL);
+    t9 = (2 * 1000LL);
     t2 = (t0 + 3280);
     xsi_process_wait(t2, t9);
 

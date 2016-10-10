@@ -99,10 +99,10 @@ BEGIN
       consumption_in <= "00000001000";
       solar_in <= "0000000000";
       
-      wait for 0.1sec;
+      wait for 2ns;
       
       sum_flag <= '1';
-      wait for 0.1sec;
+      wait for 2ns;
       
       sum_flag <= '0';
       
