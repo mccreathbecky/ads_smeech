@@ -1,5 +1,5 @@
 ISim log file
-Running: C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\SMEECH2\Sum_monitoring_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_monitoring_tb_isim_beh.wdb 
+Running: C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\SMEECH2\sum_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/sum_tb_isim_beh.wdb 
 ISim P.20131013 (signature 0x7708f090)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -8,9 +8,61 @@ This is a Lite version of ISim.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
-# run 10s
+# run 100 sec
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
+ERROR: In process Sum_Monitoring.vhd:sum_monitoring 
+ Target Size 11 and source size 13 for array dimension 0 does not match. 
+
+INFO: Simulator is stopped.
+# step
+INFO: Simulator is stopped.
+# step
+INFO: Simulator is stopped.
+# restart
+# step
+Simulator is doing circuit initialization process.
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/sum_tb.vhd" Line 99
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/sum_tb.vhd" Line 100
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/sum_tb.vhd" Line 101
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/sum_tb.vhd" Line 102
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/sum_tb.vhd" Line 104
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 62
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 95
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 96
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 101
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 102
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 103
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 105
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 106
+# step
+Finished circuit initialization process.
+Stopped at time : 500 ms : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/sum_tb.vhd" Line 106
+# step
+Stopped at time : 500 ms : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/sum_tb.vhd" Line 107
+# step
+Stopped at time : 500 ms : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 62
+# step
+Stopped at time : 500 ms : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 63
+# step
+Stopped at time : 500 ms : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 66
+# step
+Stopped at time : 500 ms : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 68
+# step
+Stopped at time : 500 ms : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 75
+# step
 ERROR: In process Sum_Monitoring.vhd:sum_monitoring 
  Target Size 11 and source size 13 for array dimension 0 does not match. 
 

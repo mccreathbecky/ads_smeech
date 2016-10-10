@@ -26,7 +26,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity Sum_Monitoring is
     Port ( 
-           sum_flag, CLK      : IN  STD_LOGIC;
+           sum_flag           : IN  STD_LOGIC;
            current_source     : IN  STD_LOGIC_VECTOR (1 DOWNTO 0);            -- none/grid/solar/X
            consumption_in     : IN  STD_LOGIC_VECTOR (10 DOWNTO 0);           -- consumption < = battery_sum
            solar_in           : IN  STD_LOGIC_VECTOR (9 DOWNTO 0);            -- max solar input is 1000Wh       
@@ -45,12 +45,13 @@ ARCHITECTURE Behavioral OF Sum_Monitoring IS
 
    CONSTANT battery_max    : UNSIGNED(10 DOWNTO 0)    := "10111011100";       -- 1500Wh
    CONSTANT sample_rate    : UNSIGNED(1 DOWNTO 0)     := "10";                -- 2 minutes
-   CONSTANT mains          : UNSIGNED(10 DOWNTO 0)    := "1111101000";        -- 1000Wh
+   CONSTANT mains          : UNSIGNED(10 DOWNTO 0)    := "01111101000";       -- 1000Wh
    
    SIGNAL battery_sum      : UNSIGNED(10 DOWNTO 0)    := battery_max/5;       -- battery sum less than 2047 [max 1500Wh] default to 20%
    SIGNAL solar_sum        : UNSIGNED(11 DOWNTO 0)    := "000000000000";      -- max solar sum for the day assumed less than 4095Wh
    SIGNAL daily_generated  : UNSIGNED (12 DOWNTO 0)   := "0000000000000";     -- max daily generation is less than 8191Wh
    SIGNAL consumption_sum  : UNSIGNED (12 DOWNTO 0)   := "0000000000000";     -- max consumption_sum assumed less than 8191Wh
+   SIGNAL update_output    : STD_LOGIC                := '0';
    
 BEGIN
 
@@ -69,28 +70,40 @@ BEGIN
                -- battery sum is just the battery - consumption for this period
                battery_sum <= battery_sum - UNSIGNED(consumption_in)*sample_rate/60;
                
-               -- battery sum is the current sum, take away the consumption and addINg IN the maINs power produced
+               -- battery sum is the current sum, take away the consumption and adding in the mains power produced
             WHEN "01" =>
                battery_sum <= battery_sum - UNSIGNED(consumption_in)*sample_rate/60 + mains*sample_rate/60;
+               daily_generated <= daily_generated + mains*sample_rate/60;
                
-               -- battery sum is the current sum, take away the consumption and addINg IN solar power produced
-               -- solar sum is also updated with the new INput
+               -- battery sum is the current sum, take away the consumption and adding in solar power produced
+               -- solar sum is also updated with the new input
             WHEN OTHERS =>
                battery_sum <= battery_sum - UNSIGNED(consumption_in)*sample_rate/60 + UNSIGNED(solar_in)*sample_rate/60;
                solar_sum <= solar_sum + UNSIGNED(solar_in)*sample_rate/60;
-         END CASE;
+               daily_generated <= daily_generated + UNSIGNED(solar_in)*sample_rate/60; 
+         END CASE;  
+         
+         update_output <= '1';
          
       END IF;
    END PROCESS;
    
-   update_process : PROCESS(battery_sum, solar_sum)
+   update_process : PROCESS(update_output)
    BEGIN
-     percent_battery    <= STD_LOGIC_VECTOR((battery_sum/battery_max)*100);
-     percent_solar      <= STD_LOGIC_VECTOR((solar_sum/daily_generated)*100);
-     total_consumption  <= STD_LOGIC_VECTOR(consumption_sum);
-     total_generated    <= STD_LOGIC_VECTOR(daily_generated);
+   
+      -- check for 0 when dividing otherwise mathematically impossible
+      IF daily_generated = 0 THEN
+         percent_solar   <= "0000000000";
+      ELSE        
+        percent_solar    <= STD_LOGIC_VECTOR((solar_sum/daily_generated)*100);
+      END IF;
+      
+      percent_battery    <= STD_LOGIC_VECTOR((battery_sum/battery_max)*100);
+      total_consumption  <= STD_LOGIC_VECTOR(consumption_sum);
+      total_generated    <= STD_LOGIC_VECTOR(daily_generated);
 
-     switching_flag <= '1';
+      update_output <= '0';
+      switching_flag <= '1';
    END PROCESS;
    
 

@@ -1,0 +1,2 @@
+vhdl isim_temp "Sum_Monitoring.vhd"
+vhdl isim_temp "sum_tb.vhd"
