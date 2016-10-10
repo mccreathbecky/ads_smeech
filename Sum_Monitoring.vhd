@@ -29,6 +29,12 @@ entity Sum_Monitoring is
            battery_sum : INOUT  STD_LOGIC_VECTOR (10 DOWNTO 0);         -- battery sum less than 2047 [max 1500Wh]
            consumption_sum : INOUT  STD_LOGIC_VECTOR (12 DOWNTO 0);     -- consumption_sum assumed less than 8191Wh
            solar_sum : INOUT  STD_LOGIC_VECTOR (11 DOWNTO 0);           -- max solar sum for the day assumed less than 4095Wh
+           -- % battery level
+           -- total consumption [set as a constant for v1]
+           
+           -- total power generated
+           -- % solar of total power generated !!!
+
            
            sum_flag : IN  STD_LOGIC;
            CLK : IN STD_LOGIC;

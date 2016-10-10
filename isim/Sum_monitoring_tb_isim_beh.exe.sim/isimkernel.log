@@ -1,0 +1,32 @@
+Command line:
+   Sum_monitoring_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  53624
+
+Fri Oct 07 19:40:06 2016
+
+
+ Elaboration Time: 0.0625 sec
+
+ Current Memory Usage: 843.788 Meg
+
+ Total Signals          : 20
+ Total Nets             : 98
+ Total Signal Drivers   : 19
+ Total Blocks           : 4
+ Total Primitive Blocks : 3
+ Total Processes        : 4
+ Total Traceable Variables  : 16
+ Total Scalar Nets and Variables : 594
+Total Line Count : 30
+In process Sum_Monitoring.vhd:sum_monitoring 
+ Target Size 11 and source size 13 for array dimension 0 does not match. 
+
+
+ Total Simulation Time: 0.078125 sec
+
+ Current Memory Usage: 529.215 Meg
+
+Sun Oct 09 11:33:53 2016
+

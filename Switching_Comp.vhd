@@ -17,7 +17,7 @@
 -- Additional Comments: 
 -- http://www.doulos.com/knowhow/vhdl_designers_guide/numeric_std/
 -- http://www.bitweenie.com/listings/vhdl-type-conversion/ 
---https://www.altera.com/support/support-resources/design-examples/design-software/vhdl/v_bidir.tablet.highResolutionDisplay.html
+-- https://www.altera.com/support/support-resources/design-examples/design-software/vhdl/v_bidir.tablet.highResolutionDisplay.html
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

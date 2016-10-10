@@ -1,0 +1,2 @@
+vhdl work "Sum_Monitoring.vhd"
+vhdl work "Sum_monitoring_tb.vhd"
