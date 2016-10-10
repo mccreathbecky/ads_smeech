@@ -15,22 +15,20 @@ ERROR: In process Sum_Monitoring.vhd:sum_monitoring
  Target Size 11 and source size 13 for array dimension 0 does not match. 
 
 INFO: Simulator is stopped.
-# step
-INFO: Simulator is stopped.
-# step
+# run all
 INFO: Simulator is stopped.
 # restart
 # step
 Simulator is doing circuit initialization process.
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/sum_tb.vhd" Line 97
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/sum_tb.vhd" Line 98
+# step
 Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/sum_tb.vhd" Line 99
 # step
 Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/sum_tb.vhd" Line 100
 # step
-Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/sum_tb.vhd" Line 101
-# step
 Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/sum_tb.vhd" Line 102
-# step
-Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/sum_tb.vhd" Line 104
 # step
 Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 62
 # step
@@ -49,21 +47,23 @@ Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Pr
 Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 106
 # step
 Finished circuit initialization process.
-Stopped at time : 500 ms : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/sum_tb.vhd" Line 106
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 62
 # step
-Stopped at time : 500 ms : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/sum_tb.vhd" Line 107
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 63
 # step
-Stopped at time : 500 ms : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 62
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 66
 # step
-Stopped at time : 500 ms : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 63
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 68
 # step
-Stopped at time : 500 ms : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 66
-# step
-Stopped at time : 500 ms : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 68
-# step
-Stopped at time : 500 ms : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 75
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring.vhd" Line 75
 # step
 ERROR: In process Sum_Monitoring.vhd:sum_monitoring 
  Target Size 11 and source size 13 for array dimension 0 does not match. 
 
+INFO: Simulator is stopped.
+# step
+INFO: Simulator is stopped.
+# step
+INFO: Simulator is stopped.
+# step
 INFO: Simulator is stopped.

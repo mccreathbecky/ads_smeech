@@ -44,24 +44,11 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1476079572" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1476079572">
+    <transform xil_pn:end_ts="1476081299" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1476081299">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1476080139" xil_pn:in_ck="-5799760007521857498" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1476080139">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="ControlUnit.vhd"/>
-      <outfile xil_pn:name="Sum_Monitoring.vhd"/>
-      <outfile xil_pn:name="Switching_Comp.vhd"/>
-      <outfile xil_pn:name="Switching_Comp_TB.vhd"/>
-      <outfile xil_pn:name="sum_tb.vhd"/>
-    </transform>
-    <transform xil_pn:end_ts="1476079104" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-6650208928563589520" xil_pn:start_ts="1476079104">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1476080139" xil_pn:in_ck="-5799760007521857498" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1476080139">
+    <transform xil_pn:end_ts="1476081299" xil_pn:in_ck="-5799760007521857498" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1476081299">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ControlUnit.vhd"/>
@@ -70,7 +57,20 @@
       <outfile xil_pn:name="Switching_Comp_TB.vhd"/>
       <outfile xil_pn:name="sum_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1476080143" xil_pn:in_ck="-5799760007521857498" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-3683427623753279202" xil_pn:start_ts="1476080139">
+    <transform xil_pn:end_ts="1476081299" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-6650208928563589520" xil_pn:start_ts="1476081299">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1476081299" xil_pn:in_ck="-5799760007521857498" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1476081299">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="ControlUnit.vhd"/>
+      <outfile xil_pn:name="Sum_Monitoring.vhd"/>
+      <outfile xil_pn:name="Switching_Comp.vhd"/>
+      <outfile xil_pn:name="Switching_Comp_TB.vhd"/>
+      <outfile xil_pn:name="sum_tb.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1476081302" xil_pn:in_ck="-5799760007521857498" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-3683427623753279202" xil_pn:start_ts="1476081299">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="fuse.log"/>
@@ -80,7 +80,7 @@
       <outfile xil_pn:name="sum_tb_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1476080144" xil_pn:in_ck="5319757008940577762" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-5511666045300544139" xil_pn:start_ts="1476080143">
+    <transform xil_pn:end_ts="1476081303" xil_pn:in_ck="5319757008940577762" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-5511666045300544139" xil_pn:start_ts="1476081302">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="isim.cmd"/>

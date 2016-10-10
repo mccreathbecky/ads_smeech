@@ -65,8 +65,6 @@ ARCHITECTURE behavior OF sum_tb IS
    signal total_generated : std_logic_vector(12 downto 0);
    signal switching_flag : std_logic;
 
-   -- Clock period definitions
-   constant sumflag_period : time := 1 sec;
  
 BEGIN
  
@@ -96,15 +94,15 @@ BEGIN
    -- Stimulus process
    sim1_none: process
    begin		
-      sum_flag <= '0';
+      sum_flag <= '1';
       current_source <= "01"; --none = source
       consumption_in <= "00000001000";
       solar_in <= "0000000000";
       
-      wait for 0.5sec;
+      wait for 0.1sec;
       
       sum_flag <= '1';
-      wait for 0.2sec;
+      wait for 0.1sec;
       
       sum_flag <= '0';
       
