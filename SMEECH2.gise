@@ -26,7 +26,9 @@
     <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="ControlUnit.sym" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ControlUnit_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Monitoring_Comp_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Sum_Monitoring_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Sum_Monitoring_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="Sum_Monitoring_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Sum_Monitoring_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Sum_monitoring_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Sum_monitoring_tb_stx_beh.prj"/>
@@ -36,9 +38,7 @@
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="sum_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="sum_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="sum_tb_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="sum_tb_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
   </files>
@@ -57,7 +57,7 @@
       <outfile xil_pn:name="Switching_Comp_TB.vhd"/>
       <outfile xil_pn:name="sum_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1476081541" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-6650208928563589520" xil_pn:start_ts="1476081541">
+    <transform xil_pn:end_ts="1476157019" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="625167404265228269" xil_pn:start_ts="1476157018">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -70,22 +70,22 @@
       <outfile xil_pn:name="Switching_Comp_TB.vhd"/>
       <outfile xil_pn:name="sum_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1476081545" xil_pn:in_ck="-5799760007521857498" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-3683427623753279202" xil_pn:start_ts="1476081541">
+    <transform xil_pn:end_ts="1476157022" xil_pn:in_ck="-5799760007521857498" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="7178789796616862091" xil_pn:start_ts="1476157019">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Sum_Monitoring_beh.prj"/>
+      <outfile xil_pn:name="Sum_Monitoring_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="sum_tb_beh.prj"/>
-      <outfile xil_pn:name="sum_tb_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1476081545" xil_pn:in_ck="5319757008940577762" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-2259113981992564757" xil_pn:start_ts="1476081545">
+    <transform xil_pn:end_ts="1476157023" xil_pn:in_ck="5319757008940577762" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="963860365775722040" xil_pn:start_ts="1476157022">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Sum_Monitoring_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="sum_tb_isim_beh.wdb"/>
     </transform>
   </transforms>
 
