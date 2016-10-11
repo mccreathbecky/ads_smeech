@@ -2,14 +2,14 @@ Command line:
    sum_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  57099
+     -socket  50554
 
-Tue Oct 11 14:10:55 2016
+Tue Oct 11 16:45:21 2016
 
 
- Elaboration Time: 0.03125 sec
+ Elaboration Time: 0.171601 sec
 
- Current Memory Usage: 843.825 Meg
+ Current Memory Usage: 1316.81 Meg
 
  Total Signals          : 23
  Total Nets             : 121
@@ -19,22 +19,13 @@ Tue Oct 11 14:10:55 2016
  Total Processes        : 3
  Total Traceable Variables  : 16
  Total Scalar Nets and Variables : 628
-Total Line Count : 28
-In process Sum_Monitoring.vhd:sum_monitoring 
- Target Size 11 and source size 13 for array dimension 0 does not match. 
-
-Total Line Count : 28
-In process Sum_Monitoring.vhd:sum_monitoring 
- Target Size 11 and source size 13 for array dimension 0 does not match. 
-
-Total Line Count : 28
 In process Sum_Monitoring.vhd:sum_monitoring 
  Target Size 11 and source size 13 for array dimension 0 does not match. 
 
 
- Total Simulation Time: 0.125 sec
+ Total Simulation Time: 0.265202 sec
 
- Current Memory Usage: 529.252 Meg
+ Current Memory Usage: 1474.08 Meg
 
-Tue Oct 11 14:36:46 2016
+Tue Oct 11 16:45:56 2016
 

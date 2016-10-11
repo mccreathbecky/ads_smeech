@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring_isim_beh.exe" -prj "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Sum_Monitoring_beh.prj" "work.Sum_Monitoring" 
+-intstyle "ise" -incremental -o "E:/ADS/SMEECH2/sum_tb_isim_beh.exe" -prj "E:/ADS/SMEECH2/sum_tb_beh.prj" "work.sum_tb" 

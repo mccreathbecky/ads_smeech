@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   16:34:38 10/10/2016
+-- Create Date:   16:44:32 10/11/2016
 -- Design Name:   
--- Module Name:   C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/sum_tb.vhd
+-- Module Name:   E:/ADS/SMEECH2/sum_tb2.vhd
 -- Project Name:  SMEECH2
 -- Target Device:  
 -- Tool versions:  
@@ -27,27 +27,29 @@
 --------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
-USE ieee.numeric_std.ALL;
  
-ENTITY sum_tb IS
-END sum_tb;
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--USE ieee.numeric_std.ALL;
  
-ARCHITECTURE behavior OF sum_tb IS 
+ENTITY sum_tb2 IS
+END sum_tb2;
+ 
+ARCHITECTURE behavior OF sum_tb2 IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
     COMPONENT Sum_Monitoring
     PORT(
-         sum_flag          : IN  std_logic;
-         current_source    : IN  std_logic_vector(1 downto 0);
-         consumption_in    : IN  std_logic_vector(10 downto 0);
-         solar_in          : IN  std_logic_vector(9 downto 0);
-         
-         percent_battery   : OUT  std_logic_vector(9 downto 0);
-         percent_solar     : OUT  std_logic_vector(9 downto 0);
+         sum_flag : IN  std_logic;
+         current_source : IN  std_logic_vector(1 downto 0);
+         consumption_in : IN  std_logic_vector(10 downto 0);
+         solar_in : IN  std_logic_vector(9 downto 0);
+         percent_battery : OUT  std_logic_vector(9 downto 0);
+         percent_solar : OUT  std_logic_vector(9 downto 0);
          total_consumption : OUT  std_logic_vector(12 downto 0);
-         total_generated   : OUT  std_logic_vector(12 downto 0);
-         switching_flag    : OUT  std_logic
+         total_generated : OUT  std_logic_vector(12 downto 0);
+         switching_flag : OUT  std_logic
         );
     END COMPONENT;
     
@@ -64,7 +66,8 @@ ARCHITECTURE behavior OF sum_tb IS
    signal total_consumption : std_logic_vector(12 downto 0);
    signal total_generated : std_logic_vector(12 downto 0);
    signal switching_flag : std_logic;
-
+   -- No clocks detected in port list. Replace <clock> below with 
+   -- appropriate port name 
  
 BEGIN
  
@@ -80,32 +83,17 @@ BEGIN
           total_generated => total_generated,
           switching_flag => switching_flag
         );
---
---   -- Clock process definitions
---   sumflag_process :process
---   begin
---		sum_flag <= '0';
---		wait for sumflag_period/2;
---		sum_flag <= '1';
---		wait for sumflag_period/2;
---   end process;
+
  
 
    -- Stimulus process
-   sim1_none: process
+   stim_proc: process
    begin		
-      sum_flag <= '1';
-      current_source <= "01"; --none = source
-      consumption_in <= "00000001000";
-      solar_in <= "0000000000";
-      
-      wait for 2ns;
-      
-      sum_flag <= '1';
-      wait for 2ns;
-      
-      sum_flag <= '0';
-      
+      -- hold reset state for 100 ns.
+      wait for 100 ns;	
+
+      -- insert stimulus here 
+
       wait;
    end process;
 

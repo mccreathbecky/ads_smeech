@@ -1,0 +1,2 @@
+vhdl isim_temp "LED_Display.vhd"
+vhdl isim_temp "LED_Display_TB.vhd"
