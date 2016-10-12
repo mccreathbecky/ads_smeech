@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "E:/ADS/SMEECH2/sum_tb.vhd";
+static const char *ng0 = "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/sum_tb.vhd";
 
 
 
@@ -53,7 +53,7 @@ LAB2:    xsi_set_current_line(97, ng0);
     *((unsigned char *)t6) = (unsigned char)3;
     xsi_driver_first_trans_fast(t2);
     xsi_set_current_line(98, ng0);
-    t2 = (t0 + 6187);
+    t2 = (t0 + 6811);
     t4 = (t0 + 3920);
     t5 = (t4 + 56U);
     t6 = *((char **)t5);
@@ -62,7 +62,7 @@ LAB2:    xsi_set_current_line(97, ng0);
     memcpy(t8, t2, 2U);
     xsi_driver_first_trans_fast(t4);
     xsi_set_current_line(99, ng0);
-    t2 = (t0 + 6189);
+    t2 = (t0 + 6813);
     t4 = (t0 + 3984);
     t5 = (t4 + 56U);
     t6 = *((char **)t5);
@@ -71,7 +71,7 @@ LAB2:    xsi_set_current_line(97, ng0);
     memcpy(t8, t2, 11U);
     xsi_driver_first_trans_fast(t4);
     xsi_set_current_line(100, ng0);
-    t2 = (t0 + 6200);
+    t2 = (t0 + 6824);
     t4 = (t0 + 4048);
     t5 = (t4 + 56U);
     t6 = *((char **)t5);
