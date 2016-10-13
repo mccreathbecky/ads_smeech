@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="E:/ADS/ads_smeech-Sum_monitoring/sum_tb_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="sum_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="9" />
+   <wvobject fp_name="/sum_tb/sum_clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sum_clk</obj_property>
+      <obj_property name="ObjectShortName">sum_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sum_tb/current_source" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">current_source[1:0]</obj_property>
+      <obj_property name="ObjectShortName">current_source[1:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sum_tb/consumption_in" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">consumption_in[10:0]</obj_property>
+      <obj_property name="ObjectShortName">consumption_in[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sum_tb/solar_in" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">solar_in[9:0]</obj_property>
+      <obj_property name="ObjectShortName">solar_in[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sum_tb/percent_battery" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">percent_battery[6:0]</obj_property>
+      <obj_property name="ObjectShortName">percent_battery[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sum_tb/percent_solar" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">percent_solar[6:0]</obj_property>
+      <obj_property name="ObjectShortName">percent_solar[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sum_tb/total_consumption" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">total_consumption[12:0]</obj_property>
+      <obj_property name="ObjectShortName">total_consumption[12:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sum_tb/total_generated" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">total_generated[12:0]</obj_property>
+      <obj_property name="ObjectShortName">total_generated[12:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sum_tb/sumflag_period" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">sumflag_period</obj_property>
+      <obj_property name="ObjectShortName">sumflag_period</obj_property>
+   </wvobject>
+</wave_config>

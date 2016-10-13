@@ -33,8 +33,8 @@ entity Sum_Monitoring is
            solar_in           : IN  STD_LOGIC_VECTOR (9 DOWNTO 0);            -- max solar input is 1000Wh       
 
 			  
-           percent_battery    : OUT STD_LOGIC_VECTOR (9 DOWNTO 0);            -- outputs the current battery level as a %age
-           percent_solar      : OUT STD_LOGIC_VECTOR (9 DOWNTO 0);            -- % solar of total power generated 
+           percent_battery    : OUT STD_LOGIC_VECTOR (6 DOWNTO 0);            -- outputs the current battery level as a %age [max is 100% ~ 7 bits]
+           percent_solar      : OUT STD_LOGIC_VECTOR (6 DOWNTO 0);            -- % solar of total power generated 
            total_consumption  : OUT STD_LOGIC_VECTOR (12 DOWNTO 0);           -- total consumption [set as a constant for v1]
            total_generated    : OUT STD_LOGIC_VECTOR (12 DOWNTO 0));           -- total power generated
         
@@ -61,7 +61,7 @@ BEGIN
       IF sum_CLK ' EVENT AND sum_CLK = '1' THEN        -- wait for sum_flag to be set
       
          -- consumption sum will be the same regardless of energy source
-         consumption_sum <= consumption_sum + UNSIGNED(consumption_in)*sample_rate/60;
+         consumption_sum <= consumption_sum + (UNSIGNED(consumption_in)*sample_rate)/60;
          
          CASE current_source IS
             WHEN "00" => 
@@ -71,33 +71,33 @@ BEGIN
                
             WHEN "01" =>
 					-- battery sum is the current sum, take away the consumption and adding in the mains power produced
-               battery_sum <= battery_sum - RESIZE(UNSIGNED(consumption_in)*sample_rate/60, 11) + RESIZE(mains*sample_rate/60, 11);
+               battery_sum <= battery_sum - RESIZE((UNSIGNED(consumption_in)*sample_rate)/60, 11) + RESIZE((mains*sample_rate)/60, 11);
                daily_generated <= daily_generated + RESIZE(mains*sample_rate/60, 13);
                
                
             WHEN OTHERS =>
 					-- battery sum is the current sum, take away the consumption and adding in solar power produced
-               battery_sum <= battery_sum - RESIZE(UNSIGNED(consumption_in)*sample_rate/60, 11) + RESIZE(UNSIGNED(solar_in)*sample_rate/60, 11);
-					solar_sum <= solar_sum + RESIZE(UNSIGNED(solar_in)*sample_rate/60, 12);
-					daily_generated <= daily_generated + RESIZE(UNSIGNED(solar_in)*sample_rate/60, 13); 		
+               battery_sum <= battery_sum - RESIZE((UNSIGNED(consumption_in)*sample_rate)/60, 11) + RESIZE((UNSIGNED(solar_in)*sample_rate)/60, 11);
+					solar_sum <= solar_sum + RESIZE((UNSIGNED(solar_in)*sample_rate)/60, 12);
+					daily_generated <= daily_generated + RESIZE((UNSIGNED(solar_in)*sample_rate)/60, 13); 		
 			END CASE;  
       END IF;
    END PROCESS;
    
    update_process : PROCESS(consumption_sum, battery_sum, daily_generated, solar_sum)
-		VARIABLE solar_p 			: UNSIGNED (9 DOWNTO 0)		:= "0000000000";
-		VARIABLE battery_p		: UNSIGNED (9 DOWNTO 0)		:= "0000000000";
+		VARIABLE solar_p 			: UNSIGNED (6 DOWNTO 0)		:= "0000000";
+		VARIABLE battery_p		: UNSIGNED (6 DOWNTO 0)		:= "0000000";
    BEGIN
 	
       -- check for 0 when dividing otherwise mathematically impossible
       IF daily_generated = 0 THEN
-         percent_solar   <= "0000000000";
+         percent_solar   <= "0000000";
       ELSE        
-		  solar_p := RESIZE((solar_sum / daily_generated)* 100, 10);
+		  solar_p := RESIZE((solar_sum * 100) / daily_generated, 7);
         percent_solar    <= STD_LOGIC_VECTOR(solar_p);
       END IF;
       
-		battery_p := RESIZE((battery_sum / battery_max)* 100, 10);
+		battery_p := RESIZE((battery_sum * 100) / battery_max, 7);
       percent_battery    <= STD_LOGIC_VECTOR(battery_p);
 		
       total_consumption  <= STD_LOGIC_VECTOR(consumption_sum);

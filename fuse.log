@@ -19,4 +19,4 @@ Waiting for 1 sub-compilation(s) to finish...
 Compiled 6 VHDL Units
 Built simulation executable E:/ADS/ads_smeech-Sum_monitoring/sum_tb_isim_beh.exe
 Fuse Memory Usage: 35244 KB
-Fuse CPU Usage: 514 ms
+Fuse CPU Usage: 545 ms
