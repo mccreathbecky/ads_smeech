@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Switching_Comp_TB_isim_beh.exe" -prj "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Switching_Comp_TB_beh.prj" "work.Switching_Comp_TB" 
+-intstyle "ise" -incremental -lib "secureip" -o "E:/ADS/ads_smeech-Sum_monitoring/sum_tb_isim_beh.exe" -prj "E:/ADS/ads_smeech-Sum_monitoring/sum_tb_beh.prj" "work.sum_tb" 
