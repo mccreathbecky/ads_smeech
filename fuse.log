@@ -1,12 +1,22 @@
-Running: C:\Xilinx\14.6\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o E:/ADS/ads_smeech-Sum_monitoring/Switching_Comp_TB_isim_beh.exe -prj E:/ADS/ads_smeech-Sum_monitoring/Switching_Comp_TB_beh.prj work.Switching_Comp_TB 
-ISim P.68d (signature 0x7708f090)
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/sum_tb_isim_beh.exe -prj C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/sum_tb_beh.prj work.sum_tb 
+ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "E:/ADS/ads_smeech-Sum_monitoring/Switching_Comp.vhd" into library work
-Parsing VHDL file "E:/ADS/ads_smeech-Sum_monitoring/Switching_Comp_TB.vhd" into library work
+Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" into library work
+Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/sum_tb.vhd" into library work
 Starting static elaboration
-WARNING:HDLCompiler:746 - "N:/P.68d/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Range is empty (null range)
-WARNING:HDLCompiler:220 - "N:/P.68d/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Assignment ignored
-ERROR:HDLCompiler:432 - "E:/ADS/ads_smeech-Sum_monitoring/Switching_Comp.vhd" Line 33: Formal <switching_flag> has no actual or default value.
-ERROR:Simulator:777 - Static elaboration of top level VHDL design unit switching_comp_tb in library work failed
+WARNING:HDLCompiler:746 - "N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Range is empty (null range)
+WARNING:HDLCompiler:220 - "N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Assignment ignored
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling architecture behavioral of entity Sum_Monitoring [sum_monitoring_default]
+Compiling architecture behavior of entity sum_tb
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 6 VHDL Units
+Built simulation executable C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/sum_tb_isim_beh.exe
+Fuse Memory Usage: 35584 KB
+Fuse CPU Usage: 546 ms
