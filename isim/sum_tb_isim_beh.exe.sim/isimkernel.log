@@ -2,9 +2,9 @@ Command line:
    sum_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  62271
+     -socket  62282
 
-Fri Oct 14 13:09:39 2016
+Fri Oct 14 13:13:36 2016
 
 
  Elaboration Time: 0.046875 sec

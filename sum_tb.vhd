@@ -62,8 +62,8 @@ ARCHITECTURE behavior OF sum_tb IS
    signal total_consumption : std_logic_vector(12 downto 0);
    signal total_generated : std_logic_vector(12 downto 0);
    
-	-- Clock period definitions
-   constant sumflag_period : time := 2 min;
+   constant sumflag_period : time := 2ns;
+   constant simchange_period : time := 10ns;
  
 BEGIN
  
@@ -95,15 +95,15 @@ BEGIN
       current_source <= "10"; 
       consumption_in <= "00000110110";			
       solar_in <= "0100110010";					
-		WAIT FOR 10 min;
+		WAIT FOR simchange_period;
 		
 		consumption_in <= "01000110110";					
 		current_source <= "01";
-		WAIT FOR 10 min;
+		WAIT FOR simchange_period;
 		
 		consumption_in <= "01010110011";					
 		current_source <="00";
-		WAIT FOR 10 min;
+		WAIT FOR simchange_period;
 		
    end process;
 

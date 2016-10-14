@@ -30,7 +30,6 @@
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="sum_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="sum_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="sum_tb_isim_beh.wdb"/>
@@ -43,9 +42,13 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1476410973" xil_pn:in_ck="-7783884150582184945" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1476410973">
+    <transform xil_pn:end_ts="1476411175" xil_pn:in_ck="-7783884150582184945" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1476411175">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="ControlUnit.vhd"/>
       <outfile xil_pn:name="LED_Display.vhd"/>
       <outfile xil_pn:name="LED_Display_TB.vhd"/>
@@ -66,9 +69,14 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1476410973" xil_pn:in_ck="-7783884150582184945" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1476410973">
+    <transform xil_pn:end_ts="1476411175" xil_pn:in_ck="-7783884150582184945" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1476411175">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="ControlUnit.vhd"/>
       <outfile xil_pn:name="LED_Display.vhd"/>
       <outfile xil_pn:name="LED_Display_TB.vhd"/>
@@ -77,21 +85,24 @@
       <outfile xil_pn:name="Switching_Comp_TB.vhd"/>
       <outfile xil_pn:name="sum_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1476410977" xil_pn:in_ck="-7783884150582184945" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-4369526370087303776" xil_pn:start_ts="1476410973">
+    <transform xil_pn:end_ts="1476411179" xil_pn:in_ck="-7783884150582184945" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-4369526370087303776" xil_pn:start_ts="1476411175">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="sum_tb_beh.prj"/>
       <outfile xil_pn:name="sum_tb_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1476410978" xil_pn:in_ck="-2536338195242749659" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8007712706874737376" xil_pn:start_ts="1476410977">
+    <transform xil_pn:end_ts="1476411179" xil_pn:in_ck="-2536338195242749659" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8007712706874737376" xil_pn:start_ts="1476411179">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="sum_tb_isim_beh.wdb"/>
     </transform>
   </transforms>
