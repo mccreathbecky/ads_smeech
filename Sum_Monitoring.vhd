@@ -45,12 +45,11 @@ ARCHITECTURE Behavioral OF Sum_Monitoring IS
 
    CONSTANT battery_max    : UNSIGNED(10 DOWNTO 0)    := "10111011100";       -- 1500Wh
    CONSTANT mains          : UNSIGNED(10 DOWNTO 0)    := "01111101000";       -- 1000Wh
+   
    CONSTANT sample_rate    : UNSIGNED(1 DOWNTO 0)     := "10";                -- 2 minutes
    CONSTANT sample_per_day : UNSIGNED(9 DOWNTO 0)     := "1011010000";        -- 720 = amount of sample periods per day
-
    SIGNAL total_samples    : UNSIGNED(9 DOWNTO 0)     := "0000000000";        -- how many samples have occurred so far
---   SIGNAL daily_reset      : STD_LOGIC                := '0';                 -- used to trigger the daily reset
-   
+ 
    SIGNAL battery_sum      : UNSIGNED(10 DOWNTO 0)    := battery_max/5;       -- battery sum less than 2047 [max 1500Wh] default to 20%
    SIGNAL solar_sum        : UNSIGNED(11 DOWNTO 0)    := "000000000000";      -- max solar sum for the day assumed less than 4095Wh
    SIGNAL daily_generated  : UNSIGNED (12 DOWNTO 0)   := "0000000000000";     -- max daily generation is less than 8191Wh
@@ -64,8 +63,17 @@ BEGIN
    -- assumes all inputs are IN Wh [not kWh] and divides by 60 to find min interval, then * sample_rate
    sum_monitoring : PROCESS (sum_CLK)
    BEGIN
-      IF sum_CLK ' EVENT AND sum_CLK = '1' THEN        -- wait for sum_flag to be set
-      
+      -- update the total_samples counter or set values to 0
+      IF total_samples = sample_per_day THEN
+         total_samples    <= "0000000000";
+         solar_sum        <= "000000000000";     
+         daily_generated  <= "0000000000000";     
+         consumption_sum  <= "0000000000000"; 
+         
+         
+      ELSIF sum_CLK ' EVENT AND sum_CLK = '1' THEN        -- wait for sum_flag to be set
+         total_samples <= total_samples + 1;                -- update the total samples counter
+         
          -- consumption sum will be the same regardless of energy source
          consumption_sum <= consumption_sum + (UNSIGNED(consumption_in)*sample_rate)/60;
          
@@ -109,18 +117,7 @@ BEGIN
       battery_out        <= STD_LOGIC_VECTOR(battery_sum);
       
       total_consumption  <= STD_LOGIC_VECTOR(consumption_sum);
-      total_generated    <= STD_LOGIC_VECTOR(daily_generated);
-      
-      -- update the total_samples counter or set values to 0
-      IF total_samples = sample_per_day THEN
-         total_samples    <= "0000000000";
---         solar_sum        <= "000000000000";     
---         daily_generated  <= "0000000000000";     
---         consumption_sum  <= "0000000000000"; 
-      ELSE
-         total_samples <= total_samples + 1;
-      END IF;     
-      
+      total_generated    <= STD_LOGIC_VECTOR(daily_generated);    
    END PROCESS;
 END Behavioral;
 
