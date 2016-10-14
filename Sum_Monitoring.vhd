@@ -49,7 +49,7 @@ ARCHITECTURE Behavioral OF Sum_Monitoring IS
    CONSTANT sample_per_day : UNSIGNED(9 DOWNTO 0)     := "1011010000";        -- 720 = amount of sample periods per day
 
    SIGNAL total_samples    : UNSIGNED(9 DOWNTO 0)     := "0000000000";        -- how many samples have occurred so far
-   SIGNAL daily_reset      : STD_LOGIC                := '0';                 -- used to trigger the daily reset
+--   SIGNAL daily_reset      : STD_LOGIC                := '0';                 -- used to trigger the daily reset
    
    SIGNAL battery_sum      : UNSIGNED(10 DOWNTO 0)    := battery_max/5;       -- battery sum less than 2047 [max 1500Wh] default to 20%
    SIGNAL solar_sum        : UNSIGNED(11 DOWNTO 0)    := "000000000000";      -- max solar sum for the day assumed less than 4095Wh
@@ -90,47 +90,38 @@ BEGIN
       END IF;
    END PROCESS;
    
+   
+   -- updates the SSD outputs and the total_samples counter
    update_process : PROCESS(consumption_sum, battery_sum, daily_generated, solar_sum)
 		VARIABLE solar_p 			: UNSIGNED (6 DOWNTO 0)		:= "0000000";
 		VARIABLE battery_p		: UNSIGNED (6 DOWNTO 0)		:= "0000000";
-   BEGIN
+   BEGIN  
       -- check for 0 when dividing otherwise mathematically impossible
       IF daily_generated = 0 THEN
          percent_solar   <= "0000000";
       ELSE        
-		  solar_p := RESIZE((solar_sum * 100) / daily_generated, 7);
+        solar_p := RESIZE((solar_sum * 100) / daily_generated, 7);
         percent_solar    <= STD_LOGIC_VECTOR(solar_p);
       END IF;
       
-		battery_p := RESIZE((battery_sum * 100) / battery_max, 7);
+      battery_p := RESIZE((battery_sum * 100) / battery_max, 7);
       percent_battery    <= STD_LOGIC_VECTOR(battery_p);
       battery_out        <= STD_LOGIC_VECTOR(battery_sum);
-		
+      
       total_consumption  <= STD_LOGIC_VECTOR(consumption_sum);
       total_generated    <= STD_LOGIC_VECTOR(daily_generated);
       
-      
-      -- update the total_samples counter
+      -- update the total_samples counter or set values to 0
       IF total_samples = sample_per_day THEN
-         total_samples <= "0000000000";
-         daily_reset <= '1';
-      ELSE
-         total_samples <= total_samples + 1;
-      END IF;
-      
-   END PROCESS;
-
-	-- at the end of the day resets all the sums
-   reset_daily : PROCESS(daily_reset)
-   BEGIN
-      IF daily_reset = '1' THEN
-         solar_sum        <= "000000000000";     
+         total_samples    <= "0000000000";
+--         solar_sum        <= "000000000000";     
 --         daily_generated  <= "0000000000000";     
 --         consumption_sum  <= "0000000000000"; 
-         daily_reset <= '0';
-      END IF;   
+      ELSE
+         total_samples <= total_samples + 1;
+      END IF;     
+      
    END PROCESS;
-
 END Behavioral;
 
 
