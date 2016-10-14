@@ -1,199 +1,265 @@
 ISim log file
-Running: E:\ADS\ads_smeech-Sum_monitoring\sum_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb E:/ADS/ads_smeech-Sum_monitoring/sum_tb_isim_beh.wdb 
-ISim P.68d (signature 0x7708f090)
-----------------------------------------------------------------------
-INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to '2100@aeolus.eng.uts.edu.au'.
-INFO:Security:53 - The LM_LICENSE_FILE environment variable is not set.
-WARNING:Security:43 - No license file was found in the standard Xilinx license directory.
-WARNING:Security:44 - Since no license file was found,
-       please run the Xilinx License Configuration Manager
-       (xlcm or "Manage Xilinx Licenses")
-       to assist in obtaining a license.
-WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
-
-
-----------------------------------------------------------------------
-This is a Full version of ISim.
+Running: C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\TopLevel_TB_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB_isim_beh.wdb 
+ISim P.20131013 (signature 0x7708f090)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
-# run 1000 ns
+# run 1000s
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
+Stopped at time : 1329599 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 51
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/sum_tb.vhd" Line 87
+Stopped at time : 1329599 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 52
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/sum_tb.vhd" Line 88
+Stopped at time : 1329599 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 27
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 61
+Stopped at time : 1329599 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 31
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 64
+Stopped at time : 1329599 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 44
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 66
+Stopped at time : 1329599 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 51
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 80
+Stopped at time : 1329599 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 45
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 81
+Stopped at time : 1329599 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 53
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 82
+Stopped at time : 1329599 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 56
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 93
+Stopped at time : 1329599 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 58
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 96
+Stopped at time : 1329599 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 66
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 97
+Stopped at time : 1329599 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 67
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 100
+Stopped at time : 1329599 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 86
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 101
-ISim P.68d (signature 0x7708f090)
-----------------------------------------------------------------------
-INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to '2100@aeolus.eng.uts.edu.au'.
-INFO:Security:53 - The LM_LICENSE_FILE environment variable is not set.
-WARNING:Security:43 - No license file was found in the standard Xilinx license directory.
-WARNING:Security:44 - Since no license file was found,
-       please run the Xilinx License Configuration Manager
-       (xlcm or "Manage Xilinx Licenses")
-       to assist in obtaining a license.
-WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
-
-
-----------------------------------------------------------------------
-This is a Full version of ISim.
-# run 1000 ns
+Stopped at time : 1329599 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 89
+# step
+Stopped at time : 1329599 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 90
+# step
+Stopped at time : 1329599 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 93
+# step
+Stopped at time : 1329599 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 94
+# step
+Stopped at time : 1329599 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 95
+# step
+Stopped at time : 1329599 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 97
+# step
+Stopped at time : 1329599 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 98
+# step
+Stopped at time : 1329600 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 49
+# step
+Stopped at time : 1329600 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 50
+# step
+Stopped at time : 1329600 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 27
+# step
+Stopped at time : 1329600 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 51
+# restart
+# step
 Simulator is doing circuit initialization process.
-Stopped at time : 0 fs : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 100
-# run 1.00us
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 49
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 50
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 57
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 58
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 63
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 64
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 27
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 51
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 45
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 86
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 87
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 93
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 94
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 95
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 97
+# step
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 98
+# step
 Finished circuit initialization process.
-Stopped at time : 1 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 100
-# run 1.00us
+Stopped at time : 0 fs : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 45
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/sum_tb.vhd" Line 87
-# run 1.00us
-# run 1.00us
-# run 1.00us
-ISim P.68d (signature 0x7708f090)
-----------------------------------------------------------------------
-INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to '2100@aeolus.eng.uts.edu.au'.
-INFO:Security:53 - The LM_LICENSE_FILE environment variable is not set.
-WARNING:Security:43 - No license file was found in the standard Xilinx license directory.
-WARNING:Security:44 - Since no license file was found,
-       please run the Xilinx License Configuration Manager
-       (xlcm or "Manage Xilinx Licenses")
-       to assist in obtaining a license.
-WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
-
-
-----------------------------------------------------------------------
-This is a Full version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-ISim P.68d (signature 0x7708f090)
-----------------------------------------------------------------------
-INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to '2100@aeolus.eng.uts.edu.au'.
-INFO:Security:53 - The LM_LICENSE_FILE environment variable is not set.
-WARNING:Security:43 - No license file was found in the standard Xilinx license directory.
-WARNING:Security:44 - Since no license file was found,
-       please run the Xilinx License Configuration Manager
-       (xlcm or "Manage Xilinx Licenses")
-       to assist in obtaining a license.
-WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
-
-
-----------------------------------------------------------------------
-This is a Full version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
+Stopped at time : 1 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 51
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/sum_tb.vhd" Line 87
+Stopped at time : 1 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 52
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/sum_tb.vhd" Line 88
+Stopped at time : 1 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 27
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 61
+Stopped at time : 1 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 31
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 64
+Stopped at time : 1 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 36
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 66
+Stopped at time : 1 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 51
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 80
+Stopped at time : 1 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 45
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 81
+Stopped at time : 1 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 53
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 82
+Stopped at time : 1 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 56
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 93
+Stopped at time : 1 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 58
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 96
+Stopped at time : 1 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 66
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 97
+Stopped at time : 1 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 67
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 100
+Stopped at time : 1 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 86
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 101
+Stopped at time : 1 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 89
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 103
+Stopped at time : 1 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 90
 # step
-Stopped at time : 1001 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 104
+Stopped at time : 1 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 93
 # step
-Stopped at time : 1002 ns : File "E:/ADS/ads_smeech-Sum_monitoring/sum_tb.vhd" Line 85
+Stopped at time : 1 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 94
 # step
-Stopped at time : 1002 ns : File "E:/ADS/ads_smeech-Sum_monitoring/sum_tb.vhd" Line 86
+Stopped at time : 1 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 95
 # step
-Stopped at time : 1002 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 61
+Stopped at time : 1 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 97
 # step
-Stopped at time : 1003 ns : File "E:/ADS/ads_smeech-Sum_monitoring/sum_tb.vhd" Line 87
+Stopped at time : 1 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 98
 # step
-Stopped at time : 1003 ns : File "E:/ADS/ads_smeech-Sum_monitoring/sum_tb.vhd" Line 88
+Stopped at time : 2 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 65
 # step
-Stopped at time : 1003 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 61
+Stopped at time : 2 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 66
 # step
-Stopped at time : 1003 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 64
+Stopped at time : 2 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 49
 # step
-Stopped at time : 1003 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 66
+Stopped at time : 2 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 50
 # step
-Stopped at time : 1003 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 80
-ISim P.68d (signature 0x7708f090)
-----------------------------------------------------------------------
-INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to '2100@aeolus.eng.uts.edu.au'.
-INFO:Security:53 - The LM_LICENSE_FILE environment variable is not set.
-WARNING:Security:43 - No license file was found in the standard Xilinx license directory.
-WARNING:Security:44 - Since no license file was found,
-       please run the Xilinx License Configuration Manager
-       (xlcm or "Manage Xilinx Licenses")
-       to assist in obtaining a license.
-WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
-
-
-----------------------------------------------------------------------
-This is a Full version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
-Stopped at time : 1 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 80
-# run 1.00us
-Stopped at time : 3 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 80
+Stopped at time : 2 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 27
 # step
-Stopped at time : 3 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 81
+Stopped at time : 2 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 51
 # step
-Stopped at time : 3 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 82
+Stopped at time : 2 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 45
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 51
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 52
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 27
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 31
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 40
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 51
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 45
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 53
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 56
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 58
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 72
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 73
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 74
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 86
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 89
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 90
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 93
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 94
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 95
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 97
+# step
+Stopped at time : 3 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 98
+# step
+Stopped at time : 4 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 67
+# step
+Stopped at time : 4 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 68
+# step
+Stopped at time : 4 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 49
+# step
+Stopped at time : 4 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 50
+# step
+Stopped at time : 4 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 27
+# step
+Stopped at time : 4 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 51
+# step
+Stopped at time : 4 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 45
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 51
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 52
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 27
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 31
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 40
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 51
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 45
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 53
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 56
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 58
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 72
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 73
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 74
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 86
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 89
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 90
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 93
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 94
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 95
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 97
+# step
+Stopped at time : 5 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 98
+# step
+Stopped at time : 6 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 69
+# step
+Stopped at time : 6 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 70
+# step
+Stopped at time : 6 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 49
+# step
+Stopped at time : 6 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 50
+# step
+Stopped at time : 6 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 27
+# step
+Stopped at time : 6 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" Line 51
+# step
+Stopped at time : 6 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 45
 # run all
-Stopped at time : 101665 ns : File "E:/ADS/ads_smeech-Sum_monitoring/Sum_Monitoring.vhd" Line 97
-ISim P.68d (signature 0x7708f090)
-----------------------------------------------------------------------
-INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to '2100@aeolus.eng.uts.edu.au'.
-INFO:Security:53 - The LM_LICENSE_FILE environment variable is not set.
-WARNING:Security:43 - No license file was found in the standard Xilinx license directory.
-WARNING:Security:44 - Since no license file was found,
-       please run the Xilinx License Configuration Manager
-       (xlcm or "Manage Xilinx Licenses")
-       to assist in obtaining a license.
-WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
-
-
-----------------------------------------------------------------------
-This is a Full version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-Finished circuit initialization process.
+Stopped at time : 2161747 ns : File "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" Line 67

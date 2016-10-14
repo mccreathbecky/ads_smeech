@@ -1,0 +1,4 @@
+vhdl isim_temp "Switching_Comp.vhd"
+vhdl isim_temp "Sum_Monitoring.vhd"
+vhdl isim_temp "TopLevel.vhd"
+vhdl isim_temp "TopLevel_TB.vhd"

@@ -1,30 +1,3 @@
---------------------------------------------------------------------------------
--- Company: 
--- Engineer:
---
--- Create Date:   16:34:38 10/10/2016
--- Design Name:   
--- Module Name:   C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/sum_tb.vhd
--- Project Name:  SMEECH2
--- Target Device:  
--- Tool versions:  
--- Description:   
--- 
--- VHDL Test Bench Created by ISE for module: Sum_Monitoring
--- 
--- Dependencies:
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
---
--- Notes: 
--- This testbench has been automatically generated using types std_logic and
--- std_logic_vector for the ports of the unit under test.  Xilinx recommends
--- that these types always be used for the top-level I/O of a design in order
--- to guarantee that the testbench will bind correctly to the post-implementation 
--- simulation model.
---------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
@@ -62,8 +35,8 @@ ARCHITECTURE behavior OF sum_tb IS
    signal total_consumption : std_logic_vector(12 downto 0);
    signal total_generated : std_logic_vector(12 downto 0);
    
-	-- Clock period definitions
    constant sumflag_period : time := 2ns;
+   constant simchange_period : time := 10ns;
  
 BEGIN
  
@@ -95,13 +68,17 @@ BEGIN
       current_source <= "10"; 
       consumption_in <= "00000110110";			
       solar_in <= "0100110010";					
+		WAIT FOR simchange_period;
 		
-		WAIT FOR 250ns;
+		consumption_in <= "01000110110";					
 		current_source <= "01";
-		WAIT FOR 250ns;
+		WAIT FOR simchange_period;
+		
+		consumption_in <= "01010110011";					
 		current_source <="00";
-		WAIT FOR 250ns;
+		WAIT FOR simchange_period;
 		
    end process;
-
 END;
+
+

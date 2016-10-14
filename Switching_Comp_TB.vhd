@@ -1,25 +1,3 @@
---------------------------------------------------------------------------------
--- Company: 
--- Engineer:
---
--- Create Date:   12:04:17 10/05/2016
--- Design Name:   
--- Module Name:   C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/SMEECH2/Switching_Comp_TB.vhd
--- Project Name:  SMEECH2
--- Target Device:  
--- Tool versions:  
--- Description:   
--- 
--- VHDL Test Bench Created by ISE for module: Monitoring_Comp
--- 
--- Dependencies:
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
---http://stackoverflow.com/questions/1510633/vhdl-how-to-set-a-value-on-an-inout-port
---http://www.textfixer.com/tools/remove-white-spaces.php
---------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
@@ -34,25 +12,25 @@ ARCHITECTURE behavior OF Switching_Comp_TB IS
     COMPONENT Monitoring_Comp
     PORT(
          CLK_SampleRate : IN  std_logic;
-         solar_in : IN  std_logic_vector(9 downto 0);
-         manual_control : IN  std_logic;
-         battery_sum : IN  std_logic_vector(10 downto 0);
+         solar_in       : IN  std_logic_vector(9 downto 0);
+--         manual_control : IN  std_logic;
+         battery_sum    : IN  std_logic_vector(10 downto 0);
          current_source : OUT  std_logic_vector(1 downto 0);
-         sum_flag : OUT  std_logic
+         sum_CLK        : OUT  std_logic
         );
     END COMPONENT;
     
 
    --Inputs
    signal CLK_SampleRate : std_logic := '0';
-   signal solar_in : std_logic_vector(9 downto 0) := (others => '0');
-   signal manual_control : std_logic := '0';
-   signal battery_sum : std_logic_vector(10 downto 0) := "00100101100";
+   signal solar_in       : std_logic_vector(9 downto 0) := (others => '0');
+ --  signal manual_control : std_logic := '0';
+   signal battery_sum    : std_logic_vector(10 downto 0) := "00100101100";
 
 
  	--Outputs
    signal current_source : std_logic_vector(1 downto 0);
-   signal sum_flag : std_logic;
+   signal sum_CLK        : std_logic;
 
    -- Clock period definitions
    constant CLK_SampleRate_period : time := 2 min;
@@ -63,10 +41,10 @@ BEGIN
    uut: Monitoring_Comp PORT MAP (
           CLK_SampleRate => CLK_SampleRate,
           solar_in => solar_in,
-          manual_control => manual_control,
+--          manual_control => manual_control,
           current_source => current_source,
           battery_sum => battery_sum,
-          sum_flag => sum_flag
+          sum_CLK => sum_CLK
         );
 
    -- Clock process definitions
@@ -83,8 +61,8 @@ BEGIN
 --   stim_proc: PROCESS
 --   BEGIN		
 --      
---      manual_control <= '0';                       -- manual control OFF
---      battery_sum <= "00011111010000";             
+--      manual_control <= '0';             -- manual control OFF
+--      battery_sum <= "01111010000";             
 --
 --      WAIT;
 --   END PROCESS;
@@ -93,16 +71,16 @@ BEGIN
 --   sim_nosolar: PROCESS
 --   BEGIN
 --      manual_control <= '1';
---      battery_sum <= "00011111010000";
+--      battery_sum <= "01111010000";
 --      
 --      WAIT;
 --   END PROCESS;
 
---      -- Simulation 3: Low battery levels, solar high
+--      -- Simulation 3: Low battery levels, solar low
 --      sim_lowbatt: PROCESS
 --      BEGIN
---         battery_sum <= "00011111010000";       --20%
---         solar_in <= "0000101110";              --low solar
+--         battery_sum <= "00100101100";       --20%
+--         solar_in <= "0000101110";         --low solar
 --      
 --         WAIT;
 --      END PROCESS;
@@ -110,14 +88,16 @@ BEGIN
 --      -- Simulation 4: Above maximum threshold
 --      sim_highbatt: PROCESS
 --      BEGIN
---         battery_sum <= "10010100011100";
---         solar_in <= "0000101110"; 
+--         battery_sum <= "10111011000";
+--         solar_in <= "1000101110"; 
 --         WAIT;
 --      END PROCESS;
    
---   -- Simulation 5: Varying solar [assumes simulation 1 also running]
+--   -- Simulation 5: Varying solar 
 --   solar_sim : PROCESS
 --   BEGIN
+--      battery_sum <= "01110101100";
+--      
 --      solar_in <="0000101100";
 --      wait for CLK_SampleRate_period;
 --      solar_in <="0000101110";
@@ -154,6 +134,8 @@ BEGIN
 --      wait for CLK_SampleRate_period;
 --      solar_in <="0001111101";
 --      wait for CLK_SampleRate_period;
+--      
+--      battery_sum <= "00110001100";
 --      solar_in <="0010010011";
 --      wait for CLK_SampleRate_period;
 --      solar_in <="0010101001";
@@ -191,6 +173,8 @@ BEGIN
 --      solar_in <="0111001100";
 --      wait for CLK_SampleRate_period;
 --      solar_in <="0111010110";
+--      
+--      battery_sum <= "00000101100";
 --      wait for CLK_SampleRate_period;
 --      solar_in <="0111011111";
 --      wait for CLK_SampleRate_period;
@@ -636,3 +620,7 @@ BEGIN
 --   END PROCESS;
 
 END;
+
+--------------------------------------------------------------------------------
+--http://www.textfixer.com/tools/remove-white-spaces.php
+--------------------------------------------------------------------------------

@@ -1,1 +1,3 @@
 work	"Sum_Monitoring.vhd"
+work	"Switching_Comp.vhd"
+work	"TopLevel.vhd"
