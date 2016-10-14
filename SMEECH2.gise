@@ -22,24 +22,12 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="SMEECH2.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
-    <file xil_pn:fileType="FILE_SPL" xil_pn:name="ControlUnit.spl"/>
     <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="ControlUnit.sym" xil_pn:origination="imported"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ControlUnit_stx_beh.prj"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="LED_Display_TB_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="LED_Display_TB_stx_beh.prj"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="LED_Display_stx_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Monitoring_Comp_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Monitoring_Comp_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Sum_Monitoring_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Sum_Monitoring_stx_beh.prj"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Sum_monitoring_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Sum_monitoring_tb_stx_beh.prj"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Switching_Comp_TB_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Switching_Comp_TB_stx_beh.prj"/>
-    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
-    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="sum_tb_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="sum_tb_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="sum_tb_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="sum_tb_stx_beh.prj"/>
@@ -47,13 +35,17 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1476164709" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1476164709">
+    <transform xil_pn:end_ts="1476316209" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1476316209">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1476164709" xil_pn:in_ck="2728315092473505115" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1476164709">
+    <transform xil_pn:end_ts="1476333119" xil_pn:in_ck="-7783884150582184945" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1476333119">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="ControlUnit.vhd"/>
       <outfile xil_pn:name="LED_Display.vhd"/>
       <outfile xil_pn:name="LED_Display_TB.vhd"/>
@@ -61,15 +53,27 @@
       <outfile xil_pn:name="Switching_Comp.vhd"/>
       <outfile xil_pn:name="Switching_Comp_TB.vhd"/>
       <outfile xil_pn:name="sum_tb.vhd"/>
-      <outfile xil_pn:name="sum_tb2.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1476164709" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-6650208928563589520" xil_pn:start_ts="1476164709">
+    <transform xil_pn:end_ts="1476333084" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-8085272306794341463" xil_pn:start_ts="1476333084">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1476164709" xil_pn:in_ck="2728315092473505115" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1476164709">
+    <transform xil_pn:end_ts="1476333084" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-1120984754915515865" xil_pn:start_ts="1476333084">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1476316209" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-8837338114348722672" xil_pn:start_ts="1476316209">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1476333119" xil_pn:in_ck="-7783884150582184945" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1476333119">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="ControlUnit.vhd"/>
       <outfile xil_pn:name="LED_Display.vhd"/>
       <outfile xil_pn:name="LED_Display_TB.vhd"/>
@@ -77,27 +81,22 @@
       <outfile xil_pn:name="Switching_Comp.vhd"/>
       <outfile xil_pn:name="Switching_Comp_TB.vhd"/>
       <outfile xil_pn:name="sum_tb.vhd"/>
-      <outfile xil_pn:name="sum_tb2.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1476178835" xil_pn:in_ck="2728315092473505115" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-3683427623753279202" xil_pn:start_ts="1476178829">
-      <status xil_pn:value="SuccessfullyRun"/>
+    <transform xil_pn:end_ts="1476333122" xil_pn:in_ck="-7783884150582184945" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="756185023356467346" xil_pn:start_ts="1476333119">
+      <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="fuse.log"/>
-      <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="sum_tb_beh.prj"/>
-      <outfile xil_pn:name="sum_tb_isim_beh.exe"/>
-      <outfile xil_pn:name="xilinxsim.ini"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputChanged"/>
     </transform>
-    <transform xil_pn:end_ts="1476178835" xil_pn:in_ck="5948232394124270032" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="4551797329828886235" xil_pn:start_ts="1476178835">
-      <status xil_pn:value="SuccessfullyRun"/>
+    <transform xil_pn:end_ts="1476332731" xil_pn:in_ck="-2536338195242749659" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8007712706874737376" xil_pn:start_ts="1476332731">
+      <status xil_pn:value="AbortedRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForced"/>
       <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="sum_tb_isim_beh.wdb"/>
     </transform>
   </transforms>

@@ -31,11 +31,11 @@ architecture Behavioral of LED_Display is
 begin
 
 	display_process: PROCESS(current_source)
-	BEGIN
-		IF current_source(1) = '1' THEN
+	BEGIN	
+		IF current_source = "10" THEN
 			solar_LED <= '1';
 			grid_LED <= '0';
-		ELSIF current_source(0) = '1' THEN
+		ELSIF current_source = "01" THEN
 			grid_LED <= '1';
 			solar_LED <= '0';
 		ELSE

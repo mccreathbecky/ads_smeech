@@ -33,7 +33,7 @@ ENTITY Monitoring_Comp IS
             switching_flag : IN STD_LOGIC;                                 -- flag from sum_monitoring to indicate sums have updated
             
             current_source : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);             -- none/grid/solar
-            sum_flag : OUT STD_LOGIC);                                     -- a single bit, used to trigger the sum_monitoring block        
+            sum_CLK : OUT STD_LOGIC);                                     -- a single bit, used to trigger the sum_monitoring block [using the same clock signal, rippled]       
 END Monitoring_Comp;
 
 ARCHITECTURE Behavioral OF Monitoring_Comp IS   
@@ -65,21 +65,14 @@ BEGIN
             ELSE
                current_source <= "01";
             END IF;
-            
-            -- solar, battery, consumption now need to be summed- 
-            -- but signals won't update until end of process
-            -- [this summing is performed in another component]
-            sum_flag <= '1';
          END IF;
       END IF;
-   END PROCESS;
-   
-   reset_flag : PROCESS (switching_flag)
-   BEGIN
-      IF switching_flag ' EVENT AND switching_flag = '1' THEN
-         sum_flag <= '0';
-      END IF;
-   END PROCESS;
-   
+		
+		-- solar, battery, consumption now need to be summed- 
+		-- but signals won't update until end of process
+		-- [this summing is performed in another component]
+		SUM_CLK <= CLK_SampleRate;
+		
+	END PROCESS;
 END Behavioral;
 

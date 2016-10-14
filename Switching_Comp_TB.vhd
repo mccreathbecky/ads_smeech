@@ -38,7 +38,7 @@ ARCHITECTURE behavior OF Switching_Comp_TB IS
          manual_control : IN  std_logic;
          battery_sum : IN  std_logic_vector(10 downto 0);
          current_source : OUT  std_logic_vector(1 downto 0);
-         sum_flag : OUT  std_logic
+         sum_CLK : OUT  std_logic
         );
     END COMPONENT;
     
@@ -52,7 +52,7 @@ ARCHITECTURE behavior OF Switching_Comp_TB IS
 
  	--Outputs
    signal current_source : std_logic_vector(1 downto 0);
-   signal sum_flag : std_logic;
+   signal sum_CLK : std_logic;
 
    -- Clock period definitions
    constant CLK_SampleRate_period : time := 2 min;
@@ -66,7 +66,7 @@ BEGIN
           manual_control => manual_control,
           current_source => current_source,
           battery_sum => battery_sum,
-          sum_flag => sum_flag
+          sum_CLK => sum_CLK
         );
 
    -- Clock process definitions

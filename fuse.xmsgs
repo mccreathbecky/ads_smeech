@@ -5,10 +5,16 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Range is empty (null range)
+<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.68d/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Range is empty (null range)
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="220" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Assignment ignored
+<msg type="warning" file="HDLCompiler" num="220" delta="unknown" >"N:/P.68d/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Assignment ignored
+</msg>
+
+<msg type="error" file="HDLCompiler" num="432" delta="unknown" >"E:/ADS/ads_smeech-Sum_monitoring/Switching_Comp.vhd" Line 33: Formal &lt;<arg fmt="%s" index="1">switching_flag</arg>&gt; has no actual or default value.
+</msg>
+
+<msg type="error" file="Simulator" num="777" delta="unknown" >Static elaboration of top level VHDL design unit <arg fmt="%s" index="1">switching_comp_tb</arg> in library <arg fmt="%s" index="2">work</arg> failed
 </msg>
 
 </messages>
