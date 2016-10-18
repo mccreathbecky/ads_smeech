@@ -9,7 +9,6 @@ ENTITY TopLevel IS
            consumption_in  : IN     STD_LOGIC_VECTOR (10 DOWNTO 0);
            GreenLed        : OUT    STD_LOGIC;
            RedLed	         : OUT    STD_LOGIC;
-           SSD             : OUT    STD_LOGIC_VECTOR (6 DOWNTO 0);
 			  SSEGHex 			: OUT STD_LOGIC_VECTOR(8 DOWNTO 0);   
            SSEGD0 			: OUT STD_LOGIC_VECTOR (3 DOWNTO 0);    
            SSEGD1 			: OUT STD_LOGIC_VECTOR (3 DOWNTO 0);

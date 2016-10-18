@@ -44,9 +44,9 @@ BEGIN
    -- this should take each input [eg percent_battery] and turn it into BCD
    stdlogic_to_bcd : PROCESS (percent_battery, percent_solar, total_generated, total_consumption)
    
-   VARIABLE temp_battery      : STD_LOGIC_VECTOR (15 DOWNTO 0) := "00000000" & percent_battery;
+   VARIABLE temp_battery      : STD_LOGIC_VECTOR (15 DOWNTO 0) := "000000000" & percent_battery;
    VARIABLE temp_generated    : STD_LOGIC_VECTOR (15 DOWNTO 0) := "000" & total_generated;
-   VARIABLE temp_solar        : STD_LOGIC_VECTOR (15 DOWNTO 0) := "00000000" & percent_solar;        
+   VARIABLE temp_solar        : STD_LOGIC_VECTOR (15 DOWNTO 0) := "000000000" & percent_solar;        
    VARIABLE temp_consumption  : STD_LOGIC_VECTOR (15 DOWNTO 0) := "000" & total_consumption;
 	VARIABLE bcd 					: STD_LOGIC_VECTOR (15 DOWNTO 0) := (others => '0');
 	VARIABLE i 						: INTEGER :=0;

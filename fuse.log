@@ -1,21 +1,18 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/William/Documents/ADS/ADS_FINAL/LED_Display_TB_isim_beh.exe -prj C:/Users/William/Documents/ADS/ADS_FINAL/LED_Display_TB_beh.prj LED_Display_TB 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB_isim_beh.exe -prj C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB_beh.prj work.TopLevel_TB 
 ISim P.20131013 (signature 0x8ef4fb42)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/Users/William/Documents/ADS/ADS_FINAL/LED_Display.vhd" into library work
-Parsing VHDL file "C:/Users/William/Documents/ADS/ADS_FINAL/LED_Display_TB.vhd" into library work
+Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" into library work
+Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" into library work
+Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/SSD.vhd" into library work
+Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/LED_Display.vhd" into library work
+Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel.vhd" into library work
+Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" into library work
 Starting static elaboration
-Completed static elaboration
-Fuse Memory Usage: 144920 KB
-Fuse CPU Usage: 343 ms
-Compiling package standard
-Compiling package std_logic_1164
-Compiling architecture behavioral of entity LED_Display [led_display_default]
-Compiling architecture behavior of entity led_display_tb
-Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 5 VHDL Units
-Built simulation executable C:/Users/William/Documents/ADS/ADS_FINAL/LED_Display_TB_isim_beh.exe
-Fuse Memory Usage: 157496 KB
-Fuse CPU Usage: 389 ms
+WARNING:HDLCompiler:746 - "N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Range is empty (null range)
+WARNING:HDLCompiler:220 - "N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Assignment ignored
+WARNING:HDLCompiler:746 - "N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Range is empty (null range)
+WARNING:HDLCompiler:220 - "N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Assignment ignored
+ERROR:HDLCompiler:1318 - "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/SSD.vhd" Line 373: Left bound value <35> of slice is out of range [15:0] of array <bcd_solar>
+ERROR:Simulator:777 - Static elaboration of top level VHDL design unit toplevel_tb in library work failed

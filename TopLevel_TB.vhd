@@ -7,15 +7,19 @@ END TopLevel_TB;
  
 ARCHITECTURE behavior OF TopLevel_TB IS 
  
-    COMPONENT TopLevel
-    PORT(
-         CLK_sampleRate : IN  std_logic;
-         solar_in : IN  std_logic_vector(9 downto 0);
-         consumption_in : IN  std_logic_vector(10 downto 0);
-         grid_LED : OUT  std_logic;
-         solar_LED : OUT  std_logic;
-         SSD : OUT  std_logic_vector(6 downto 0)
-        );
+ 
+ COMPONENT TopLevel IS
+    PORT ( CLK_sampleRate  : IN     STD_LOGIC;
+           solar_in        : IN     STD_LOGIC_VECTOR (9 DOWNTO 0);
+           consumption_in  : IN     STD_LOGIC_VECTOR (10 DOWNTO 0);
+           GreenLed        : OUT    STD_LOGIC;
+           RedLed	         : OUT    STD_LOGIC;
+			  SSEGHex 			: OUT STD_LOGIC_VECTOR(8 DOWNTO 0);   
+           SSEGD0 			: OUT STD_LOGIC_VECTOR (3 DOWNTO 0);    
+           SSEGD1 			: OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
+           SSEGD2 			: OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
+           SSEGD3 			: OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
+           SSEGCL 			: OUT STD_LOGIC_VECTOR (3 DOWNTO 0));
     END COMPONENT;
     
 
@@ -25,12 +29,17 @@ ARCHITECTURE behavior OF TopLevel_TB IS
    signal consumption_in : std_logic_vector(10 downto 0) := (others => '0');
 
  	--Outputs
-   signal grid_LED : std_logic;
-   signal solar_LED : std_logic;
-   signal SSD : std_logic_vector(6 downto 0);
+   SIGNAL GreenLed      : STD_LOGIC;
+   SIGNAL RedLed	      : STD_LOGIC;
+	SIGNAL SSEGHex 		: STD_LOGIC_VECTOR(8 DOWNTO 0);   
+   SIGNAL SSEGD0 			: STD_LOGIC_VECTOR (3 DOWNTO 0);    
+   SIGNAL SSEGD1 			: STD_LOGIC_VECTOR (3 DOWNTO 0);
+   SIGNAL SSEGD2 			: STD_LOGIC_VECTOR (3 DOWNTO 0);
+   SIGNAL SSEGD3 			: STD_LOGIC_VECTOR (3 DOWNTO 0);
+   SIGNAL SSEGCL 			: STD_LOGIC_VECTOR (3 DOWNTO 0);
 
    -- Clock period definitions
-   constant CLK_sampleRate_period : time := 2 ns;
+   constant CLK_sampleRate_period : time := 200 ns;
  
 BEGIN
  
@@ -39,9 +48,15 @@ BEGIN
           CLK_sampleRate => CLK_sampleRate,
           solar_in => solar_in,
           consumption_in => consumption_in,
-          grid_LED => grid_LED,
-          solar_LED => solar_LED,
-          SSD => SSD
+          GreenLed => GreenLed,
+          RedLed => RedLed,
+          SSEGHex => SSEGHex,
+          SSEGD0 => SSEGD0,
+          SSEGD1 => SSEGD1,
+          SSEGD2 => SSEGD2,
+          SSEGD3 => SSEGD3,
+          SSEGCL => SSEGCL
+          
         );
 
    CLK_sampleRate_process :process
