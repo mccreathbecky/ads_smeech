@@ -14,5 +14,24 @@ WARNING:HDLCompiler:746 - "N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line
 WARNING:HDLCompiler:220 - "N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Assignment ignored
 WARNING:HDLCompiler:746 - "N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Range is empty (null range)
 WARNING:HDLCompiler:220 - "N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Assignment ignored
-ERROR:HDLCompiler:1318 - "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/SSD.vhd" Line 373: Left bound value <35> of slice is out of range [15:0] of array <bcd_solar>
-ERROR:Simulator:777 - Static elaboration of top level VHDL design unit toplevel_tb in library work failed
+Completed static elaboration
+Fuse Memory Usage: 159460 KB
+Fuse CPU Usage: 327 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling package switching_package
+Compiling package sum_package
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package ssd_package
+Compiling package led_package
+Compiling architecture behavioral of entity Monitoring_Comp [monitoring_comp_default]
+Compiling architecture behavioral of entity Sum_Monitoring [sum_monitoring_default]
+Compiling architecture behavioral of entity BCD_to_SSD [bcd_to_ssd_default]
+Compiling architecture behavioral of entity LED_Display [led_display_default]
+Compiling architecture behavioral of entity TopLevel [toplevel_default]
+Compiling architecture behavior of entity toplevel_tb
+Time Resolution for simulation is 1ps.
+Waiting for 5 sub-compilation(s) to finish...
+ERROR:Simulator:861 - Failed to link the design

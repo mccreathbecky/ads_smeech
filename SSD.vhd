@@ -370,22 +370,22 @@ BEGIN
 		
 		---**********************************************************************--
 		SSEGD0(2) <= '0'; -- eg turn on DIG0, DISPLAY2
-      SSEGHex <= bcd_solar(35 downto 27);          
+      SSEGHex <= solar_dig(35 downto 27);          
       wait for wait_time;
       
       SSEGD0(2) <= '1';    -- turn off previous display
       SSEGD1(2) <= '0';    -- turn on DIG1, DISPLAY2
-      SSEGHex <= bcd_solar(26 downto 18);
+      SSEGHex <= solar_dig(26 downto 18);
       wait for wait_time;
       
       SSEGD1(2) <= '1';    -- turn off previous display
       SSEGD2(2) <= '0';    -- turn on DIG2, DISPLAY2
-      SSEGHex <= bcd_solar(17 downto 9);
+      SSEGHex <= solar_dig(17 downto 9);
       wait for wait_time;
       
       SSEGD2(2) <= '1';    -- turn off previous display
       SSEGD3(2) <= '0';    -- turn on DIG3, DISPLAY2
-      SSEGHex <= bcd_solar(8 downto 0);
+      SSEGHex <= solar_dig(8 downto 0);
       wait for wait_time;
       
       SSEGD3(2) <= '1';     --turn off previous display
@@ -393,31 +393,28 @@ BEGIN
 		---**********************************************************************--
 		
 		SSEGD0(3) <= '0'; -- eg turn on DIG0, DISPLAY3
-      SSEGHex <= bcd_consumption(35 downto 27);          
+      SSEGHex <= consumption_dig(35 downto 27);          
       wait for wait_time;
       
       SSEGD0(3) <= '1';    -- turn off previous display
       SSEGD1(3) <= '0';    -- turn on DIG1, DISPLAY3
-      SSEGHex <= bcd_consumption(26 downto 18);
+      SSEGHex <= consumption_dig(26 downto 18);
       wait for wait_time;
       
       SSEGD1(3) <= '1';    -- turn off previous display
       SSEGD2(3) <= '0';    -- turn on DIG2, DISPLAY3
-      SSEGHex <= bcd_consumption(17 downto 9);
+      SSEGHex <= consumption_dig(17 downto 9);
       wait for wait_time;
       
       SSEGD2(3) <= '1';    -- turn off previous display
       SSEGD3(3) <= '0';    -- turn on DIG3, DISPLAY3
-      SSEGHex <= bcd_consumption(8 downto 0);
+      SSEGHex <= consumption_dig(8 downto 0);
       wait for wait_time;
       
       SSEGD3(3) <= '1';     --turn off previous display
-		
-		
-      
+      wait for wait_time;
       --**********************************************************************--
       
-      -- WILL : update this so it goes through all 4 displays, not just the first one
       
    END PROCESS; 
  
