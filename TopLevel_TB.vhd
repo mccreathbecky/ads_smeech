@@ -39,8 +39,8 @@ ARCHITECTURE behavior OF TopLevel_TB IS
    SIGNAL SSEGCL 			: STD_LOGIC_VECTOR (3 DOWNTO 0);
 
    -- Clock period definitions
-   constant CLK_sampleRate_period : time := 200 ns;
-   constant consumption_period : time := 1000 ns;
+   constant CLK_sampleRate_period : time := 0.05sec;
+   constant consumption_period : time := 1.5sec;
  
 BEGIN
  
@@ -685,7 +685,6 @@ BEGIN
       solar_in <="0000000000";
       wait for CLK_SampleRate_period;   
 
-      wait;
    end process;
 
 END;
