@@ -7,9 +7,20 @@ ENTITY TopLevel IS
     PORT ( CLK_sampleRate  : IN     STD_LOGIC;
            solar_in        : IN     STD_LOGIC_VECTOR (9 DOWNTO 0);
            consumption_in  : IN     STD_LOGIC_VECTOR (10 DOWNTO 0);
-           grid_LED        : OUT    STD_LOGIC;
-           solar_LED       : OUT    STD_LOGIC;
-           SSD             : OUT    STD_LOGIC_VECTOR (6 DOWNTO 0));
+           GreenLed        : OUT    STD_LOGIC;
+           RedLed	         : OUT    STD_LOGIC;
+           SSD             : OUT    STD_LOGIC_VECTOR (6 DOWNTO 0);
+			  SSEGHex 			: OUT STD_LOGIC_VECTOR(8 DOWNTO 0);   
+           SSEGD0 			: OUT STD_LOGIC_VECTOR (3 DOWNTO 0);    
+           SSEGD1 			: OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
+           SSEGD2 			: OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
+           SSEGD3 			: OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
+           SSEGCL 			: OUT STD_LOGIC_VECTOR (3 DOWNTO 0));
+			  
+			  
+			  
+			  
+			  
 END TopLevel;
 
 USE WORK.Switching_Package.ALL;

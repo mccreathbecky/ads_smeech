@@ -1,4 +1,0 @@
-vhdl work "Switching_Comp.vhd"
-vhdl work "Sum_Monitoring.vhd"
-vhdl work "TopLevel.vhd"
-vhdl work "TopLevel_TB.vhd"

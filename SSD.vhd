@@ -19,7 +19,9 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-USE ieee.numeric_std.ALL;       
+use ieee.numeric_std.ALL; 
+use ieee.std_logic_arith.ALL;
+use ieee.std_logic_unsigned.ALL;      
 
 entity BCD_to_SSD is
     Port ( clk : IN std_logic; 
@@ -40,7 +42,7 @@ end BCD_to_SSD;
 
 architecture Behavioral of BCD_to_SSD is
    -- a constant used when cycling through the digits and displays
-   CONSTANT wait_time : time := 0.001s;
+   CONSTANT wait_time : time := 0.001sec;
 
    -- the inputs, translated into BCD
    SIGNAL bcd_battery : STD_LOGIC_VECTOR (15 DOWNTO 0);
@@ -65,6 +67,8 @@ BEGIN
    VARIABLE temp_generated    : STD_LOGIC_VECTOR (15 DOWNTO 0) := "000" & total_generated;
    VARIABLE temp_solar        : STD_LOGIC_VECTOR (15 DOWNTO 0) := "00000000" & percent_solar;        
    VARIABLE temp_consumption  : STD_LOGIC_VECTOR (15 DOWNTO 0) := "000" & total_consumption;
+	VARIABLE bcd 					: STD_LOGIC_VECTOR (15 DOWNTO 0) := (others => '0');
+	VARIABLE i 						: INTEGER :=0;
 
    
    BEGIN
@@ -74,40 +78,97 @@ BEGIN
 	  -- http://vhdlguru.blogspot.com.au/2010/04/8-bit-binary-to-bcd-converter-double.html
 	  -- http://electronics.stackexchange.com/questions/70412/vhdl-convert-from-binary-integer-to-bcd-and-display-it-on-the-7-segment-displa
 	  
-	  -- Convert Binary to BCD (Double Dabble algorithm)
-            for i in 0 to 13 loop
+	  -- Convert Binary to BCD (Double Dabble algorithm) for temp_battery
+            for i in 0 to 15 loop
                 bcd(15 downto 1) := bcd(14 downto 0);  --shifting the bits.
-                bcd(0) := bin(13);
-                bin(13 downto 1) := bin(12 downto 0);
-                bin(0) :='0';
+                bcd(0) := temp_battery(15);
+                temp_battery(15 downto 1) := temp_battery(14 downto 0);
+                temp_battery(0) :='0';
 
-                if(i < 13 and bcd(3 downto 0) > "0100") then --add 3 if BCD digit is greater than 4.
+                if(i < 15 and bcd(3 downto 0) > "0100") then --add 3 if BCD digit is greater than 4.
                 bcd(3 downto 0) := bcd(3 downto 0) + "0011";
                 end if;
-                if(i < 13 and bcd(7 downto 4) > "0100") then --add 3 if BCD digit is greater than 4.
+                if(i < 15 and bcd(7 downto 4) > "0100") then --add 3 if BCD digit is greater than 4.
                 bcd(7 downto 4) := bcd(7 downto 4) + "0011";
                 end if;
-                if(i < 13 and bcd(11 downto 8) > "0100") then  --add 3 if BCD digit is greater than 4.
+                if(i < 15 and bcd(11 downto 8) > "0100") then  --add 3 if BCD digit is greater than 4.
                 bcd(11 downto 8) := bcd(11 downto 8) + "0011";
                 end if; 
-                if(i < 13 and bcd(15 downto 12) > "0100") then  --add 3 if BCD digit is greater than 4.
+                if(i < 15 and bcd(15 downto 12) > "0100") then  --add 3 if BCD digit is greater than 4.
+                bcd(15 downto 12) := bcd(15 downto 12) + "0011";
+                end if;
+            end loop; 	  
+	  
+	  --**********************************************************************--
+	  
+	  -- Convert Binary to BCD (Double Dabble algorithm) for temp_generated
+            for i in 0 to 15 loop
+                bcd(15 downto 1) := bcd(14 downto 0);  --shifting the bits.
+                bcd(0) := temp_generated(15);
+                temp_generated(15 downto 1) := temp_generated(14 downto 0);
+                temp_generated(0) :='0';
+
+                if(i < 15 and bcd(3 downto 0) > "0100") then --add 3 if BCD digit is greater than 4.
+                bcd(3 downto 0) := bcd(3 downto 0) + "0011";
+                end if;
+                if(i < 15 and bcd(7 downto 4) > "0100") then --add 3 if BCD digit is greater than 4.
+                bcd(7 downto 4) := bcd(7 downto 4) + "0011";
+                end if;
+                if(i < 15 and bcd(11 downto 8) > "0100") then  --add 3 if BCD digit is greater than 4.
+                bcd(11 downto 8) := bcd(11 downto 8) + "0011";
+                end if; 
+                if(i < 15 and bcd(15 downto 12) > "0100") then  --add 3 if BCD digit is greater than 4.
+                bcd(15 downto 12) := bcd(15 downto 12) + "0011";
+                end if;
+            end loop; 
+	 
+	 --**********************************************************************--
+	  
+	  -- Convert Binary to BCD (Double Dabble algorithm) for temp_solar
+            for i in 0 to 15 loop
+                bcd(15 downto 1) := bcd(14 downto 0);  --shifting the bits.
+                bcd(0) := temp_solar(15);
+                temp_solar(15 downto 1) := temp_solar(14 downto 0);
+                temp_solar(0) :='0';
+
+                if(i < 15 and bcd(3 downto 0) > "0100") then --add 3 if BCD digit is greater than 4.
+                bcd(3 downto 0) := bcd(3 downto 0) + "0011";
+                end if;
+                if(i < 15 and bcd(7 downto 4) > "0100") then --add 3 if BCD digit is greater than 4.
+                bcd(7 downto 4) := bcd(7 downto 4) + "0011";
+                end if;
+                if(i < 15 and bcd(11 downto 8) > "0100") then  --add 3 if BCD digit is greater than 4.
+                bcd(11 downto 8) := bcd(11 downto 8) + "0011";
+                end if; 
+                if(i < 15 and bcd(15 downto 12) > "0100") then  --add 3 if BCD digit is greater than 4.
+                bcd(15 downto 12) := bcd(15 downto 12) + "0011";
+                end if;
+            end loop; 
+   --**********************************************************************--
+	  
+	  -- Convert Binary to BCD (Double Dabble algorithm) for temp_consumption
+            for i in 0 to 15 loop
+                bcd(15 downto 1) := bcd(14 downto 0);  --shifting the bits.
+                bcd(0) := temp_consumption(15);
+                temp_consumption(15 downto 1) := temp_consumption(14 downto 0);
+                temp_consumption(0) :='0';
+
+                if(i < 15 and bcd(3 downto 0) > "0100") then --add 3 if BCD digit is greater than 4.
+                bcd(3 downto 0) := bcd(3 downto 0) + "0011";
+                end if;
+                if(i < 15 and bcd(7 downto 4) > "0100") then --add 3 if BCD digit is greater than 4.
+                bcd(7 downto 4) := bcd(7 downto 4) + "0011";
+                end if;
+                if(i < 15 and bcd(11 downto 8) > "0100") then  --add 3 if BCD digit is greater than 4.
+                bcd(11 downto 8) := bcd(11 downto 8) + "0011";
+                end if; 
+                if(i < 15 and bcd(15 downto 12) > "0100") then  --add 3 if BCD digit is greater than 4.
                 bcd(15 downto 12) := bcd(15 downto 12) + "0011";
                 end if;
             end loop; 
 	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  --**********************************************************************--
      
-   
+   --**********************************************************************--
       -- STEP 2: fill the corresponding temporary variables with the BCD digits 
       bcd_battery <= temp_battery;
       bcd_generated <= temp_generated;
