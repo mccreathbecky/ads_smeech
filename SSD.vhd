@@ -1,10 +1,28 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date:    19:44:03 10/17/2016 
+-- Design Name: 
+-- Module Name:    BCD_SSD - Behavioral 
+-- Project Name: 
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 0.01 - File Created
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 USE ieee.numeric_std.ALL;       
 
 entity BCD_to_SSD is
-    Port ( clk : IN std_logic;
-            
+    Port ( clk : IN std_logic; 
            percent_battery : IN STD_LOGIC_VECTOR (6 downto 0);          -- 0 to 100
            total_generated : IN  STD_LOGIC_VECTOR (12 downto 0);        -- 0 to 8191
            percent_solar : IN  STD_LOGIC_VECTOR (6 downto 0);           -- 0 to 100
@@ -22,7 +40,7 @@ end BCD_to_SSD;
 
 architecture Behavioral of BCD_to_SSD is
    -- a constant used when cycling through the digits and displays
-   CONSTANT wait_time : time := 2ns;
+   CONSTANT wait_time : time := 0.001s;
 
    -- the inputs, translated into BCD
    SIGNAL bcd_battery : STD_LOGIC_VECTOR (15 DOWNTO 0);
@@ -51,7 +69,43 @@ BEGIN
    
    BEGIN
       -- STEP 1: convert each to 16 bit BCD [WILL] 
-     
+     --**********************************************************************--
+	  
+	  -- http://vhdlguru.blogspot.com.au/2010/04/8-bit-binary-to-bcd-converter-double.html
+	  -- http://electronics.stackexchange.com/questions/70412/vhdl-convert-from-binary-integer-to-bcd-and-display-it-on-the-7-segment-displa
+	  
+	  -- Convert Binary to BCD (Double Dabble algorithm)
+            for i in 0 to 13 loop
+                bcd(15 downto 1) := bcd(14 downto 0);  --shifting the bits.
+                bcd(0) := bin(13);
+                bin(13 downto 1) := bin(12 downto 0);
+                bin(0) :='0';
+
+                if(i < 13 and bcd(3 downto 0) > "0100") then --add 3 if BCD digit is greater than 4.
+                bcd(3 downto 0) := bcd(3 downto 0) + "0011";
+                end if;
+                if(i < 13 and bcd(7 downto 4) > "0100") then --add 3 if BCD digit is greater than 4.
+                bcd(7 downto 4) := bcd(7 downto 4) + "0011";
+                end if;
+                if(i < 13 and bcd(11 downto 8) > "0100") then  --add 3 if BCD digit is greater than 4.
+                bcd(11 downto 8) := bcd(11 downto 8) + "0011";
+                end if; 
+                if(i < 13 and bcd(15 downto 12) > "0100") then  --add 3 if BCD digit is greater than 4.
+                bcd(15 downto 12) := bcd(15 downto 12) + "0011";
+                end if;
+            end loop; 
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  --**********************************************************************--
      
    
       -- STEP 2: fill the corresponding temporary variables with the BCD digits 
@@ -66,6 +120,78 @@ BEGIN
    VARIABLE segment7 : STD_LOGIC_VECTOR (8 DOWNTO 0);
    VARIABLE bcd : STD_LOGIC_VECTOR (3 DOWNTO 0);
    BEGIN
+	
+	--**********************************************************************--
+      -- EG for bcd_generated
+      FOR i IN 3 DOWNTO 0 LOOP
+         bcd := bcd_generated((4*(i+1)-1) DOWNTO (4*(i+1)-4));        -- eg 15 dt 12 , 11 dt 8...
+         
+         CASE bcd IS
+            when "0000" => 
+               segment7 := "111111000";  -- '0'
+            when "0001" => 
+               segment7 := "011000000";  -- '1'
+            when "0010" => 
+               segment7 := "110110100";  -- '2'
+            when "0011" => 
+               segment7 := "111100100";  -- '3'
+            when "0100" => 
+               segment7 := "011001100";  -- '4'
+            when "0101" => 
+               segment7 := "101101100";  -- '5'
+            when "0110" => 
+               segment7 := "101111100";  -- '6'
+            when "0111" => 
+               segment7 := "111000000";  -- '7'
+            when "1000" => 
+               segment7 := "111111100";  -- '8'
+            when "1001" => 
+               segment7 := "111101100";  -- '9'
+            when others =>
+               segment7 := "000000000";  -- blank
+          END CASE;  
+       
+          -- store the generated value in the position in the 36 bit vector
+          generated_dig((9*(i+1)-1) DOWNTO (9*(i+1)-9)) <= segment7;    -- eg 35 dt 27, 26 dt 18...
+          
+       END LOOP;
+      --**********************************************************************--
+		
+		--**********************************************************************--
+      -- EG for bcd_battery
+      FOR i IN 3 DOWNTO 0 LOOP
+         bcd := bcd_battery((4*(i+1)-1) DOWNTO (4*(i+1)-4));        -- eg 15 dt 12 , 11 dt 8...
+         
+         CASE bcd IS
+            when "0000" => 
+               segment7 := "111111000";  -- '0'
+            when "0001" => 
+               segment7 := "011000000";  -- '1'
+            when "0010" => 
+               segment7 := "110110100";  -- '2'
+            when "0011" => 
+               segment7 := "111100100";  -- '3'
+            when "0100" => 
+               segment7 := "011001100";  -- '4'
+            when "0101" => 
+               segment7 := "101101100";  -- '5'
+            when "0110" => 
+               segment7 := "101111100";  -- '6'
+            when "0111" => 
+               segment7 := "111000000";  -- '7'
+            when "1000" => 
+               segment7 := "111111100";  -- '8'
+            when "1001" => 
+               segment7 := "111101100";  -- '9'
+            when others =>
+               segment7 := "000000000";  -- blank
+          END CASE;  
+       
+          -- store the battery value in the position in the 36 bit vector
+          battery_dig((9*(i+1)-1) DOWNTO (9*(i+1)-9)) <= segment7;    -- eg 35 dt 27, 26 dt 18...
+          
+       END LOOP;
+      --**********************************************************************--
       
       --**********************************************************************--
       -- EG for bcd_solar
@@ -103,11 +229,45 @@ BEGIN
        END LOOP;
       --**********************************************************************--       
        
-       -- Will : replicate this for all 4 inputs
+       --**********************************************************************--
+      -- EG for bcd_consumption
+      FOR i IN 3 DOWNTO 0 LOOP
+         bcd := bcd_consumption((4*(i+1)-1) DOWNTO (4*(i+1)-4));        -- eg 15 dt 12 , 11 dt 8...
+         
+         CASE bcd IS
+            when "0000" => 
+               segment7 := "111111000";  -- '0'
+            when "0001" => 
+               segment7 := "011000000";  -- '1'
+            when "0010" => 
+               segment7 := "110110100";  -- '2'
+            when "0011" => 
+               segment7 := "111100100";  -- '3'
+            when "0100" => 
+               segment7 := "011001100";  -- '4'
+            when "0101" => 
+               segment7 := "101101100";  -- '5'
+            when "0110" => 
+               segment7 := "101111100";  -- '6'
+            when "0111" => 
+               segment7 := "111000000";  -- '7'
+            when "1000" => 
+               segment7 := "111111100";  -- '8'
+            when "1001" => 
+               segment7 := "111101100";  -- '9'
+            when others =>
+               segment7 := "000000000";  -- blank
+          END CASE;  
+       
+          -- store the consumption value in the position in the 36 bit vector
+          consumption_dig((9*(i+1)-1) DOWNTO (9*(i+1)-9)) <= segment7;    -- eg 35 dt 27, 26 dt 18...
+          
+       END LOOP;
+		 
+		 -- Will : replicate this for all 4 inputs
        
        
    END PROCESS;
-   
    
  
    -- should loop through the four digits of battery_dig and output them
@@ -142,6 +302,76 @@ BEGIN
       wait for wait_time;
       
       SSEGD3(0) <= '1';     --turn off previous display
+		
+		
+		---**********************************************************************--
+		SSEGD0(1) <= '0'; -- eg turn on DIG0, DISPLAY1
+      SSEGHex <= generated_dig(35 downto 27);          
+      wait for wait_time;
+      
+      SSEGD0(1) <= '1';    -- turn off previous display
+      SSEGD1(1) <= '0';    -- turn on DIG1, DISPLAY1
+      SSEGHex <= generated_dig(26 downto 18);
+      wait for wait_time;
+      
+      SSEGD1(1) <= '1';    -- turn off previous display
+      SSEGD2(1) <= '0';    -- turn on DIG2, DISPLAY1
+      SSEGHex <= generated_dig(17 downto 9);
+      wait for wait_time;
+      
+      SSEGD2(1) <= '1';    -- turn off previous display
+      SSEGD3(1) <= '0';    -- turn on DIG3, DISPLAY1
+      SSEGHex <= generated_dig(8 downto 0);
+      wait for wait_time;
+      
+      SSEGD3(1) <= '1';     --turn off previous display
+		
+		---**********************************************************************--
+		SSEGD0(2) <= '0'; -- eg turn on DIG0, DISPLAY2
+      SSEGHex <= bcd_solar(35 downto 27);          
+      wait for wait_time;
+      
+      SSEGD0(2) <= '1';    -- turn off previous display
+      SSEGD1(2) <= '0';    -- turn on DIG1, DISPLAY2
+      SSEGHex <= bcd_solar(26 downto 18);
+      wait for wait_time;
+      
+      SSEGD1(2) <= '1';    -- turn off previous display
+      SSEGD2(2) <= '0';    -- turn on DIG2, DISPLAY2
+      SSEGHex <= bcd_solar(17 downto 9);
+      wait for wait_time;
+      
+      SSEGD2(2) <= '1';    -- turn off previous display
+      SSEGD3(2) <= '0';    -- turn on DIG3, DISPLAY2
+      SSEGHex <= bcd_solar(8 downto 0);
+      wait for wait_time;
+      
+      SSEGD3(2) <= '1';     --turn off previous display
+		
+		---**********************************************************************--
+		
+		SSEGD0(3) <= '0'; -- eg turn on DIG0, DISPLAY3
+      SSEGHex <= bcd_consumption(35 downto 27);          
+      wait for wait_time;
+      
+      SSEGD0(3) <= '1';    -- turn off previous display
+      SSEGD1(3) <= '0';    -- turn on DIG1, DISPLAY3
+      SSEGHex <= bcd_consumption(26 downto 18);
+      wait for wait_time;
+      
+      SSEGD1(3) <= '1';    -- turn off previous display
+      SSEGD2(3) <= '0';    -- turn on DIG2, DISPLAY3
+      SSEGHex <= bcd_consumption(17 downto 9);
+      wait for wait_time;
+      
+      SSEGD2(3) <= '1';    -- turn off previous display
+      SSEGD3(3) <= '0';    -- turn on DIG3, DISPLAY3
+      SSEGHex <= bcd_consumption(8 downto 0);
+      wait for wait_time;
+      
+      SSEGD3(3) <= '1';     --turn off previous display
+		
+		
       
       --**********************************************************************--
       
@@ -150,4 +380,3 @@ BEGIN
    END PROCESS; 
  
 END;
-
