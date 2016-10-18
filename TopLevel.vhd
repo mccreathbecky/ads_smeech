@@ -17,14 +17,11 @@ ENTITY TopLevel IS
            SSEGD3 			: OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
            SSEGCL 			: OUT STD_LOGIC_VECTOR (3 DOWNTO 0));
 			  
-			  
-			  
-			  
-			  
 END TopLevel;
 
 USE WORK.Switching_Package.ALL;
 USE WORK.Sum_Package.ALL;
+USE WORK.SSD_Package.ALL;
 
 ARCHITECTURE Behavioral OF TopLevel IS
    
@@ -38,6 +35,9 @@ ARCHITECTURE Behavioral OF TopLevel IS
    SIGNAL toSSD_percentSolar : STD_LOGIC_VECTOR (6 DOWNTO 0);  
    SIGNAL toSSD_totalConsumption : STD_LOGIC_VECTOR (12 DOWNTO 0);
    SIGNAL toSSD_totalGenerated    : STD_LOGIC_VECTOR (12 DOWNTO 0); 
+   
+   -- SSD Component
+   
    
 BEGIN
    switch0  : Monitoring_Comp PORT MAP(CLK_sampleRate, 
@@ -55,6 +55,22 @@ BEGIN
                                        toSSD_percentSolar,
                                        toSSD_totalConsumption,
                                        toSSD_totalGenerated);
+   
+   ssd0     : BCD_to_SSD        PORT MAP(toSum_clk, 
+                                       toSSD_percentBattery,
+                                       toSSD_totalGenerated,
+                                       toSSD_percentSolar,
+                                       toSSD_totalConsumption,
+                                       SSEGHex,
+                                       SSEGD0,
+                                       SSEGD1,
+                                       SSEGD2,
+                                       SSEGD3,
+                                       SSEGCL);
+   led0     : LED_Display     PORT MAP(top_current_source,
+                                       GreenLed,
+                                       RedLed);
+                                       
                                        
 END Behavioral;
 

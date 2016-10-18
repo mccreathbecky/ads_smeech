@@ -1,22 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    19:44:03 10/17/2016 
--- Design Name: 
--- Module Name:    BCD_SSD - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.ALL; 
@@ -441,3 +422,30 @@ BEGIN
    END PROCESS; 
  
 END;
+
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use ieee.numeric_std.ALL; 
+use ieee.std_logic_arith.ALL;
+use ieee.std_logic_unsigned.ALL; 
+
+PACKAGE SSD_Package IS
+
+   COMPONENT BCD_to_SSD Port( 
+              clk : IN std_logic; 
+              percent_battery : IN STD_LOGIC_VECTOR (6 downto 0);          -- 0 to 100
+              total_generated : IN  STD_LOGIC_VECTOR (12 downto 0);        -- 0 to 8191
+              percent_solar : IN  STD_LOGIC_VECTOR (6 downto 0);           -- 0 to 100
+              total_consumption : IN  STD_LOGIC_VECTOR (12 downto 0);      -- 0 to 8191
+
+              SSEGHex : OUT STD_LOGIC_VECTOR(8 DOWNTO 0);   -- outputs for SSD [abcdefg, DP, col]
+              SSEGD0 : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);   -- 
+              SSEGD1 : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
+              SSEGD2 : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
+              SSEGD3 : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
+              SSEGCL : OUT STD_LOGIC_VECTOR (3 DOWNTO 0)
+              );
+             
+   END COMPONENT;
+END SSD_Package;

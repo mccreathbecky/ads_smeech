@@ -1,0 +1,111 @@
+#------------------------------------------------------------------
+#-- Company:        UTS Remote Labs
+#-- Author:         Alex Gibson
+#-- Creation Date:  24th March 2012
+#--
+#-- Project Name:   Nexys3
+#-- Design Name:    Nexys
+#-- File Name:      nexys.ucf
+#-- Purpose :       Pin constraints file for top level design
+#-- 
+#-- Target Board:   UTS Remote Labs Nexys FPGA
+#-- Target Device:  xc6slx16l-1Lcsg324 
+#-- 
+#-- Tool versions:  Ise 13.2 , ISE 13.4 , ISE14.1
+#--
+#-- VERSION :       v1.05
+#-- Modified by LJC 24/08/2012
+#-- Modified by DA  30/08/2012
+#------------------------------------------------------------------
+Net "clk" LOC=V10 | IOSTANDARD=LVCMOS33;
+Net "clk" TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 100000 kHz;
+
+#--Display Board LEDs
+#---Red LEDs
+Net "RedLed" LOC = C7  | IOSTANDARD=LVCMOS33;
+#Net "RedLed<0>" LOC = C7  | IOSTANDARD=LVCMOS33;
+#Net "RedLed<1>" LOC = C14 | IOSTANDARD=LVCMOS33;
+#Net "RedLed<2>" LOC = A6  | IOSTANDARD=LVCMOS33;
+#Net "RedLed<3>" LOC = C5  | IOSTANDARD=LVCMOS33;
+#---Amber LEDs
+#Net "AmberLed<0>" LOC = A7  | IOSTANDARD=LVCMOS33;
+#Net "AmberLed<1>" LOC = F13 | IOSTANDARD=LVCMOS33;
+#Net "AmberLed<2>" LOC = D11 | IOSTANDARD=LVCMOS33;
+#Net "AmberLed<3>" LOC = A5  | IOSTANDARD=LVCMOS33;
+#---Green LEDs
+Net "GreenLed" LOC = B6  | IOSTANDARD=LVCMOS33;
+#Net "GreenLed<0>" LOC = B6  | IOSTANDARD=LVCMOS33;
+#Net "GreenLed<1>" LOC = E13 | IOSTANDARD=LVCMOS33;
+#Net "GreenLed<2>" LOC = D6  | IOSTANDARD=LVCMOS33;
+#Net "GreenLed<3>" LOC = D14 | IOSTANDARD=LVCMOS33;
+#-Alpha Numeric Displays (ANDs)
+#--Display Board ANDs
+#---AND Display selection
+#Net "Alpha<0>" LOC = G11 | IOSTANDARD=LVCMOS33;
+#Net "Alpha<1>" LOC = F10 | IOSTANDARD=LVCMOS33;
+#Net "Alpha<2>" LOC = F11 | IOSTANDARD=LVCMOS33;
+#Net "Alpha<3>" LOC = E11 | IOSTANDARD=LVCMOS33;
+#Net "Alpha<4>" LOC = A4 | IOSTANDARD=LVCMOS33;
+#Net "Alpha<5>" LOC = B4 | IOSTANDARD=LVCMOS33;
+#---AND Segment Selection
+#Net "AlphaHex<0>"  LOC = V11 | IOSTANDARD=LVCMOS33; #A1
+#Net "AlphaHex<1>"  LOC = U11 | IOSTANDARD=LVCMOS33; #A2
+#Net "AlphaHex<2>"  LOC = N9  | IOSTANDARD=LVCMOS33; #B 
+#Net "AlphaHex<3>"  LOC = M10 | IOSTANDARD=LVCMOS33; #C 
+#Net "AlphaHex<4>"  LOC = P11 | IOSTANDARD=LVCMOS33; #D1
+#Net "AlphaHex<5>"  LOC = N10 | IOSTANDARD=LVCMOS33; #D2
+#Net "AlphaHex<6>"  LOC = V12 | IOSTANDARD=LVCMOS33; #E
+#Net "AlphaHex<7>"  LOC = T12 | IOSTANDARD=LVCMOS33; #F
+#Net "AlphaHex<8>"  LOC = K5  | IOSTANDARD=LVCMOS33; #G1
+#Net "AlphaHex<9>"  LOC = K3  | IOSTANDARD=LVCMOS33; #G2
+#Net "AlphaHex<10>" LOC = J1  | IOSTANDARD=LVCMOS33; #H
+#Net "AlphaHex<11>" LOC = J3  | IOSTANDARD=LVCMOS33; #J
+#Net "AlphaHex<12>" LOC = L3  | IOSTANDARD=LVCMOS33; #K
+#Net "AlphaHex<13>" LOC = L4  | IOSTANDARD=LVCMOS33; #L
+#Net "AlphaHex<14>" LOC = K1  | IOSTANDARD=LVCMOS33; #M
+#Net "AlphaHex<15>" LOC = K2  | IOSTANDARD=LVCMOS33; #N
+#-Seven Segment Displays (SSDs)
+#---SSD Display Digit Selection
+#Net "SSEG_AN<0>" LOC=N16 | IOSTANDARD=LVCMOS33;
+#Net "SSEG_AN<1>" LOC=N15 | IOSTANDARD=LVCMOS33;
+#Net "SSEG_AN<2>" LOC=P18 | IOSTANDARD=LVCMOS33;
+#Net "SSEG_AN<3>" LOC=P17 | IOSTANDARD=LVCMOS33;
+##---SSD Display Segment Selection  
+#--Display board Seven Segment displays
+#---SSD Display Digit Selection
+#----SSEGD0 (Digit 0) on Display <n>
+Net "SSEGD0<0>" LOC = D12 | IOSTANDARD=LVCMOS33;
+Net "SSEGD0<1>" LOC = C12 | IOSTANDARD=LVCMOS33;
+Net "SSEGD0<2>" LOC = F12 | IOSTANDARD=LVCMOS33;
+Net "SSEGD0<3>" LOC = E12 | IOSTANDARD=LVCMOS33;
+#----SSDG1 (Digit 1) on Display <n>
+Net "SSEGD1<0>" LOC = H3 | IOSTANDARD=LVCMOS33;
+Net "SSEGD1<1>" LOC = L7 | IOSTANDARD=LVCMOS33;
+Net "SSEGD1<2>" LOC = K6 | IOSTANDARD=LVCMOS33;
+Net "SSEGD1<3>" LOC = G3 | IOSTANDARD=LVCMOS33;
+#----SSDG2 (Digit 2) on Display <n>
+Net "SSEGD2<0>" LOC = A15 | IOSTANDARD=LVCMOS33;
+Net "SSEGD2<1>" LOC = C15 | IOSTANDARD=LVCMOS33;
+Net "SSEGD2<2>" LOC = A16 | IOSTANDARD=LVCMOS33;
+Net "SSEGD2<3>" LOC = B16 | IOSTANDARD=LVCMOS33;
+#----SSDG3 (Digit 3) on Display <n>
+Net "SSEGD3<0>" LOC = G1 | IOSTANDARD=LVCMOS33;
+Net "SSEGD3<1>" LOC = J7 | IOSTANDARD=LVCMOS33;
+Net "SSEGD3<2>" LOC = J6 | IOSTANDARD=LVCMOS33;
+Net "SSEGD3<3>" LOC = F2 | IOSTANDARD=LVCMOS33;
+#----SSCOL (Colon) on Display <n>
+Net "SSEGCL<0>" LOC = A2 | IOSTANDARD=LVCMOS33;
+Net "SSEGCL<1>" LOC = B2 | IOSTANDARD=LVCMOS33;
+Net "SSEGCL<2>" LOC = A3 | IOSTANDARD=LVCMOS33;
+Net "SSEGCL<3>" LOC = B3 | IOSTANDARD=LVCMOS33;
+#---SSD Segment Selection
+#Net "SSEGHex<0>" LOC = C13  |  IOSTANDARD=LVCMOS33; #A  
+#Net "SSEGHex<1>" LOC = A13  |  IOSTANDARD=LVCMOS33; #B                     
+#Net "SSEGHex<2>" LOC = B11  |  IOSTANDARD=LVCMOS33; #C                      
+#Net "SSEGHex<3>" LOC = A11  |  IOSTANDARD=LVCMOS33; #D                      
+#Net "SSEGHex<4>" LOC = B14  |  IOSTANDARD=LVCMOS33; #E
+#Net "SSEGHex<5>" LOC = A14  |  IOSTANDARD=LVCMOS33; #F
+#Net "SSEGHex<6>" LOC = B12  |  IOSTANDARD=LVCMOS33; #G                     
+#Net "SSEGHex<7>" LOC = A12  |  IOSTANDARD=LVCMOS33; #DP
+#Net "SSEGHex<8>" LOC = C6   |  IOSTANDARD=LVCMOS33; #COL 

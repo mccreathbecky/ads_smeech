@@ -1,16 +1,16 @@
-Release 14.7 - xst P.20131013 (nt64)
+Release 14.7 - xst P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Parameter xsthdpdir set to C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Reading design: Switching_Package.prj
 
@@ -45,12 +45,12 @@ Parsing architecture <Behavioral> of entity <monitoring_comp>.
 Parsing package <Switching_Package>.
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.99 secs
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 3.27 secs
  
 --> 
 
-Total memory usage is 234152 kilobytes
+Total memory usage is 208064 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

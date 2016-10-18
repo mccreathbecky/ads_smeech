@@ -25,6 +25,7 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="BCD_to_SSD.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="BCD_to_SSD.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="BCD_to_SSD.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="BCD_to_SSD_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="ControlUnit.sym" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="LED_Display.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="LED_Display.stx"/>
@@ -45,9 +46,11 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Switching_Package.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Switching_Package.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="Switching_Package.xst"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="TopLevel.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="TopLevel.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="TopLevel.lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="TopLevel.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="TopLevel.ngd"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="TopLevel.ngr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TopLevel.prj"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="TopLevel.stx"/>
@@ -56,9 +59,12 @@
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="TopLevel_TB_isim_beh.exe"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TopLevel_TB_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="TopLevel_envsettings.html"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="TopLevel_ngdbuild.xrpt"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TopLevel_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="TopLevel_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="TopLevel_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
@@ -69,21 +75,22 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="sum_tb_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1476773200" xil_pn:name="TRANEXT_compLibraries_FPGA" xil_pn:prop_ck="1321705353062746806" xil_pn:start_ts="1476773200">
+      <status xil_pn:value="FailedRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
     <transform xil_pn:end_ts="1476408714" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1476408714">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1476763021" xil_pn:in_ck="-1096514949078690604" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1476763021">
+    <transform xil_pn:end_ts="1476774168" xil_pn:in_ck="-1096514949078690604" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1476774168">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="ControlUnit.vhd"/>
       <outfile xil_pn:name="LED_Display.vhd"/>
       <outfile xil_pn:name="LED_Display_TB.vhd"/>
@@ -98,10 +105,12 @@
     <transform xil_pn:end_ts="1476763026" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-4872592409057431019" xil_pn:start_ts="1476763026">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
     </transform>
     <transform xil_pn:end_ts="1476763026" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-957656963823513453" xil_pn:start_ts="1476763026">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
     </transform>
     <transform xil_pn:end_ts="1476418276" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="176964491675454394" xil_pn:start_ts="1476418276">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -135,8 +144,7 @@
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="LED_Display_TB_beh.prj"/>
-      <outfile xil_pn:name="LED_Display_TB_isim_beh.exe"/>
+      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
@@ -145,13 +153,13 @@
     <transform xil_pn:end_ts="1476763076" xil_pn:in_ck="7717592378613405220" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="2339561365572485609" xil_pn:start_ts="1476763076">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="LED_Display_TB_isim_beh.wdb"/>
-      <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
+      <status xil_pn:value="OutputRemoved"/>
     </transform>
     <transform xil_pn:end_ts="1476749445" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1476749445">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -173,16 +181,17 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1476764629" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="1106364426758808884" xil_pn:start_ts="1476764629">
-      <status xil_pn:value="FailedRun"/>
+    <transform xil_pn:end_ts="1476773381" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="1106364426758808884" xil_pn:start_ts="1476773381">
+      <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1476764629" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="8673597777192120900" xil_pn:start_ts="1476764629">
-      <status xil_pn:value="FailedRun"/>
+    <transform xil_pn:end_ts="1476773381" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="8673597777192120900" xil_pn:start_ts="1476773381">
+      <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1476764638" xil_pn:in_ck="-3290738259596702024" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-4498035882352309037" xil_pn:start_ts="1476764629">
-      <status xil_pn:value="FailedRun"/>
+    <transform xil_pn:end_ts="1476773392" xil_pn:in_ck="-3290738259596702024" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-4498035882352309037" xil_pn:start_ts="1476773381">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -201,6 +210,35 @@
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1476773392" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-5299430572891783389" xil_pn:start_ts="1476773392">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
+    </transform>
+    <transform xil_pn:end_ts="1476773398" xil_pn:in_ck="4420851648763903089" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="5480757410714762693" xil_pn:start_ts="1476773392">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
+      <outfile xil_pn:name="TopLevel.bld"/>
+      <outfile xil_pn:name="TopLevel.ngd"/>
+      <outfile xil_pn:name="TopLevel_ngdbuild.xrpt"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    </transform>
+    <transform xil_pn:end_ts="1476773404" xil_pn:in_ck="4420851648763903090" xil_pn:name="TRAN_createTimingConstraints" xil_pn:start_ts="1476773398">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
     </transform>
   </transforms>
 

@@ -1,16 +1,16 @@
-Release 14.7 - xst P.20131013 (nt)
+Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.17 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.17 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Reading design: TopLevel.prj
 
@@ -105,15 +105,15 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\William\Documents\ADS\ADS_FINAL\Switching_Comp.vhd" into library work
+Parsing VHDL file "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\Switching_Comp.vhd" into library work
 Parsing entity <Monitoring_Comp>.
 Parsing architecture <Behavioral> of entity <monitoring_comp>.
 Parsing package <Switching_Package>.
-Parsing VHDL file "C:\Users\William\Documents\ADS\ADS_FINAL\Sum_Monitoring.vhd" into library work
+Parsing VHDL file "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\Sum_Monitoring.vhd" into library work
 Parsing entity <Sum_Monitoring>.
 Parsing architecture <Behavioral> of entity <sum_monitoring>.
 Parsing package <Sum_Package>.
-Parsing VHDL file "C:\Users\William\Documents\ADS\ADS_FINAL\TopLevel.vhd" into library work
+Parsing VHDL file "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\TopLevel.vhd" into library work
 Parsing entity <TopLevel>.
 Parsing architecture <Behavioral> of entity <toplevel>.
 
@@ -126,20 +126,20 @@ Elaborating entity <TopLevel> (architecture <Behavioral>) from library <work>.
 Elaborating entity <Monitoring_Comp> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <Sum_Monitoring> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:92 - "C:\Users\William\Documents\ADS\ADS_FINAL\Sum_Monitoring.vhd" Line 45: total_samples should be on the sensitivity list of the process
-WARNING:Xst:2972 - "C:\Users\William\Documents\ADS\ADS_FINAL\TopLevel.vhd" line 43. All outputs of instance <switch0> of block <Monitoring_Comp> are unconnected in block <TopLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "C:\Users\William\Documents\ADS\ADS_FINAL\TopLevel.vhd" line 49. All outputs of instance <sum0> of block <Sum_Monitoring> are unconnected in block <TopLevel>. Underlying logic will be removed.
+WARNING:HDLCompiler:92 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\Sum_Monitoring.vhd" Line 45: total_samples should be on the sensitivity list of the process
+WARNING:Xst:2972 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\TopLevel.vhd" line 43. All outputs of instance <switch0> of block <Monitoring_Comp> are unconnected in block <TopLevel>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\TopLevel.vhd" line 49. All outputs of instance <sum0> of block <Sum_Monitoring> are unconnected in block <TopLevel>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <TopLevel>.
-    Related source file is "C:\Users\William\Documents\ADS\ADS_FINAL\TopLevel.vhd".
-INFO:Xst:3210 - "C:\Users\William\Documents\ADS\ADS_FINAL\TopLevel.vhd" line 49: Output port <percent_battery> of the instance <sum0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\William\Documents\ADS\ADS_FINAL\TopLevel.vhd" line 49: Output port <percent_solar> of the instance <sum0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\William\Documents\ADS\ADS_FINAL\TopLevel.vhd" line 49: Output port <total_consumption> of the instance <sum0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\William\Documents\ADS\ADS_FINAL\TopLevel.vhd" line 49: Output port <total_generated> of the instance <sum0> is unconnected or connected to loadless signal.
+    Related source file is "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\TopLevel.vhd".
+INFO:Xst:3210 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\TopLevel.vhd" line 49: Output port <percent_battery> of the instance <sum0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\TopLevel.vhd" line 49: Output port <percent_solar> of the instance <sum0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\TopLevel.vhd" line 49: Output port <total_consumption> of the instance <sum0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\TopLevel.vhd" line 49: Output port <total_generated> of the instance <sum0> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <TopLevel> synthesized.
@@ -289,12 +289,12 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.21 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.25 secs
  
 --> 
 
-Total memory usage is 241812 kilobytes
+Total memory usage is 296704 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    3 (   0 filtered)
