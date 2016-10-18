@@ -40,6 +40,7 @@ ARCHITECTURE behavior OF TopLevel_TB IS
 
    -- Clock period definitions
    constant CLK_sampleRate_period : time := 200 ns;
+   constant consumption_period : time := 1000 ns;
  
 BEGIN
  
@@ -67,10 +68,105 @@ BEGIN
 		wait for CLK_sampleRate_period/2;
    end process;
    
+   -- one day of consumption data [but in half hourly intervals]
    consumption_process: PROCESS
    BEGIN
-      consumption_in <= "00011101100";
-      WAIT;
+      consumption_in <= "0000011111";
+      wait for consumption_period;
+      consumption_in <= "0000111010";
+      wait for consumption_period;
+      consumption_in <= "0000100000";
+      wait for consumption_period;
+      consumption_in <= "0000101011";
+      wait for consumption_period;
+      consumption_in <= "0000100111";
+      wait for consumption_period;
+      consumption_in <= "0000110000";
+      wait for consumption_period;
+      consumption_in <= "0000101101";
+      wait for consumption_period;
+      consumption_in <= "0000011111";
+      wait for consumption_period;
+      consumption_in <= "0000101100";
+      wait for consumption_period;
+      consumption_in <= "0000101010";
+      wait for consumption_period;
+      consumption_in <= "0000111101";
+      wait for consumption_period;
+      consumption_in <= "0000011001";
+      wait for consumption_period;
+      consumption_in <= "0000101110";
+      wait for consumption_period;
+      consumption_in <= "0000011011";
+      wait for consumption_period;
+      consumption_in <= "0001001001";
+      wait for consumption_period;
+      consumption_in <= "0000011100";
+      wait for consumption_period;
+      consumption_in <= "0000100010";
+      wait for consumption_period;
+      consumption_in <= "0001110111";
+      wait for consumption_period;
+      consumption_in <= "0001100100";
+      wait for consumption_period;
+      consumption_in <= "0001110100";
+      wait for consumption_period;
+      consumption_in <= "0001011100";
+      wait for consumption_period;
+      consumption_in <= "0001111110";
+      wait for consumption_period;
+      consumption_in <= "0001100111";
+      wait for consumption_period;
+      consumption_in <= "0010000011";
+      wait for consumption_period;
+      consumption_in <= "0001011101";
+      wait for consumption_period;
+      consumption_in <= "0001100101";
+      wait for consumption_period;
+      consumption_in <= "0000100000";
+      wait for consumption_period;
+      consumption_in <= "0000101110";
+      wait for consumption_period;
+      consumption_in <= "0000101000";
+      wait for consumption_period;
+      consumption_in <= "0011100001";
+      wait for consumption_period;
+      consumption_in <= "0101010110";
+      wait for consumption_period;
+      consumption_in <= "1010101001";
+      wait for consumption_period;
+      consumption_in <= "1011100011";
+      wait for consumption_period;
+      consumption_in <= "1100001010";
+      wait for consumption_period;
+      consumption_in <= "0001011110";
+      wait for consumption_period;
+      consumption_in <= "0001010100";
+      wait for consumption_period;
+      consumption_in <= "0000101011";
+      wait for consumption_period;
+      consumption_in <= "0001100010";
+      wait for consumption_period;
+      consumption_in <= "0000110101";
+      wait for consumption_period;
+      consumption_in <= "0001101111";
+      wait for consumption_period;
+      consumption_in <= "0010011100";
+      wait for consumption_period;
+      consumption_in <= "0010110100";
+      wait for consumption_period;
+      consumption_in <= "0011010101";
+      wait for consumption_period;
+      consumption_in <= "0010001011";
+      wait for consumption_period;
+      consumption_in <= "0001010011";
+      wait for consumption_period;
+      consumption_in <= "0000011110";
+      wait for consumption_period;
+      consumption_in <= "0001000100";
+      wait for consumption_period;
+      consumption_in <= "0000011101";
+      wait for consumption_period;
    END PROCESS;
  
    solar_process: process
