@@ -22,6 +22,7 @@ END TopLevel;
 USE WORK.Switching_Package.ALL;
 USE WORK.Sum_Package.ALL;
 USE WORK.SSD_Package.ALL;
+USE WORK.LED_Package.ALL;
 
 ARCHITECTURE Behavioral OF TopLevel IS
    

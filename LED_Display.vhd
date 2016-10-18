@@ -37,46 +37,9 @@ architecture Behavioral of LED_Display is
 begin
 
 
---	
----- Wait Signal
---
---EppWait <= '1' when EppAstb = '0' or EppDstb = '0' else '0';
---
----- EPP Address Recieve
---
---process (EppAstb)
---begin
---	if rising_edge(EppAstb) then
---		if EppWr = '0' then
---			regEppAdr <= EppDB;
---		end if;
---	end if;
---end process;
---
----- EPP Data Recieve
---
---process (EppDstb)
---begin
---if rising_edge(EppDstb) then
---	if EppWr = '0' then
---		if regEppAdr = X"00" then
---			reg0 <= EppDB;
---		end if;
---	end if;
---end if;
---
---end process;
-
---with reg0 select 
---	GreenLed <= '1' when "00000001";
---	GreenLed <=	'0' when others;
---
---with reg0 select
---	RedLed <= '1' when "00000010";
---	RedLed <= '0' when others;
-PROCESS
+PROCESS (current_source)
 BEGIN
-	case reg0 is
+	case current_source is
 		WHEN "01" =>
 			GreenLed <= '1';
 			RedLed <= '0';
@@ -118,6 +81,43 @@ END LED_PACKAGE;
 
 
 
+--	
+---- Wait Signal
+--
+--EppWait <= '1' when EppAstb = '0' or EppDstb = '0' else '0';
+--
+---- EPP Address Recieve
+--
+--process (EppAstb)
+--begin
+--	if rising_edge(EppAstb) then
+--		if EppWr = '0' then
+--			regEppAdr <= EppDB;
+--		end if;
+--	end if;
+--end process;
+--
+---- EPP Data Recieve
+--
+--process (EppDstb)
+--begin
+--if rising_edge(EppDstb) then
+--	if EppWr = '0' then
+--		if regEppAdr = X"00" then
+--			reg0 <= EppDB;
+--		end if;
+--	end if;
+--end if;
+--
+--end process;
+
+--with reg0 select 
+--	GreenLed <= '1' when "00000001";
+--	GreenLed <=	'0' when others;
+--
+--with reg0 select
+--	RedLed <= '1' when "00000010";
+--	RedLed <= '0' when others;
 
 	--display_process: PROCESS(current_source)
 	--BEGIN
