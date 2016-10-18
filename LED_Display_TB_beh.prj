@@ -1,0 +1,2 @@
+vhdl work "LED_Display.vhd"
+vhdl work "LED_Display_TB.vhd"

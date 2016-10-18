@@ -25,10 +25,10 @@ entity LED_Display is
     Port (
 			  current_source 	: in   STD_LOGIC_VECTOR (1 downto 0);
            GreenLed 	 		: out  STD_LOGIC;			-- Grid LED
-           RedLed	    		: out  STD_LOGIC;			-- Solar LED
-			  EppAstb, EppDstb, EppWr : in std_logic;
-			  EppWait : out std_logic;
-			  EppDB : in std_logic_vector (7 downto 0));
+           RedLed	    		: out  STD_LOGIC);			-- Solar LED
+			  --EppAstb, EppDstb, EppWr : in std_logic;
+			  --EppWait : out std_logic;
+			  --EppDB : in std_logic_vector (7 downto 0));
 			  
 end LED_Display;
 

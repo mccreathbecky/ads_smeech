@@ -1,0 +1,4 @@
+WARNING: C:/Xilinx/14.7/ISE_DS/ISE/lib/nt64 does not exist.
+WARNING: C:/Xilinx/14.7/ISE_DS/ISE/bin/nt64 does not exist.
+ERROR: %XILINX% does not contain 64bit executables. Use -m32 to run 32bit executables.
+Press any key to continue . . . 

@@ -184,6 +184,10 @@
     <transform xil_pn:end_ts="1476764638" xil_pn:in_ck="-3290738259596702024" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-4498035882352309037" xil_pn:start_ts="1476764629">
       <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="TopLevel.lso"/>
       <outfile xil_pn:name="TopLevel.ngc"/>
       <outfile xil_pn:name="TopLevel.ngr"/>
