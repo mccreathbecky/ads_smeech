@@ -100,12 +100,12 @@ Net "SSEGCL<1>" LOC = B2 | IOSTANDARD=LVCMOS33;
 Net "SSEGCL<2>" LOC = A3 | IOSTANDARD=LVCMOS33;
 Net "SSEGCL<3>" LOC = B3 | IOSTANDARD=LVCMOS33;
 #---SSD Segment Selection
-#Net "SSEGHex<0>" LOC = C13  |  IOSTANDARD=LVCMOS33; #A  
-#Net "SSEGHex<1>" LOC = A13  |  IOSTANDARD=LVCMOS33; #B                     
-#Net "SSEGHex<2>" LOC = B11  |  IOSTANDARD=LVCMOS33; #C                      
-#Net "SSEGHex<3>" LOC = A11  |  IOSTANDARD=LVCMOS33; #D                      
-#Net "SSEGHex<4>" LOC = B14  |  IOSTANDARD=LVCMOS33; #E
-#Net "SSEGHex<5>" LOC = A14  |  IOSTANDARD=LVCMOS33; #F
-#Net "SSEGHex<6>" LOC = B12  |  IOSTANDARD=LVCMOS33; #G                     
-#Net "SSEGHex<7>" LOC = A12  |  IOSTANDARD=LVCMOS33; #DP
-#Net "SSEGHex<8>" LOC = C6   |  IOSTANDARD=LVCMOS33; #COL 
+Net "SSEGHex<0>" LOC = C13  |  IOSTANDARD=LVCMOS33; #A  
+Net "SSEGHex<1>" LOC = A13  |  IOSTANDARD=LVCMOS33; #B                     
+Net "SSEGHex<2>" LOC = B11  |  IOSTANDARD=LVCMOS33; #C                      
+Net "SSEGHex<3>" LOC = A11  |  IOSTANDARD=LVCMOS33; #D                      
+Net "SSEGHex<4>" LOC = B14  |  IOSTANDARD=LVCMOS33; #E
+Net "SSEGHex<5>" LOC = A14  |  IOSTANDARD=LVCMOS33; #F
+Net "SSEGHex<6>" LOC = B12  |  IOSTANDARD=LVCMOS33; #G                     
+Net "SSEGHex<7>" LOC = A12  |  IOSTANDARD=LVCMOS33; #DP
+Net "SSEGHex<8>" LOC = C6   |  IOSTANDARD=LVCMOS33; #COL 
