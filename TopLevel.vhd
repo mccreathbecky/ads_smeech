@@ -7,7 +7,7 @@ ENTITY TopLevel IS
     PORT (-- CLK_sampleRate  : IN     STD_LOGIC;
           -- solar_in        : IN     STD_LOGIC_VECTOR (9 DOWNTO 0);
           -- consumption_in  : IN     STD_LOGIC_VECTOR (10 DOWNTO 0);
-           CLK             : IN     STD_LOGIC;
+           clk             : IN     STD_LOGIC;
            GreenLed        : OUT    STD_LOGIC;
            RedLed	         : OUT    STD_LOGIC;
 			  SSEGHex 			: OUT STD_LOGIC_VECTOR(8 DOWNTO 0);   
@@ -52,7 +52,7 @@ ARCHITECTURE Behavioral OF TopLevel IS
      
 BEGIN
 
-   clock0   : clockdivide        PORT MAP(CLK,
+   clock0   : clockdivide        PORT MAP(clk,
                                           onesec_clock,
                                           halfsec_clock, 
                                           SSD_clock);
