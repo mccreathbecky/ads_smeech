@@ -7,6 +7,7 @@ ENTITY TopLevel IS
     PORT (-- CLK_sampleRate  : IN     STD_LOGIC;
           -- solar_in        : IN     STD_LOGIC_VECTOR (9 DOWNTO 0);
           -- consumption_in  : IN     STD_LOGIC_VECTOR (10 DOWNTO 0);
+           CLK             : IN     STD_LOGIC;
            GreenLed        : OUT    STD_LOGIC;
            RedLed	         : OUT    STD_LOGIC;
 			  SSEGHex 			: OUT STD_LOGIC_VECTOR(8 DOWNTO 0);   
@@ -22,13 +23,12 @@ USE WORK.Switching_Package.ALL;
 USE WORK.Sum_Package.ALL;
 USE WORK.SSD_Package.ALL;
 USE WORK.LED_Package.ALL;
-USE WORK.SampleInputs_Package.ALL;
+USE WORK.SampleInputs_UsingClock_Package.ALL;
 USE WORK.clockdivide_Package.ALL;
 
 ARCHITECTURE Behavioral OF TopLevel IS
    
    --  Sample Inputs [provided by a component for the sake of demonstration on FPGA]
-   SIGNAL CLK_sampleRate  : STD_LOGIC;
    SIGNAL solar_in        : STD_LOGIC_VECTOR (9 DOWNTO 0);
    SIGNAL consumption_in  : STD_LOGIC_VECTOR (10 DOWNTO 0);
    
@@ -44,15 +44,26 @@ ARCHITECTURE Behavioral OF TopLevel IS
    SIGNAL toSSD_totalConsumption : STD_LOGIC_VECTOR (12 DOWNTO 0);
    SIGNAL toSSD_totalGenerated    : STD_LOGIC_VECTOR (12 DOWNTO 0); 
    
-   -- SSD Clock
-   SIGNAL SSD_Clock : STD_LOGIC;
-   -- a constant used when cycling through the digits and displays
-   CONSTANT SSD_CLOCK_PERIOD : time := 0.001sec;
+   -- CLOCKS
+   SIGNAL onesec_clock : STD_LOGIC;
+   SIGNAL halfsec_clock : STD_LOGIC;
+   SIGNAL SSD_clock : STD_LOGIC;
+
      
 BEGIN
 
+   clock0   : clockdivide        PORT MAP(CLK,
+                                          onesec_clock,
+                                          halfsec_clock, 
+                                          SSD_clock);
+                                          
+   sampleInputs0 : SampleInputs_usingclk  PORT MAP(halfsec_clock,
+                                          solar_in,
+                                          consumption_in);
    
-   switch0  : Monitoring_Comp    PORT MAP(CLK_sampleRate, 
+
+                                          
+   switch0  : Monitoring_Comp    PORT MAP(halfsec_clock, 
                                           solar_in, 
                                           toSwitch_battery, 
                                           top_current_source, 
@@ -68,7 +79,7 @@ BEGIN
                                           toSSD_totalConsumption,
                                           toSSD_totalGenerated);
    
-   ssd0     : BCD_to_SSD         PORT MAP(SSD_Clock,
+   ssd0     : BCD_to_SSD         PORT MAP(SSD_clock,
                                           toSSD_percentBattery,
                                           toSSD_totalGenerated,
                                           toSSD_percentSolar,
@@ -84,17 +95,7 @@ BEGIN
                                           GreenLed,
                                           RedLed);
    
-   sampleInputs0 : SampleInputs  PORT MAP(CLK_SampleRate,
-                                          solar_in,
-                                          consumption_in);
-                                          
-   SSD_CLOCK_PROCESS : PROCESS
-   BEGIN
-   	SSD_Clock <= '0';
-		wait for SSD_CLOCK_PERIOD/2;
-		SSD_Clock <= '1';
-		wait for SSD_CLOCK_PERIOD/2;
-   END PROCESS;
-                                       
+
+                       
 END Behavioral;
 

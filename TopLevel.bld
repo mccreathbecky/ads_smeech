@@ -8,10 +8,6 @@ TopLevel.ngd
 Reading NGO file
 "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel.ngc"
 ...
-Loading design module
-"C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech/TopLevel.ngc"
-...
-WARNING:NgdBuild:578 - Design contains no instances.
 Gathering constraint information from source properties...
 Done.
 
@@ -30,12 +26,12 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:   1
+  Number of warnings:   0
 
-Total memory usage is 183840 kilobytes
+Total memory usage is 191768 kilobytes
 
 Writing NGD file "TopLevel.ngd" ...
-Total REAL time to NGDBUILD completion:  3 sec
-Total CPU time to NGDBUILD completion:   3 sec
+Total REAL time to NGDBUILD completion:  4 sec
+Total CPU time to NGDBUILD completion:   4 sec
 
 Writing NGDBUILD log file "TopLevel.bld"...

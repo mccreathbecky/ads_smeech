@@ -151,7 +151,7 @@ end Behavioral;
 LIBRARY ieee;
 USE ieee.STD_LOGIC_1164.ALL;
 
-PACKAGE SampleInputs_Package IS
+PACKAGE SampleInputs_UsingClock_Package IS
    COMPONENT SampleInputs_usingclk 
        Port ( CLK            : in  STD_LOGIC;
               solar_in       : out  STD_LOGIC_VECTOR (9 downto 0);
