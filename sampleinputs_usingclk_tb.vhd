@@ -42,7 +42,6 @@ ARCHITECTURE behavior OF sampleinputs_usingclk_tb IS
     COMPONENT SampleInputs_usingclk
     PORT(
          CLK : IN  std_logic;
-         rst : IN  std_logic;
          solar_in : OUT  std_logic_vector(9 downto 0);
          consumption_in : OUT  std_logic_vector(10 downto 0)
         );
@@ -51,7 +50,6 @@ ARCHITECTURE behavior OF sampleinputs_usingclk_tb IS
 
    --Inputs
    signal CLK : std_logic := '0';
-   signal rst : std_logic := '0';
 
  	--Outputs
    signal solar_in : std_logic_vector(9 downto 0);
@@ -65,7 +63,6 @@ BEGIN
 	-- Instantiate the Unit Under Test (UUT)
    uut: SampleInputs_usingclk PORT MAP (
           CLK => CLK,
-          rst => rst,
           solar_in => solar_in,
           consumption_in => consumption_in
         );
@@ -79,16 +76,5 @@ BEGIN
 		wait for CLK_period/2;
    end process;
  
-
-   -- Stimulus process
-   stim_proc: process
-   begin		
-      -- hold reset state for 100 ns.
-      rst <= '0';
-
-      -- insert stimulus here 
-
-      wait;
-   end process;
 
 END;

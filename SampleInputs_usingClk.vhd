@@ -5,20 +5,118 @@ use IEEE.NUMERIC_STD.ALL;
 
 
 entity SampleInputs_usingclk is
-    Port ( CLK : in  STD_LOGIC;
-           rst            : in  STD_LOGIC;
+    Port ( CLK            : in  STD_LOGIC;
            solar_in       : out  STD_LOGIC_VECTOR (9 downto 0);
            consumption_in : out  STD_LOGIC_VECTOR (10 downto 0));
 end SampleInputs_usingclk;
 
 architecture Behavioral of SampleInputs_usingclk is
-   TYPE lut IS ARRAY (2 DOWNTO 0) OF STD_LOGIC_VECTOR(10 DOWNTO 0);
-   CONSTANT consumption_lut : lut :=("00000011111", "00000111010", "00000100000");
+   TYPE lut_consumptiontype IS ARRAY (47 DOWNTO 0) OF STD_LOGIC_VECTOR(10 DOWNTO 0);
+   TYPE lut_solartype IS ARRAY (47 DOWNTO 0) OF STD_LOGIC_VECTOR(9 DOWNTO 0);
+   CONSTANT consumption_lut : lut_consumptiontype := 
+                                     ( "00000011111",
+                                       "00000111010",
+                                       "00000100000",
+                                       "00000101011",
+                                       "00000100111",
+                                       "00000110000",
+                                       "00000101101",
+                                       "00000011111",
+                                       "00000101100",
+                                       "00000101010",
+                                       "00000111101",
+                                       "00000011001",
+                                       "00000101110",
+                                       "00000011011",
+                                       "00001001001",
+                                       "00000011100",
+                                       "00000100010",
+                                       "00001110111",
+                                       "00001100100",
+                                       "00001110100",
+                                       "00001011100",
+                                       "00001111110",
+                                       "00001100111",
+                                       "00010000011",
+                                       "00001011101",
+                                       "00001100101",
+                                       "00000100000",
+                                       "00000101110",
+                                       "00000101000",
+                                       "00011100001",
+                                       "00101010110",
+                                       "01010101001",
+                                       "01011100011",
+                                       "01100001010",
+                                       "00001011110",
+                                       "00001010100",
+                                       "00000101011",
+                                       "00001100010",
+                                       "00000110101",
+                                       "00001101111",
+                                       "00010011100",
+                                       "00010110100",
+                                       "00011010101",
+                                       "00010001011",
+                                       "00001010011",
+                                       "00000011110",
+                                       "00001000100",
+                                       "00000011101"
+                                       );
    CONSTANT max_counter_consumption: integer := 48;
    SIGNAL counter_consumption : integer := 0;
    
-   CONSTANT solar_lut : lut :=("00000011111", "00000111010", "00000100000");
-   CONSTANT max_solar_consumption: integer := 48;
+   CONSTANT solar_lut : lut_solartype := 
+                                       ("0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000010011",
+                                       "0000101100",
+                                       "0001010001",
+                                       "0110011101",
+                                       "1000101100",
+                                       "1011101110",
+                                       "1011111011",
+                                       "1100111111",
+                                       "1110110000",
+                                       "1110110111",
+                                       "1110011101",
+                                       "1001001100",
+                                       "1010101001",
+                                       "1010111100",
+                                       "0011011011",
+                                       "0111101110",
+                                       "0100000000",
+                                       "0000101100",
+                                       "0000000110",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000",
+                                       "0000000000"
+                                       );
+   CONSTANT max_counter_solar: integer := 48;
    SIGNAL counter_solar : integer := 0;
 BEGIN
 
@@ -38,952 +136,16 @@ BEGIN
    solar_process : PROCESS (CLK)
    BEGIN
       IF CLK'EVENT AND CLK = '1' THEN
-         IF solar_consumption = max_counter_solar THEN
-            solar_consumption <= 0;
+         IF counter_solar = max_counter_solar THEN
+            counter_solar <= 0;
          ELSE
-            solar_consumption <= solar_consumption + 1;
+            counter_solar <= counter_solar + 1;
          END IF;
          
-         solar_in <= solar_lut(solar_consumption);
+         solar_in <= solar_lut(counter_solar);
       END IF;
    END PROCESS;
-   
---   -- one day of consumption data [but in half hourly intervals]
---   consumption_process: PROCESS
---   BEGIN
---      
---      seq_loop : LOOP
---      
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      consumption_in <= "00000011111";
---      
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      consumption_in <= "00000111010";
---      
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      consumption_in <= "00000100000";
---      
-----      
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00000101011";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00000100111";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00000110000";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00000101101";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00000011111";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00000101100";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00000101010";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00000111101";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00000011001";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00000101110";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00000011011";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00001001001";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00000011100";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00000100010";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00001110111";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00001100100";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00001110100";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00001011100";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00001111110";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00001100111";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00010000011";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00001011101";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00001100101";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00000100000";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00000101110";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00000101000";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00011100001";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00101010110";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "01010101001";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "01011100011";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "01100001010";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00001011110";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00001010100";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00000101011";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00001100010";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00000110101";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00001101111";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00010011100";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00010110100";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00011010101";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00010001011";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00001010011";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00000011110";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00001000100";
-----      wait until CLK'EVENT AND CLK = '1';
-----      exit seq_loop when rst = '1';
-----      consumption_in <= "00000011101";
---
---      
---      END LOOP;
---
---   END PROCESS;
--- 
---   solar_process: process
---   begin		        
---      
---      seq_loop : LOOP
---      
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000101100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000101110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000110000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000110011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000110101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000111000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000111010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000111101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000111111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0001000010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0001000100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0001000111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0001001001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0001001100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0001001110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0001010001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0001100111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0001111101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0010010011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0010101001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0010111111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0011010101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0011101011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0100000010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0100011000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0100101110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0101000100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0101011010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0101110000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0110000110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0110011100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0110100110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0110110000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0110111001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0111000011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0111001100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0111010110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0111011111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0111101001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0111110010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0111111100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1000000101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1000001111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1000011000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1000100010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1000101100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1000111000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1001000101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1001010010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1001011111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1001101100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1001111001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010000110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010010011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010100000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010101101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010111010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011000111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011010100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011100001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011101101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011101110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011101111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011110000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011110001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011110010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011110011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011110100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011110100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011110101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011110110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011110111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011111000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011111001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011111010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011111010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011111111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1100000100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1100001000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1100001101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1100010001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1100010110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1100011010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1100011111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1100100011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1100101000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1100101100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1100110001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1100110101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1100111010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1100111110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1101000110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1101001110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1101010101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1101011101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1101100100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1101101100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1101110011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1101111011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1110000010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1110001010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1110010001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1110011001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1110100000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1110101000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1110101111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1110110011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1110110111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1110111011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1110111110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1111000010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1111000110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1111001010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1111001101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1111010001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1111010101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1111011001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1111011100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1111100000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1111100100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1111100111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1111100010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1111011101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1111011000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1111010011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1111001110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1111001001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1111000100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1110111111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1110111010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1110110101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1110110000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1110101011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1110100110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1110100001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1110011100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1110000110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1101110000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1101011001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1101000011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1100101100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1100010110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011111111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011101001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1011010010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010111100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010100101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010001111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1001111000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1001100010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1001001011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1001010010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1001011000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1001011110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1001100100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1001101010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1001110001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1001110111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1001111101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010000011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010001001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010010000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010010110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010011100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010100010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010101000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010101010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010101011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010101100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010101110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010101111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010110000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010110001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010110011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010110100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010110101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010110110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010111000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010111001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010111010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010111011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1010011011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1001111011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1001011011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1000111011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="1000011011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0111111011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0111011011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0110111011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0110011011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0101111011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0101011011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0100111011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0100011011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0011111011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0011011010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0011101101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0011111111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0100010001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0100100100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0100110110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0101001000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0101011011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0101101101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0101111111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0110010010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0110100100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0110110110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0111001001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0111011011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0111101101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0111011110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0111001110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0110111110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0110101110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0110011110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0110001110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0101111110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0101101111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0101011111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0101001111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0100111111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0100101111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0100011111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0100001111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0011111111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0011110001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0011100011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0011010101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0011000111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0010111001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0010101011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0010011101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0010001110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0010000000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0001110010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0001100100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0001010110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0001001000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000111010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000101011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000101001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000100110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000100011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000100000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000011101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000011010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000010111";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000010100";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000010001";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000001110";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000001011";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000001000";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000000101";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000000010";
---      wait until CLK'EVENT AND CLK = '1';
---      exit seq_loop when rst = '1';
---      solar_in <="0000000000";
---      
---      end loop;
---   end process;
+ 
 end Behavioral;
 
 LIBRARY ieee;
@@ -991,7 +153,7 @@ USE ieee.STD_LOGIC_1164.ALL;
 
 PACKAGE SampleInputs_Package IS
    COMPONENT SampleInputs_usingclk 
-       Port ( CLK : out  STD_LOGIC;
+       Port ( CLK            : in  STD_LOGIC;
               solar_in       : out  STD_LOGIC_VECTOR (9 downto 0);
               consumption_in : out  STD_LOGIC_VECTOR (10 downto 0));
    end COMPONENT;

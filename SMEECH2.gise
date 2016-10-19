@@ -94,7 +94,6 @@
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="netgen"/>
     <file xil_pn:branch="PostSynthSim" xil_pn:fileType="FILE_NETGEN_REPORT" xil_pn:name="netgen/synthesis/TopLevel_synthesis.nlf"/>
     <file xil_pn:branch="PostSynthSim" xil_pn:fileType="FILE_VHDL" xil_pn:name="netgen/synthesis/TopLevel_synthesis.vhd"/>
@@ -116,42 +115,11 @@
       <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1476865234" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1476865234">
+    <transform xil_pn:end_ts="1476867971" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1476867971">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1476865234" xil_pn:in_ck="8370199260583792189" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1476865234">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="ControlUnit.vhd"/>
-      <outfile xil_pn:name="LED_Display.vhd"/>
-      <outfile xil_pn:name="LED_Display_TB.vhd"/>
-      <outfile xil_pn:name="SSD.vhd"/>
-      <outfile xil_pn:name="SampleInputs.vhd"/>
-      <outfile xil_pn:name="SampleInputs_usingClk.vhd"/>
-      <outfile xil_pn:name="Sum_Monitoring.vhd"/>
-      <outfile xil_pn:name="Switching_Comp.vhd"/>
-      <outfile xil_pn:name="Switching_Comp_TB.vhd"/>
-      <outfile xil_pn:name="TopLevel.vhd"/>
-      <outfile xil_pn:name="TopLevel_TB.vhd"/>
-      <outfile xil_pn:name="clockdivide.vhd"/>
-      <outfile xil_pn:name="clockdivide_TB.vhd"/>
-      <outfile xil_pn:name="sampleinputs_usingclk_tb.vhd"/>
-      <outfile xil_pn:name="sum_tb.vhd"/>
-    </transform>
-    <transform xil_pn:end_ts="1476865234" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="4078362694432709775" xil_pn:start_ts="1476865234">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1476865234" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="9038655586778509069" xil_pn:start_ts="1476865234">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1476865234" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-7135760632248292941" xil_pn:start_ts="1476865234">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1476865234" xil_pn:in_ck="8370199260583792189" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1476865234">
+    <transform xil_pn:end_ts="1476868159" xil_pn:in_ck="8370199260583792189" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1476868159">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ControlUnit.vhd"/>
@@ -170,21 +138,50 @@
       <outfile xil_pn:name="sampleinputs_usingclk_tb.vhd"/>
       <outfile xil_pn:name="sum_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1476865239" xil_pn:in_ck="8370199260583792189" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-6025108525459608706" xil_pn:start_ts="1476865234">
+    <transform xil_pn:end_ts="1476867971" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="4078362694432709775" xil_pn:start_ts="1476867971">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1476867971" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="9038655586778509069" xil_pn:start_ts="1476867971">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1476867971" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-7135760632248292941" xil_pn:start_ts="1476867971">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1476868159" xil_pn:in_ck="8370199260583792189" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1476868159">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="ControlUnit.vhd"/>
+      <outfile xil_pn:name="LED_Display.vhd"/>
+      <outfile xil_pn:name="LED_Display_TB.vhd"/>
+      <outfile xil_pn:name="SSD.vhd"/>
+      <outfile xil_pn:name="SampleInputs.vhd"/>
+      <outfile xil_pn:name="SampleInputs_usingClk.vhd"/>
+      <outfile xil_pn:name="Sum_Monitoring.vhd"/>
+      <outfile xil_pn:name="Switching_Comp.vhd"/>
+      <outfile xil_pn:name="Switching_Comp_TB.vhd"/>
+      <outfile xil_pn:name="TopLevel.vhd"/>
+      <outfile xil_pn:name="TopLevel_TB.vhd"/>
+      <outfile xil_pn:name="clockdivide.vhd"/>
+      <outfile xil_pn:name="clockdivide_TB.vhd"/>
+      <outfile xil_pn:name="sampleinputs_usingclk_tb.vhd"/>
+      <outfile xil_pn:name="sum_tb.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1476868164" xil_pn:in_ck="8370199260583792189" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-6025108525459608706" xil_pn:start_ts="1476868159">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="sampleinputs_usingclk_tb_beh.prj"/>
       <outfile xil_pn:name="sampleinputs_usingclk_tb_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1476865239" xil_pn:in_ck="-1257349390059679864" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="3000712258190667533" xil_pn:start_ts="1476865239">
+    <transform xil_pn:end_ts="1476868164" xil_pn:in_ck="-1257349390059679864" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="3000712258190667533" xil_pn:start_ts="1476868164">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="isim.cmd"/>
-      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="sampleinputs_usingclk_tb_isim_beh.wdb"/>
     </transform>
     <transform xil_pn:end_ts="1476749445" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1476749445">
