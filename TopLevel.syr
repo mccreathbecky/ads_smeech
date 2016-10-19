@@ -140,7 +140,8 @@ Elaborating entity <Monitoring_Comp> (architecture <Behavioral>) from library <w
 Elaborating entity <Sum_Monitoring> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <BCD_to_SSD> (architecture <Behavioral>) from library <work>.
-ERROR:HDLCompiler:890 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\SSD.vhd" Line 333: wait statement without UNTIL clause not supported for synthesis
+WARNING:HDLCompiler:92 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\SSD.vhd" Line 59: bcd_battery should be on the sensitivity list of the process
+ERROR:HDLCompiler:410 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\SSD.vhd" Line 76: Expression has 17 elements ; expected 16
 Netlist BCD_to_SSD(Behavioral) remains a blackbox, due to errors in its contents
 
 Elaborating entity <LED_Display> (architecture <Behavioral>) from library <work>.
@@ -150,9 +151,9 @@ ERROR:HDLCompiler:890 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\
 Netlist SampleInputs(Behavioral) remains a blackbox, due to errors in its contents
 --> 
 
-Total memory usage is 253176 kilobytes
+Total memory usage is 250104 kilobytes
 
 Number of errors   :    2 (   0 filtered)
-Number of warnings :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 
