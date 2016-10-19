@@ -66,6 +66,7 @@ BEGIN
                                           toSSD_totalGenerated);
    
    ssd0     : BCD_to_SSD         PORT MAP(toSum_clk, 
+                                          CLK,
                                           toSSD_percentBattery,
                                           toSSD_totalGenerated,
                                           toSSD_percentSolar,

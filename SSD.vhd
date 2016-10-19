@@ -6,6 +6,7 @@ use ieee.std_logic_unsigned.ALL;
 
 entity BCD_to_SSD is
     Port ( clk : IN std_logic; 
+           fsm_clk : IN std_logic;
            percent_battery : IN STD_LOGIC_VECTOR (6 downto 0);          -- 0 to 100
            total_generated : IN  STD_LOGIC_VECTOR (12 downto 0);        -- 0 to 8191
            percent_solar : IN  STD_LOGIC_VECTOR (6 downto 0);           -- 0 to 100
@@ -23,11 +24,9 @@ end BCD_to_SSD;
 
 architecture Behavioral of BCD_to_SSD is
 
-   TYPE display_type IS (dp0dg1, dp0dg1, dp0dg2, dp0dg3, dp1dg1, dp1dg1, dp1dg2, dp1dg3,dp2dg1, dp2dg1, dp2dg2, dp2dg3,dp3dg0, dp3dg1, dp3dg2, dp3dg3); 
+   TYPE display_type IS (dp0dg0, dp0dg1, dp0dg2, dp0dg3, dp1dg0, dp1dg1, dp1dg2, dp1dg3,dp2dg0, dp2dg1, dp2dg2, dp2dg3,dp3dg0, dp3dg1, dp3dg2, dp3dg3); 
    SIGNAL display : display_type := dp0dg1;
    
-   -- a constant used when cycling through the digits and displays
-   CONSTANT wait_time : time := 0.001sec;
 
    -- the inputs, translated into BCD
    SIGNAL bcd_battery : STD_LOGIC_VECTOR (15 DOWNTO 0);
@@ -311,15 +310,14 @@ BEGIN
           
        END LOOP;
 		 
-		 -- Will : replicate this for all 4 inputs
        
        
    END PROCESS;
    
    
-   display_fsm : PROCESS (fsm_clock)
+   display_fsm : PROCESS (fsm_clk)
    BEGIN
-      IF fsm_clock'EVENT AND fsm_clock = '1' THEN
+      IF fsm_clk'EVENT AND fsm_clk = '1' THEN
          -- inverse logic - set all to 0/off
          SSEGD0 <= "1111"; 
          SSEGD1 <= "1111";
@@ -412,10 +410,8 @@ BEGIN
                SSEGD3(3) <= '0';    -- turn on DIG3, DISPLAY0
                SSEGHex <= consumption_dig(8 downto 0);
                display <= dp0dg0;
-      END CASE;
-      
-   END IF;
-      
+      END CASE;      
+   END IF;   
    END PROCESS; 
  
 END;
@@ -431,6 +427,7 @@ PACKAGE SSD_Package IS
 
    COMPONENT BCD_to_SSD Port( 
               clk : IN std_logic; 
+              fsm_clk : IN std_logic;
               percent_battery : IN STD_LOGIC_VECTOR (6 downto 0);          -- 0 to 100
               total_generated : IN  STD_LOGIC_VECTOR (12 downto 0);        -- 0 to 8191
               percent_solar : IN  STD_LOGIC_VECTOR (6 downto 0);           -- 0 to 100
