@@ -42,37 +42,39 @@ BEGIN
    sum_monitoring : PROCESS (sum_CLK)
    BEGIN
       -- update the total_samples counter or set values to 0
-      IF total_samples = sample_per_day THEN
-         total_samples    <= "0000000000";
-         solar_sum        <= "000000000000";     
-         daily_generated  <= "0000000000000";     
-         consumption_sum  <= "0000000000000"; 
+      IF sum_CLK ' EVENT AND sum_CLK = '1' THEN 
+         IF total_samples = sample_per_day THEN
+            total_samples    <= "0000000000";
+            solar_sum        <= "000000000000";     
+            daily_generated  <= "0000000000000";     
+            consumption_sum  <= "0000000000000"; 
          
          
-      ELSIF sum_CLK ' EVENT AND sum_CLK = '1' THEN        -- wait for sum_flag to be set
-         total_samples <= total_samples + 1;                -- update the total samples counter
-         
-         -- consumption sum will be the same regardless of energy source
-         consumption_sum <= consumption_sum + (UNSIGNED(consumption_in)*sample_rate)/60;
-         
-         CASE current_source IS
-            WHEN "00" => 
-               -- battery sum is just the battery - consumption for this period
-               battery_sum <= battery_sum - RESIZE(UNSIGNED(consumption_in)*sample_rate/60,11);
-               
-               
-            WHEN "01" =>
-					-- battery sum is the current sum, take away the consumption and adding in the mains power produced
-               battery_sum <= battery_sum - RESIZE((UNSIGNED(consumption_in)*sample_rate)/60, 11) + RESIZE((mains*sample_rate)/60, 11);
-               daily_generated <= daily_generated + RESIZE(mains*sample_rate/60, 13);
-               
-               
-            WHEN OTHERS =>
-					-- battery sum is the current sum, take away the consumption and adding in solar power produced
-               battery_sum <= battery_sum - RESIZE((UNSIGNED(consumption_in)*sample_rate)/60, 11) + RESIZE((UNSIGNED(solar_in)*sample_rate)/60, 11);
-					solar_sum <= solar_sum + RESIZE((UNSIGNED(solar_in)*sample_rate)/60, 12);
-					daily_generated <= daily_generated + RESIZE((UNSIGNED(solar_in)*sample_rate)/60, 13); 		
-			END CASE;          
+         ELSE                                                  -- wait for sum_flag to be set
+            total_samples <= total_samples + 1;                -- update the total samples counter
+            
+            -- consumption sum will be the same regardless of energy source
+            consumption_sum <= consumption_sum + (UNSIGNED(consumption_in)*sample_rate)/60;
+            
+            CASE current_source IS
+               WHEN "00" => 
+                  -- battery sum is just the battery - consumption for this period
+                  battery_sum <= battery_sum - RESIZE(UNSIGNED(consumption_in)*sample_rate/60,11);
+                  
+                  
+               WHEN "01" =>
+                  -- battery sum is the current sum, take away the consumption and adding in the mains power produced
+                  battery_sum <= battery_sum - RESIZE((UNSIGNED(consumption_in)*sample_rate)/60, 11) + RESIZE((mains*sample_rate)/60, 11);
+                  daily_generated <= daily_generated + RESIZE(mains*sample_rate/60, 13);
+                  
+                  
+               WHEN OTHERS =>
+                  -- battery sum is the current sum, take away the consumption and adding in solar power produced
+                  battery_sum <= battery_sum - RESIZE((UNSIGNED(consumption_in)*sample_rate)/60, 11) + RESIZE((UNSIGNED(solar_in)*sample_rate)/60, 11);
+                  solar_sum <= solar_sum + RESIZE((UNSIGNED(solar_in)*sample_rate)/60, 12);
+                  daily_generated <= daily_generated + RESIZE((UNSIGNED(solar_in)*sample_rate)/60, 13); 		
+            END CASE; 
+         END IF;
       END IF;
    END PROCESS;
    

@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.12 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: TopLevel.prj
 
@@ -113,6 +113,18 @@ Parsing VHDL file "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_sm
 Parsing entity <Sum_Monitoring>.
 Parsing architecture <Behavioral> of entity <sum_monitoring>.
 Parsing package <Sum_Package>.
+Parsing VHDL file "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\SSD.vhd" into library work
+Parsing entity <BCD_to_SSD>.
+Parsing architecture <Behavioral> of entity <bcd_to_ssd>.
+Parsing package <SSD_Package>.
+Parsing VHDL file "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\SampleInputs.vhd" into library work
+Parsing entity <SampleInputs>.
+Parsing architecture <Behavioral> of entity <sampleinputs>.
+Parsing package <SampleInputs_Package>.
+Parsing VHDL file "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\LED_Display.vhd" into library work
+Parsing entity <LED_Display>.
+Parsing architecture <Behavioral> of entity <led_display>.
+Parsing package <LED_Package>.
 Parsing VHDL file "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\TopLevel.vhd" into library work
 Parsing entity <TopLevel>.
 Parsing architecture <Behavioral> of entity <toplevel>.
@@ -126,177 +138,21 @@ Elaborating entity <TopLevel> (architecture <Behavioral>) from library <work>.
 Elaborating entity <Monitoring_Comp> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <Sum_Monitoring> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:92 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\Sum_Monitoring.vhd" Line 45: total_samples should be on the sensitivity list of the process
-WARNING:Xst:2972 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\TopLevel.vhd" line 43. All outputs of instance <switch0> of block <Monitoring_Comp> are unconnected in block <TopLevel>. Underlying logic will be removed.
-WARNING:Xst:2972 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\TopLevel.vhd" line 49. All outputs of instance <sum0> of block <Sum_Monitoring> are unconnected in block <TopLevel>. Underlying logic will be removed.
 
-=========================================================================
-*                           HDL Synthesis                               *
-=========================================================================
+Elaborating entity <BCD_to_SSD> (architecture <Behavioral>) from library <work>.
+ERROR:HDLCompiler:890 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\SSD.vhd" Line 333: wait statement without UNTIL clause not supported for synthesis
+Netlist BCD_to_SSD(Behavioral) remains a blackbox, due to errors in its contents
 
-Synthesizing Unit <TopLevel>.
-    Related source file is "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\TopLevel.vhd".
-INFO:Xst:3210 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\TopLevel.vhd" line 49: Output port <percent_battery> of the instance <sum0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\TopLevel.vhd" line 49: Output port <percent_solar> of the instance <sum0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\TopLevel.vhd" line 49: Output port <total_consumption> of the instance <sum0> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\TopLevel.vhd" line 49: Output port <total_generated> of the instance <sum0> is unconnected or connected to loadless signal.
-    Summary:
-	no macro.
-Unit <TopLevel> synthesized.
+Elaborating entity <LED_Display> (architecture <Behavioral>) from library <work>.
 
-Synthesizing Unit <div_13u_6u>.
-    Related source file is "".
-    Summary:
-	no macro.
-Unit <div_13u_6u> synthesized.
-
-Synthesizing Unit <div_12u_6u>.
-    Related source file is "".
-    Summary:
-	no macro.
-Unit <div_12u_6u> synthesized.
-
-Synthesizing Unit <div_24u_13u>.
-    Related source file is "".
-    Summary:
-	no macro.
-Unit <div_24u_13u> synthesized.
-
-Synthesizing Unit <div_22u_11u>.
-    Related source file is "".
-    Summary:
-	no macro.
-Unit <div_22u_11u> synthesized.
-
-=========================================================================
-HDL Synthesis Report
-
-Found no macro
-=========================================================================
-
-=========================================================================
-*                       Advanced HDL Synthesis                          *
-=========================================================================
-
-
-=========================================================================
-Advanced HDL Synthesis Report
-
-Found no macro
-=========================================================================
-
-=========================================================================
-*                         Low Level Synthesis                           *
-=========================================================================
-
-Optimizing unit <TopLevel> ...
-
-Mapping all equations...
-Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block TopLevel, actual ratio is 0.
-
-Final Macro Processing ...
-
-=========================================================================
-Final Register Report
-
-Found no macro
-=========================================================================
-
-=========================================================================
-*                           Partition Report                            *
-=========================================================================
-
-Partition Implementation Status
--------------------------------
-
-  No Partitions were found in this design.
-
--------------------------------
-
-=========================================================================
-*                            Design Summary                             *
-=========================================================================
-
-Top Level Output File Name         : TopLevel.ngc
-
-Primitive and Black Box Usage:
-------------------------------
-
-Device utilization summary:
----------------------------
-
-Selected Device : 6slx16csg324-2 
-
-
-Slice Logic Utilization: 
-
-Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:      0
-   Number with an unused Flip Flop:       0  out of      0         
-   Number with an unused LUT:             0  out of      0         
-   Number of fully used LUT-FF pairs:     0  out of      0         
-   Number of unique control sets:         0
-
-IO Utilization: 
- Number of IOs:                          60
- Number of bonded IOBs:                   0  out of    232     0%  
-
-Specific Feature Utilization:
-
----------------------------
-Partition Resource Summary:
----------------------------
-
-  No Partitions were found in this design.
-
----------------------------
-
-
-=========================================================================
-Timing Report
-
-NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
-      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
-      GENERATED AFTER PLACE-and-ROUTE.
-
-Clock Information:
-------------------
-No clock signals found in this design
-
-Asynchronous Control Signals Information:
-----------------------------------------
-No asynchronous control signals found in this design
-
-Timing Summary:
----------------
-Speed Grade: -2
-
-   Minimum period: No path found
-   Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: No path found
-   Maximum combinational path delay: No path found
-
-Timing Details:
----------------
-All values displayed in nanoseconds (ns)
-
-=========================================================================
-
-Cross Clock Domains Report:
---------------------------
-
-=========================================================================
-
-
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 8.25 secs
- 
+Elaborating entity <SampleInputs> (architecture <Behavioral>) from library <work>.
+ERROR:HDLCompiler:890 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\SampleInputs.vhd" Line 25: wait statement without UNTIL clause not supported for synthesis
+Netlist SampleInputs(Behavioral) remains a blackbox, due to errors in its contents
 --> 
 
-Total memory usage is 296704 kilobytes
+Total memory usage is 253176 kilobytes
 
-Number of errors   :    0 (   0 filtered)
-Number of warnings :    3 (   0 filtered)
-Number of infos    :    4 (   0 filtered)
+Number of errors   :    2 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
 

@@ -58,9 +58,10 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="TopLevel.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="TopLevel.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="TopLevel.xst"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TopLevel_TB_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="TopLevel_TB_isim_beh.exe"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TopLevel_TB_stx_beh.prj"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TopLevel_beh.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TopLevel_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="TopLevel_envsettings.html"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="TopLevel_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="TopLevel_isim_beh.wdb"/>
@@ -96,6 +97,10 @@
     <transform xil_pn:end_ts="1476836335" xil_pn:in_ck="4671809907878239945" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1476836335">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="ControlUnit.vhd"/>
       <outfile xil_pn:name="LED_Display.vhd"/>
       <outfile xil_pn:name="LED_Display_TB.vhd"/>
@@ -123,6 +128,11 @@
     <transform xil_pn:end_ts="1476836335" xil_pn:in_ck="4671809907878239945" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1476836335">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="ControlUnit.vhd"/>
       <outfile xil_pn:name="LED_Display.vhd"/>
       <outfile xil_pn:name="LED_Display_TB.vhd"/>
@@ -138,6 +148,11 @@
     <transform xil_pn:end_ts="1476836340" xil_pn:in_ck="4671809907878239945" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="21587719104645807" xil_pn:start_ts="1476836335">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="TopLevel_beh.prj"/>
       <outfile xil_pn:name="TopLevel_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
@@ -148,6 +163,9 @@
     <transform xil_pn:end_ts="1476836340" xil_pn:in_ck="-6654623146297140750" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="4537826066620426110" xil_pn:start_ts="1476836340">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="TopLevel_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
@@ -180,35 +198,27 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1476773392" xil_pn:in_ck="-3290738259596702024" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-4498035882352309037" xil_pn:start_ts="1476773381">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="WarningsGenerated"/>
+    <transform xil_pn:end_ts="1476838652" xil_pn:in_ck="8508589748004621805" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-4498035882352309037" xil_pn:start_ts="1476838646">
+      <status xil_pn:value="FailedRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputAdded"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="TopLevel.lso"/>
       <outfile xil_pn:name="TopLevel.ngc"/>
       <outfile xil_pn:name="TopLevel.ngr"/>
       <outfile xil_pn:name="TopLevel.prj"/>
-      <outfile xil_pn:name="TopLevel.stx"/>
       <outfile xil_pn:name="TopLevel.syr"/>
       <outfile xil_pn:name="TopLevel.xst"/>
+      <outfile xil_pn:name="TopLevel_TB_beh.prj"/>
       <outfile xil_pn:name="TopLevel_TB_stx_beh.prj"/>
+      <outfile xil_pn:name="TopLevel_beh.prj"/>
       <outfile xil_pn:name="TopLevel_stx_beh.prj"/>
       <outfile xil_pn:name="TopLevel_xst.xrpt"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1476773392" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-5299430572891783389" xil_pn:start_ts="1476773392">
+    <transform xil_pn:end_ts="1476838413" xil_pn:in_ck="159169260450819" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-5299430572891783389" xil_pn:start_ts="1476838413">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputAdded"/>
-      <status xil_pn:value="InputChanged"/>
     </transform>
     <transform xil_pn:end_ts="1476773398" xil_pn:in_ck="4420851648763903089" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="5480757410714762693" xil_pn:start_ts="1476773392">
       <status xil_pn:value="SuccessfullyRun"/>

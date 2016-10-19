@@ -1,3 +1,6 @@
 vhdl work "Switching_Comp.vhd"
 vhdl work "Sum_Monitoring.vhd"
+vhdl work "SSD.vhd"
+vhdl work "SampleInputs.vhd"
+vhdl work "LED_Display.vhd"
 vhdl work "TopLevel.vhd"
