@@ -48,7 +48,7 @@ ARCHITECTURE Behavioral OF TopLevel IS
    SIGNAL SSD_Clock : STD_LOGIC;
    -- a constant used when cycling through the digits and displays
    CONSTANT SSD_CLOCK_PERIOD : time := 0.001sec;
-   
+     
 BEGIN
 
    

@@ -59,7 +59,7 @@ BEGIN
    BEGIN
       -- STEP 1: convert each to 16 bit BCD [WILL] 
      --**********************************************************************--
-	bcd := (others => '0');
+	bcd := temp_battery;
 	
 	 
 	 for i in 0 to 15 loop
@@ -83,7 +83,7 @@ BEGIN
 	  end loop;
 	  
 	--**********************************************************************--
-	 bcd := (others => '0');
+	 bcd := temp_generated;
 	
 	 
 	 for i in 0 to 15 loop
@@ -107,8 +107,7 @@ BEGIN
 	  end loop;
 	       
    --**********************************************************************--  
-	 bcd := (others => '0');
-	 temp_solar(15 downto 0) := bcd_solar;
+	 bcd := temp_solar;
 	 
 	 for i in 0 to 15 loop
     
@@ -131,8 +130,7 @@ BEGIN
 	  end loop;  
      
    --**********************************************************************--
-	 bcd := (others => '0');
-	 temp_consumption(15 downto 0) := bcd_consumption;
+	 bcd := temp_consumption;
 	 
 	 for i in 0 to 15 loop
     
