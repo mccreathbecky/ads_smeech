@@ -9,8 +9,8 @@ ARCHITECTURE behavior OF TopLevel_TB IS
  
  
  COMPONENT TopLevel IS
-    PORT ( CLK_sampleRate  : IN     STD_LOGIC;
-           solar_in        : IN     STD_LOGIC_VECTOR (9 DOWNTO 0);
+    PORT (-- CLK_sampleRate  : IN     STD_LOGIC;
+          -- solar_in        : IN     STD_LOGIC_VECTOR (9 DOWNTO 0);
            consumption_in  : IN     STD_LOGIC_VECTOR (10 DOWNTO 0);
            GreenLed        : OUT    STD_LOGIC;
            RedLed	         : OUT    STD_LOGIC;

@@ -17,8 +17,5 @@
 <msg type="warning" file="HDLCompiler" num="220" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Assignment ignored
 </msg>
 
-<msg type="error" file="Simulator" num="861" delta="unknown" >Failed to link the design
-</msg>
-
 </messages>
 

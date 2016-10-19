@@ -59,6 +59,10 @@ BEGIN
 	  -- http://vhdlguru.blogspot.com.au/2010/04/8-bit-binary-to-bcd-converter-double.html
 	  -- http://electronics.stackexchange.com/questions/70412/vhdl-convert-from-binary-integer-to-bcd-and-display-it-on-the-7-segment-displa
 	  
+     -- haven't actually given bcd a non-zero value yet
+--     bcd := (others := '0');
+     
+     
 	  -- Convert Binary to BCD (Double Dabble algorithm) for temp_battery
             for i in 0 to 15 loop
                 bcd(15 downto 1) := bcd(14 downto 0);  --shifting the bits.

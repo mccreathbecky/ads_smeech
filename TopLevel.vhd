@@ -4,9 +4,9 @@ use IEEE.NUMERIC_STD.ALL;
 
 
 ENTITY TopLevel IS
-    PORT ( CLK_sampleRate  : IN     STD_LOGIC;
-           solar_in        : IN     STD_LOGIC_VECTOR (9 DOWNTO 0);
-           consumption_in  : IN     STD_LOGIC_VECTOR (10 DOWNTO 0);
+    PORT (-- CLK_sampleRate  : IN     STD_LOGIC;
+          -- solar_in        : IN     STD_LOGIC_VECTOR (9 DOWNTO 0);
+          -- consumption_in  : IN     STD_LOGIC_VECTOR (10 DOWNTO 0);
            GreenLed        : OUT    STD_LOGIC;
            RedLed	         : OUT    STD_LOGIC;
 			  SSEGHex 			: OUT STD_LOGIC_VECTOR(8 DOWNTO 0);   
@@ -22,8 +22,15 @@ USE WORK.Switching_Package.ALL;
 USE WORK.Sum_Package.ALL;
 USE WORK.SSD_Package.ALL;
 USE WORK.LED_Package.ALL;
+USE WORK.SampleInputs_Package.ALL;
 
 ARCHITECTURE Behavioral OF TopLevel IS
+   
+   --  Sample Inputs [provided by a component for the sake of demonstration on FPGA]
+   SIGNAL CLK_sampleRate  : STD_LOGIC;
+   SIGNAL solar_in        : STD_LOGIC_VECTOR (9 DOWNTO 0);
+   SIGNAL consumption_in  : STD_LOGIC_VECTOR (10 DOWNTO 0);
+   
    
    -- Switching Component
    SIGNAL toSwitch_battery  : STD_LOGIC_VECTOR(10 DOWNTO 0) := "00100101100";
@@ -36,41 +43,45 @@ ARCHITECTURE Behavioral OF TopLevel IS
    SIGNAL toSSD_totalConsumption : STD_LOGIC_VECTOR (12 DOWNTO 0);
    SIGNAL toSSD_totalGenerated    : STD_LOGIC_VECTOR (12 DOWNTO 0); 
    
-   -- SSD Component
+   
    
    
 BEGIN
-   switch0  : Monitoring_Comp PORT MAP(CLK_sampleRate, 
-                                       solar_in, 
-                                       toSwitch_battery, 
-                                       top_current_source, 
-                                       toSum_clk);
+   switch0  : Monitoring_Comp    PORT MAP(CLK_sampleRate, 
+                                          solar_in, 
+                                          toSwitch_battery, 
+                                          top_current_source, 
+                                          toSum_clk);
                                        
-   sum0     : Sum_Monitoring  PORT MAP(toSum_clk, 
-                                       top_current_source, 
-                                       consumption_in, 
-                                       solar_in, 
-                                       toSwitch_battery, 
-                                       toSSD_percentBattery, 
-                                       toSSD_percentSolar,
-                                       toSSD_totalConsumption,
-                                       toSSD_totalGenerated);
+   sum0     : Sum_Monitoring     PORT MAP(toSum_clk, 
+                                          top_current_source, 
+                                          consumption_in, 
+                                          solar_in, 
+                                          toSwitch_battery, 
+                                          toSSD_percentBattery, 
+                                          toSSD_percentSolar,
+                                          toSSD_totalConsumption,
+                                          toSSD_totalGenerated);
    
-   ssd0     : BCD_to_SSD        PORT MAP(toSum_clk, 
-                                       toSSD_percentBattery,
-                                       toSSD_totalGenerated,
-                                       toSSD_percentSolar,
-                                       toSSD_totalConsumption,
-                                       SSEGHex,
-                                       SSEGD0,
-                                       SSEGD1,
-                                       SSEGD2,
-                                       SSEGD3,
-                                       SSEGCL);
-   led0     : LED_Display     PORT MAP(top_current_source,
-                                       GreenLed,
-                                       RedLed);
-                                       
+   ssd0     : BCD_to_SSD         PORT MAP(toSum_clk, 
+                                          toSSD_percentBattery,
+                                          toSSD_totalGenerated,
+                                          toSSD_percentSolar,
+                                          toSSD_totalConsumption,
+                                          SSEGHex,
+                                          SSEGD0,
+                                          SSEGD1,
+                                          SSEGD2,
+                                          SSEGD3,
+                                          SSEGCL);
+                                          
+   led0     : LED_Display        PORT MAP(top_current_source,
+                                          GreenLed,
+                                          RedLed);
+   
+   sampleInputs0 : SampleInputs  PORT MAP(CLK_SampleRate,
+                                          solar_in,
+                                          consumption_in);
                                        
 END Behavioral;
 
