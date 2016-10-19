@@ -177,25 +177,25 @@ BEGIN
          
          CASE bcd IS
             when "0000" => 
-               segment7 := "111111000";  -- '0'
+               segment7 := "000111111";  -- '0'
             when "0001" => 
-               segment7 := "011000000";  -- '1'
+               segment7 := "000000110";  -- '1'
             when "0010" => 
-               segment7 := "110110100";  -- '2'
+               segment7 := "001011011";  -- '2'
             when "0011" => 
-               segment7 := "111100100";  -- '3'
+               segment7 := "001001111";  -- '3'
             when "0100" => 
-               segment7 := "011001100";  -- '4'
+               segment7 := "001100110";  -- '4'
             when "0101" => 
-               segment7 := "101101100";  -- '5'
+               segment7 := "001101101";  -- '5'
             when "0110" => 
-               segment7 := "101111100";  -- '6'
+               segment7 := "001111101";  -- '6'
             when "0111" => 
-               segment7 := "111000000";  -- '7'
+               segment7 := "000000111";  -- '7'
             when "1000" => 
-               segment7 := "111111100";  -- '8'
+               segment7 := "001111111";  -- '8'
             when "1001" => 
-               segment7 := "111101100";  -- '9'
+               segment7 := "001101111";  -- '9'
             when others =>
                segment7 := "000000000";  -- blank
           END CASE;  
@@ -213,29 +213,29 @@ BEGIN
          
          CASE bcd IS
             when "0000" => 
-               segment7 := "111111000";  -- '0'
+               segment7 := "000111111";  -- '0'
             when "0001" => 
-               segment7 := "011000000";  -- '1'
+               segment7 := "000000110";  -- '1'
             when "0010" => 
-               segment7 := "110110100";  -- '2'
+               segment7 := "001011011";  -- '2'
             when "0011" => 
-               segment7 := "111100100";  -- '3'
+               segment7 := "001001111";  -- '3'
             when "0100" => 
-               segment7 := "011001100";  -- '4'
+               segment7 := "001100110";  -- '4'
             when "0101" => 
-               segment7 := "101101100";  -- '5'
+               segment7 := "001101101";  -- '5'
             when "0110" => 
-               segment7 := "101111100";  -- '6'
+               segment7 := "001111101";  -- '6'
             when "0111" => 
-               segment7 := "111000000";  -- '7'
+               segment7 := "000000111";  -- '7'
             when "1000" => 
-               segment7 := "111111100";  -- '8'
+               segment7 := "001111111";  -- '8'
             when "1001" => 
-               segment7 := "111101100";  -- '9'
+               segment7 := "001101111";  -- '9'
             when others =>
                segment7 := "000000000";  -- blank
           END CASE;  
-       
+          
           -- store the battery value in the position in the 36 bit vector
           battery_dig((9*(i+1)-1) DOWNTO (9*(i+1)-9)) <= segment7;    -- eg 35 dt 27, 26 dt 18...
           
@@ -249,29 +249,29 @@ BEGIN
          
          CASE bcd IS
             when "0000" => 
-               segment7 := "111111000";  -- '0'
+               segment7 := "000111111";  -- '0'
             when "0001" => 
-               segment7 := "011000000";  -- '1'
+               segment7 := "000000110";  -- '1'
             when "0010" => 
-               segment7 := "110110100";  -- '2'
+               segment7 := "001011011";  -- '2'
             when "0011" => 
-               segment7 := "111100100";  -- '3'
+               segment7 := "001001111";  -- '3'
             when "0100" => 
-               segment7 := "011001100";  -- '4'
+               segment7 := "001100110";  -- '4'
             when "0101" => 
-               segment7 := "101101100";  -- '5'
+               segment7 := "001101101";  -- '5'
             when "0110" => 
-               segment7 := "101111100";  -- '6'
+               segment7 := "001111101";  -- '6'
             when "0111" => 
-               segment7 := "111000000";  -- '7'
+               segment7 := "000000111";  -- '7'
             when "1000" => 
-               segment7 := "111111100";  -- '8'
+               segment7 := "001111111";  -- '8'
             when "1001" => 
-               segment7 := "111101100";  -- '9'
+               segment7 := "001101111";  -- '9'
             when others =>
                segment7 := "000000000";  -- blank
           END CASE;  
-       
+          
           -- store the solar value in the position in the 36 bit vector
           solar_dig((9*(i+1)-1) DOWNTO (9*(i+1)-9)) <= segment7;    -- eg 35 dt 27, 26 dt 18...
           
@@ -283,31 +283,31 @@ BEGIN
       FOR i IN 3 DOWNTO 0 LOOP
          bcd := bcd_consumption((4*(i+1)-1) DOWNTO (4*(i+1)-4));        -- eg 15 dt 12 , 11 dt 8...
          
-         CASE bcd IS
+          CASE bcd IS
             when "0000" => 
-               segment7 := "111111000";  -- '0'
+               segment7 := "000111111";  -- '0'
             when "0001" => 
-               segment7 := "011000000";  -- '1'
+               segment7 := "000000110";  -- '1'
             when "0010" => 
-               segment7 := "110110100";  -- '2'
+               segment7 := "001011011";  -- '2'
             when "0011" => 
-               segment7 := "111100100";  -- '3'
+               segment7 := "001001111";  -- '3'
             when "0100" => 
-               segment7 := "011001100";  -- '4'
+               segment7 := "001100110";  -- '4'
             when "0101" => 
-               segment7 := "101101100";  -- '5'
+               segment7 := "001101101";  -- '5'
             when "0110" => 
-               segment7 := "101111100";  -- '6'
+               segment7 := "001111101";  -- '6'
             when "0111" => 
-               segment7 := "111000000";  -- '7'
+               segment7 := "000000111";  -- '7'
             when "1000" => 
-               segment7 := "111111100";  -- '8'
+               segment7 := "001111111";  -- '8'
             when "1001" => 
-               segment7 := "111101100";  -- '9'
+               segment7 := "001101111";  -- '9'
             when others =>
                segment7 := "000000000";  -- blank
           END CASE;  
-       
+          
           -- store the consumption value in the position in the 36 bit vector
           consumption_dig((9*(i+1)-1) DOWNTO (9*(i+1)-9)) <= segment7;    -- eg 35 dt 27, 26 dt 18...
           
