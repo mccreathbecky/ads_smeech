@@ -7,6 +7,7 @@ ENTITY TopLevel IS
     PORT (-- CLK_sampleRate  : IN     STD_LOGIC;
           -- solar_in        : IN     STD_LOGIC_VECTOR (9 DOWNTO 0);
           -- consumption_in  : IN     STD_LOGIC_VECTOR (10 DOWNTO 0);
+           CLK             : IN     STD_LOGIC;
            GreenLed        : OUT    STD_LOGIC;
            RedLed	         : OUT    STD_LOGIC;
 			  SSEGHex 			: OUT STD_LOGIC_VECTOR(8 DOWNTO 0);   
@@ -23,6 +24,7 @@ USE WORK.Sum_Package.ALL;
 USE WORK.SSD_Package.ALL;
 USE WORK.LED_Package.ALL;
 USE WORK.SampleInputs_Package.ALL;
+USE WORK.clockdivide_Package.ALL;
 
 ARCHITECTURE Behavioral OF TopLevel IS
    
@@ -82,6 +84,9 @@ BEGIN
    sampleInputs0 : SampleInputs  PORT MAP(CLK_SampleRate,
                                           solar_in,
                                           consumption_in);
+   
+   clockdivide0 : clockdivide    PORT MAP(CLK,
+                                          CLK_SampleRate);
                                        
 END Behavioral;
 

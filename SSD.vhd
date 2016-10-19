@@ -49,9 +49,7 @@ BEGIN
    VARIABLE temp_solar        : STD_LOGIC_VECTOR (15 DOWNTO 0) := "000000000" & percent_solar;        
    VARIABLE temp_consumption  : STD_LOGIC_VECTOR (15 DOWNTO 0) := "000" & total_consumption;
 	VARIABLE bcd 					: STD_LOGIC_VECTOR (15 DOWNTO 0) := (others => '0');
-	
-
-   
+ 
    BEGIN
       -- STEP 1: convert each to 16 bit BCD [WILL] 
      --**********************************************************************--

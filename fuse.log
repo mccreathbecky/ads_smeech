@@ -8,6 +8,7 @@ Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_sm
 Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/SSD.vhd" into library work
 Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/SampleInputs.vhd" into library work
 Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/LED_Display.vhd" into library work
+Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/clockdivide.vhd" into library work
 Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel.vhd" into library work
 Starting static elaboration
 WARNING:HDLCompiler:746 - "N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Range is empty (null range)
@@ -25,15 +26,17 @@ Compiling package std_logic_unsigned
 Compiling package ssd_package
 Compiling package led_package
 Compiling package sampleinputs_package
+Compiling package clockdivide_package
 Compiling architecture behavioral of entity Monitoring_Comp [monitoring_comp_default]
 Compiling architecture behavioral of entity Sum_Monitoring [sum_monitoring_default]
 Compiling architecture behavioral of entity BCD_to_SSD [bcd_to_ssd_default]
 Compiling architecture behavioral of entity LED_Display [led_display_default]
 Compiling architecture behavioral of entity SampleInputs [sampleinputs_default]
+Compiling architecture behavioral of entity clockdivide [clockdivide_default]
 Compiling architecture behavioral of entity toplevel
 Time Resolution for simulation is 1ps.
-Waiting for 7 sub-compilation(s) to finish...
-Compiled 21 VHDL Units
+Waiting for 8 sub-compilation(s) to finish...
+Compiled 24 VHDL Units
 Built simulation executable C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_isim_beh.exe
-Fuse Memory Usage: 37324 KB
-Fuse CPU Usage: 842 ms
+Fuse Memory Usage: 37812 KB
+Fuse CPU Usage: 811 ms

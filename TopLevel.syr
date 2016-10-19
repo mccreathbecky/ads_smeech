@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Reading design: TopLevel.prj
 
@@ -125,6 +125,10 @@ Parsing VHDL file "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_sm
 Parsing entity <LED_Display>.
 Parsing architecture <Behavioral> of entity <led_display>.
 Parsing package <LED_Package>.
+Parsing VHDL file "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\clockdivide.vhd" into library work
+Parsing entity <clockdivide>.
+Parsing architecture <Behavioral> of entity <clockdivide>.
+Parsing package <clockdivide_package>.
 Parsing VHDL file "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\TopLevel.vhd" into library work
 Parsing entity <TopLevel>.
 Parsing architecture <Behavioral> of entity <toplevel>.
@@ -140,15 +144,17 @@ Elaborating entity <Monitoring_Comp> (architecture <Behavioral>) from library <w
 Elaborating entity <Sum_Monitoring> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <BCD_to_SSD> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:92 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\SSD.vhd" Line 59: bcd_battery should be on the sensitivity list of the process
-ERROR:HDLCompiler:410 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\SSD.vhd" Line 76: Expression has 17 elements ; expected 16
+WARNING:HDLCompiler:92 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\SSD.vhd" Line 57: bcd_battery should be on the sensitivity list of the process
+ERROR:HDLCompiler:410 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\SSD.vhd" Line 74: Expression has 17 elements ; expected 16
 Netlist BCD_to_SSD(Behavioral) remains a blackbox, due to errors in its contents
 
 Elaborating entity <LED_Display> (architecture <Behavioral>) from library <work>.
+ERROR:HDLCompiler:1156 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\SampleInputs.vhd" Line 643: Formal port <CLK_sampleRate> does not exist in entity <SampleInputs>.  Please compare the definition of block <SampleInputs> to its component declaration and its instantion to detect the mismatch.
+INFO:HDLCompiler:1408 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\SampleInputs.vhd" Line 7. sampleinputs is declared here
 
 Elaborating entity <SampleInputs> (architecture <Behavioral>) from library <work>.
-ERROR:HDLCompiler:890 - "C:\Users\mccre\OneDrive\Documents\2016\Uni\ADS\Project\usb_smeech\SampleInputs.vhd" Line 25: wait statement without UNTIL clause not supported for synthesis
-Netlist SampleInputs(Behavioral) remains a blackbox, due to errors in its contents
+Execution of entity sampleinputs failed
+Netlist TopLevel(Behavioral) remains a blackbox, due to errors in its contents
 --> 
 
 Total memory usage is 250104 kilobytes
