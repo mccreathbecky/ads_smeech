@@ -26,9 +26,6 @@ architecture Behavioral of BCD_to_SSD is
    TYPE display_type IS (dp0dg0, dp0dg1, dp0dg2, dp0dg3, dp1dg0, dp1dg1, dp1dg2, dp1dg3,dp2dg0, dp2dg1, dp2dg2, dp2dg3,dp3dg0, dp3dg1, dp3dg2, dp3dg3); 
    SIGNAL display : display_type := dp0dg1;
    
-   -- a constant used when cycling through the digits and displays
-   CONSTANT wait_time : time := 0.001sec;
-
    -- the inputs, translated into BCD
    SIGNAL bcd_battery : STD_LOGIC_VECTOR (15 DOWNTO 0);
    SIGNAL bcd_generated: STD_LOGIC_VECTOR (15 DOWNTO 0);

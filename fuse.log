@@ -1,41 +1,22 @@
-Running: fuse.exe -relaunch -intstyle "ise" -incremental -lib "secureip" -o "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_isim_beh.exe" -prj "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_beh.prj" "TopLevel" 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/clockdivide_TB_isim_beh.exe -prj C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/clockdivide_TB_beh.prj clockdivide_TB 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Switching_Comp.vhd" into library work
-Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/Sum_Monitoring.vhd" into library work
-Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/SSD.vhd" into library work
-Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/SampleInputs.vhd" into library work
-Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/LED_Display.vhd" into library work
 Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/clockdivide.vhd" into library work
-Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel.vhd" into library work
+Parsing VHDL file "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/clockdivide_TB.vhd" into library work
 Starting static elaboration
-WARNING:HDLCompiler:746 - "N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Range is empty (null range)
-WARNING:HDLCompiler:220 - "N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Assignment ignored
-WARNING:HDLCompiler:746 - "N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Range is empty (null range)
-WARNING:HDLCompiler:220 - "N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Assignment ignored
 Completed static elaboration
 Compiling package standard
 Compiling package std_logic_1164
-Compiling package numeric_std
-Compiling package switching_package
-Compiling package sum_package
 Compiling package std_logic_arith
 Compiling package std_logic_unsigned
-Compiling package ssd_package
-Compiling package led_package
-Compiling package sampleinputs_package
-Compiling package clockdivide_package
-Compiling architecture behavioral of entity Monitoring_Comp [monitoring_comp_default]
-Compiling architecture behavioral of entity Sum_Monitoring [sum_monitoring_default]
-Compiling architecture behavioral of entity BCD_to_SSD [bcd_to_ssd_default]
-Compiling architecture behavioral of entity LED_Display [led_display_default]
-Compiling architecture behavioral of entity SampleInputs [sampleinputs_default]
-Compiling architecture behavioral of entity toplevel
+Compiling package numeric_std
+Compiling architecture behavioral of entity clockdivide [clockdivide_default]
+Compiling architecture behavior of entity clockdivide_tb
 Time Resolution for simulation is 1ps.
-Waiting for 7 sub-compilation(s) to finish...
-Compiled 22 VHDL Units
-Built simulation executable C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_isim_beh.exe
-Fuse Memory Usage: 37632 KB
-Fuse CPU Usage: 843 ms
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 8 VHDL Units
+Built simulation executable C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/clockdivide_TB_isim_beh.exe
+Fuse Memory Usage: 36816 KB
+Fuse CPU Usage: 687 ms
