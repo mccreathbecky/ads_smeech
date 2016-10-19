@@ -48,18 +48,28 @@ BEGIN
    -- this should take each input [eg percent_battery] and turn it into BCD
    stdlogic_to_bcd : PROCESS (percent_battery, percent_solar, total_generated, total_consumption)
    
-   VARIABLE temp_battery      : STD_LOGIC_VECTOR (15 DOWNTO 0) := "000000000" & percent_battery;
-   VARIABLE temp_generated    : STD_LOGIC_VECTOR (15 DOWNTO 0) := "000" & total_generated;
-   VARIABLE temp_solar        : STD_LOGIC_VECTOR (15 DOWNTO 0) := "000000000" & percent_solar;        
-   VARIABLE temp_consumption  : STD_LOGIC_VECTOR (15 DOWNTO 0) := "000" & total_consumption;
+   VARIABLE temp_battery      : STD_LOGIC_VECTOR (15 DOWNTO 0) ;
+   VARIABLE temp_generated    : STD_LOGIC_VECTOR (15 DOWNTO 0) ;
+   VARIABLE temp_solar        : STD_LOGIC_VECTOR (15 DOWNTO 0) ;        
+   VARIABLE temp_consumption  : STD_LOGIC_VECTOR (15 DOWNTO 0) ;
 	VARIABLE bcd 					: STD_LOGIC_VECTOR (15 DOWNTO 0) := (others => '0');
 	
 
    
    BEGIN
+   
+   -- equivalent of temp(11 downto 0) := binIN
+   temp_battery      := "000000000" & percent_battery;
+   temp_generated    := "000" & total_generated;
+   temp_solar        := "000000000" & percent_solar;        
+   temp_consumption  := "000" & total_consumption;
+	
+	
+   
+   
       -- STEP 1: convert each to 16 bit BCD [WILL] 
      --**********************************************************************--
-	bcd := temp_battery;
+    bcd := (OTHERS => '0');
 	
 	 
 	 for i in 0 to 15 loop
@@ -82,8 +92,9 @@ BEGIN
 	  
 	  end loop;
 	  
+     bcd_battery <= bcd;
 	--**********************************************************************--
-	 bcd := temp_generated;
+	 bcd := (OTHERS => '0');
 	
 	 
 	 for i in 0 to 15 loop
@@ -105,9 +116,10 @@ BEGIN
 	  temp_generated := temp_generated(14 downto 0) & '0';
 	  
 	  end loop;
-	       
+	   
+     bcd_generated <= bcd;
    --**********************************************************************--  
-	 bcd := temp_solar;
+	 bcd := (OTHERS => '0');
 	 
 	 for i in 0 to 15 loop
     
@@ -128,9 +140,9 @@ BEGIN
 	  temp_solar := temp_solar(14 downto 0) & '0';
 	  
 	  end loop;  
-     
+     bcd_solar <= bcd;
    --**********************************************************************--
-	 bcd := temp_consumption;
+	 bcd := (OTHERS => '0');
 	 
 	 for i in 0 to 15 loop
     
@@ -151,13 +163,8 @@ BEGIN
 	  temp_consumption := temp_consumption(14 downto 0) & '0';
 	  
 	  end loop;
-	       
-   --**********************************************************************--
-      -- STEP 2: fill the corresponding temporary variables with the BCD digits 
-      bcd_battery <= temp_battery;
-      bcd_generated <= temp_generated;
-      bcd_solar <= temp_solar;
-      bcd_consumption <= temp_consumption;  
+	  bcd_consumption <= bcd;     
+
    END PROCESS;
 
    -- this should take the array of 4 BCD numbers for each input and convert it into a 9 bit SSD number
