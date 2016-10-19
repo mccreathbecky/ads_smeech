@@ -1,16 +1,16 @@
-Release 14.7 - xst P.20131013 (nt)
+Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.37 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.41 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.37 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.41 secs
  
 --> Reading design: TopLevel.prj
 
@@ -455,175 +455,175 @@ Synthesizing Unit <BCD_to_SSD>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_1_OUT> created at line 75.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_4_OUT> created at line 79.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_6_OUT> created at line 83.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_8_OUT> created at line 75.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_10_OUT> created at line 79.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_12_OUT> created at line 83.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_14_OUT> created at line 75.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_16_OUT> created at line 79.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_18_OUT> created at line 83.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_20_OUT> created at line 75.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_22_OUT> created at line 79.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_24_OUT> created at line 83.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_26_OUT> created at line 100.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_29_OUT> created at line 104.
-    Found 4-bit adder for signal <n0566> created at line 108.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_33_OUT> created at line 100.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_35_OUT> created at line 104.
-    Found 4-bit adder for signal <n0569> created at line 108.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_39_OUT> created at line 100.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_41_OUT> created at line 104.
-    Found 4-bit adder for signal <n0572> created at line 108.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_45_OUT> created at line 100.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_47_OUT> created at line 104.
-    Found 4-bit adder for signal <n0575> created at line 108.
-    Found 4-bit adder for signal <total_generated[9]_GND_23_o_add_51_OUT> created at line 100.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_53_OUT> created at line 104.
-    Found 4-bit adder for signal <n0578> created at line 108.
-    Found 4-bit adder for signal <total_generated[8]_GND_23_o_add_57_OUT> created at line 100.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_59_OUT> created at line 104.
-    Found 4-bit adder for signal <n0581> created at line 108.
-    Found 4-bit adder for signal <total_generated[7]_GND_23_o_add_63_OUT> created at line 100.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_65_OUT> created at line 104.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_67_OUT> created at line 108.
-    Found 4-bit adder for signal <total_generated[6]_GND_23_o_add_69_OUT> created at line 100.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_71_OUT> created at line 104.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_73_OUT> created at line 108.
-    Found 4-bit adder for signal <total_generated[5]_GND_23_o_add_75_OUT> created at line 100.
-    Found 4-bit adder for signal <total_generated[9]_GND_23_o_add_77_OUT> created at line 104.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_79_OUT> created at line 108.
-    Found 4-bit adder for signal <total_generated[4]_GND_23_o_add_81_OUT> created at line 100.
-    Found 4-bit adder for signal <total_generated[8]_GND_23_o_add_83_OUT> created at line 104.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_85_OUT> created at line 108.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_87_OUT> created at line 124.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_90_OUT> created at line 128.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_92_OUT> created at line 132.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_94_OUT> created at line 124.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_96_OUT> created at line 128.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_98_OUT> created at line 132.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_100_OUT> created at line 124.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_102_OUT> created at line 128.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_104_OUT> created at line 132.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_106_OUT> created at line 124.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_108_OUT> created at line 128.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_110_OUT> created at line 132.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_112_OUT> created at line 147.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_115_OUT> created at line 151.
-    Found 4-bit adder for signal <n0610> created at line 155.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_119_OUT> created at line 147.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_121_OUT> created at line 151.
-    Found 4-bit adder for signal <n0613> created at line 155.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_125_OUT> created at line 147.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_127_OUT> created at line 151.
-    Found 4-bit adder for signal <n0616> created at line 155.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_131_OUT> created at line 147.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_133_OUT> created at line 151.
-    Found 4-bit adder for signal <n0619> created at line 155.
-    Found 4-bit adder for signal <total_consumption[9]_GND_23_o_add_137_OUT> created at line 147.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_139_OUT> created at line 151.
-    Found 4-bit adder for signal <n0622> created at line 155.
-    Found 4-bit adder for signal <total_consumption[8]_GND_23_o_add_143_OUT> created at line 147.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_145_OUT> created at line 151.
-    Found 4-bit adder for signal <n0625> created at line 155.
-    Found 4-bit adder for signal <total_consumption[7]_GND_23_o_add_149_OUT> created at line 147.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_151_OUT> created at line 151.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_153_OUT> created at line 155.
-    Found 4-bit adder for signal <total_consumption[6]_GND_23_o_add_155_OUT> created at line 147.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_157_OUT> created at line 151.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_159_OUT> created at line 155.
-    Found 4-bit adder for signal <total_consumption[5]_GND_23_o_add_161_OUT> created at line 147.
-    Found 4-bit adder for signal <total_consumption[9]_GND_23_o_add_163_OUT> created at line 151.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_165_OUT> created at line 155.
-    Found 4-bit adder for signal <total_consumption[4]_GND_23_o_add_167_OUT> created at line 147.
-    Found 4-bit adder for signal <total_consumption[8]_GND_23_o_add_169_OUT> created at line 151.
-    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_171_OUT> created at line 155.
-    Found 9-bit 16-to-1 multiplexer for signal <display[3]_consumption_dig[8]_wide_mux_195_OUT> created at line 332.
-    Found 3-bit comparator greater for signal <PWR_22_o_percent_battery[6]_LessThan_1_o> created at line 74
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_4_o> created at line 78
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_6_o> created at line 82
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_8_o> created at line 74
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_10_o> created at line 78
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_12_o> created at line 82
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_14_o> created at line 74
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_16_o> created at line 78
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_18_o> created at line 82
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_20_o> created at line 74
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_22_o> created at line 78
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_24_o> created at line 82
-    Found 3-bit comparator greater for signal <PWR_22_o_total_generated[12]_LessThan_26_o> created at line 99
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_29_o> created at line 103
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_31_o> created at line 107
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_33_o> created at line 99
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_35_o> created at line 103
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_37_o> created at line 107
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_39_o> created at line 99
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_41_o> created at line 103
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_43_o> created at line 107
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_45_o> created at line 99
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_47_o> created at line 103
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_49_o> created at line 107
-    Found 4-bit comparator greater for signal <GND_23_o_total_generated[9]_LessThan_51_o> created at line 99
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_53_o> created at line 103
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_55_o> created at line 107
-    Found 4-bit comparator greater for signal <GND_23_o_total_generated[8]_LessThan_57_o> created at line 99
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_59_o> created at line 103
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_61_o> created at line 107
-    Found 4-bit comparator greater for signal <GND_23_o_total_generated[7]_LessThan_63_o> created at line 99
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_65_o> created at line 103
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_67_o> created at line 107
-    Found 4-bit comparator greater for signal <GND_23_o_total_generated[6]_LessThan_69_o> created at line 99
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_71_o> created at line 103
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_73_o> created at line 107
-    Found 4-bit comparator greater for signal <GND_23_o_total_generated[5]_LessThan_75_o> created at line 99
-    Found 4-bit comparator greater for signal <GND_23_o_total_generated[9]_LessThan_77_o> created at line 103
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_79_o> created at line 107
-    Found 4-bit comparator greater for signal <GND_23_o_total_generated[4]_LessThan_81_o> created at line 99
-    Found 4-bit comparator greater for signal <GND_23_o_total_generated[8]_LessThan_83_o> created at line 103
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_85_o> created at line 107
-    Found 3-bit comparator greater for signal <PWR_22_o_percent_solar[6]_LessThan_87_o> created at line 123
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_90_o> created at line 127
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_92_o> created at line 131
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_94_o> created at line 123
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_96_o> created at line 127
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_98_o> created at line 131
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_100_o> created at line 123
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_102_o> created at line 127
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_104_o> created at line 131
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_106_o> created at line 123
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_108_o> created at line 127
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_110_o> created at line 131
-    Found 3-bit comparator greater for signal <PWR_22_o_total_consumption[12]_LessThan_112_o> created at line 146
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_115_o> created at line 150
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_117_o> created at line 154
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_119_o> created at line 146
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_121_o> created at line 150
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_123_o> created at line 154
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_125_o> created at line 146
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_127_o> created at line 150
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_129_o> created at line 154
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_131_o> created at line 146
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_133_o> created at line 150
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_135_o> created at line 154
-    Found 4-bit comparator greater for signal <GND_23_o_total_consumption[9]_LessThan_137_o> created at line 146
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_139_o> created at line 150
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_141_o> created at line 154
-    Found 4-bit comparator greater for signal <GND_23_o_total_consumption[8]_LessThan_143_o> created at line 146
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_145_o> created at line 150
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_147_o> created at line 154
-    Found 4-bit comparator greater for signal <GND_23_o_total_consumption[7]_LessThan_149_o> created at line 146
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_151_o> created at line 150
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_153_o> created at line 154
-    Found 4-bit comparator greater for signal <GND_23_o_total_consumption[6]_LessThan_155_o> created at line 146
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_157_o> created at line 150
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_159_o> created at line 154
-    Found 4-bit comparator greater for signal <GND_23_o_total_consumption[5]_LessThan_161_o> created at line 146
-    Found 4-bit comparator greater for signal <GND_23_o_total_consumption[9]_LessThan_163_o> created at line 150
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_165_o> created at line 154
-    Found 4-bit comparator greater for signal <GND_23_o_total_consumption[4]_LessThan_167_o> created at line 146
-    Found 4-bit comparator greater for signal <GND_23_o_total_consumption[8]_LessThan_169_o> created at line 150
-    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_171_o> created at line 154
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_1_OUT> created at line 74.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_4_OUT> created at line 78.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_6_OUT> created at line 82.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_8_OUT> created at line 74.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_10_OUT> created at line 78.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_12_OUT> created at line 82.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_14_OUT> created at line 74.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_16_OUT> created at line 78.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_18_OUT> created at line 82.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_20_OUT> created at line 74.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_22_OUT> created at line 78.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_24_OUT> created at line 82.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_26_OUT> created at line 99.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_29_OUT> created at line 103.
+    Found 4-bit adder for signal <n0566> created at line 107.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_33_OUT> created at line 99.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_35_OUT> created at line 103.
+    Found 4-bit adder for signal <n0569> created at line 107.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_39_OUT> created at line 99.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_41_OUT> created at line 103.
+    Found 4-bit adder for signal <n0572> created at line 107.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_45_OUT> created at line 99.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_47_OUT> created at line 103.
+    Found 4-bit adder for signal <n0575> created at line 107.
+    Found 4-bit adder for signal <total_generated[9]_GND_23_o_add_51_OUT> created at line 99.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_53_OUT> created at line 103.
+    Found 4-bit adder for signal <n0578> created at line 107.
+    Found 4-bit adder for signal <total_generated[8]_GND_23_o_add_57_OUT> created at line 99.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_59_OUT> created at line 103.
+    Found 4-bit adder for signal <n0581> created at line 107.
+    Found 4-bit adder for signal <total_generated[7]_GND_23_o_add_63_OUT> created at line 99.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_65_OUT> created at line 103.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_67_OUT> created at line 107.
+    Found 4-bit adder for signal <total_generated[6]_GND_23_o_add_69_OUT> created at line 99.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_71_OUT> created at line 103.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_73_OUT> created at line 107.
+    Found 4-bit adder for signal <total_generated[5]_GND_23_o_add_75_OUT> created at line 99.
+    Found 4-bit adder for signal <total_generated[9]_GND_23_o_add_77_OUT> created at line 103.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_79_OUT> created at line 107.
+    Found 4-bit adder for signal <total_generated[4]_GND_23_o_add_81_OUT> created at line 99.
+    Found 4-bit adder for signal <total_generated[8]_GND_23_o_add_83_OUT> created at line 103.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_85_OUT> created at line 107.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_87_OUT> created at line 123.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_90_OUT> created at line 127.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_92_OUT> created at line 131.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_94_OUT> created at line 123.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_96_OUT> created at line 127.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_98_OUT> created at line 131.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_100_OUT> created at line 123.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_102_OUT> created at line 127.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_104_OUT> created at line 131.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_106_OUT> created at line 123.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_108_OUT> created at line 127.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_110_OUT> created at line 131.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_112_OUT> created at line 146.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_115_OUT> created at line 150.
+    Found 4-bit adder for signal <n0610> created at line 154.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_119_OUT> created at line 146.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_121_OUT> created at line 150.
+    Found 4-bit adder for signal <n0613> created at line 154.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_125_OUT> created at line 146.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_127_OUT> created at line 150.
+    Found 4-bit adder for signal <n0616> created at line 154.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_131_OUT> created at line 146.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_133_OUT> created at line 150.
+    Found 4-bit adder for signal <n0619> created at line 154.
+    Found 4-bit adder for signal <total_consumption[9]_GND_23_o_add_137_OUT> created at line 146.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_139_OUT> created at line 150.
+    Found 4-bit adder for signal <n0622> created at line 154.
+    Found 4-bit adder for signal <total_consumption[8]_GND_23_o_add_143_OUT> created at line 146.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_145_OUT> created at line 150.
+    Found 4-bit adder for signal <n0625> created at line 154.
+    Found 4-bit adder for signal <total_consumption[7]_GND_23_o_add_149_OUT> created at line 146.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_151_OUT> created at line 150.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_153_OUT> created at line 154.
+    Found 4-bit adder for signal <total_consumption[6]_GND_23_o_add_155_OUT> created at line 146.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_157_OUT> created at line 150.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_159_OUT> created at line 154.
+    Found 4-bit adder for signal <total_consumption[5]_GND_23_o_add_161_OUT> created at line 146.
+    Found 4-bit adder for signal <total_consumption[9]_GND_23_o_add_163_OUT> created at line 150.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_165_OUT> created at line 154.
+    Found 4-bit adder for signal <total_consumption[4]_GND_23_o_add_167_OUT> created at line 146.
+    Found 4-bit adder for signal <total_consumption[8]_GND_23_o_add_169_OUT> created at line 150.
+    Found 4-bit adder for signal <GND_23_o_GND_23_o_add_171_OUT> created at line 154.
+    Found 9-bit 16-to-1 multiplexer for signal <display[3]_consumption_dig[8]_wide_mux_195_OUT> created at line 331.
+    Found 3-bit comparator greater for signal <PWR_22_o_percent_battery[6]_LessThan_1_o> created at line 73
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_4_o> created at line 77
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_6_o> created at line 81
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_8_o> created at line 73
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_10_o> created at line 77
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_12_o> created at line 81
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_14_o> created at line 73
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_16_o> created at line 77
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_18_o> created at line 81
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_20_o> created at line 73
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_22_o> created at line 77
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_24_o> created at line 81
+    Found 3-bit comparator greater for signal <PWR_22_o_total_generated[12]_LessThan_26_o> created at line 98
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_29_o> created at line 102
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_31_o> created at line 106
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_33_o> created at line 98
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_35_o> created at line 102
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_37_o> created at line 106
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_39_o> created at line 98
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_41_o> created at line 102
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_43_o> created at line 106
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_45_o> created at line 98
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_47_o> created at line 102
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_49_o> created at line 106
+    Found 4-bit comparator greater for signal <GND_23_o_total_generated[9]_LessThan_51_o> created at line 98
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_53_o> created at line 102
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_55_o> created at line 106
+    Found 4-bit comparator greater for signal <GND_23_o_total_generated[8]_LessThan_57_o> created at line 98
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_59_o> created at line 102
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_61_o> created at line 106
+    Found 4-bit comparator greater for signal <GND_23_o_total_generated[7]_LessThan_63_o> created at line 98
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_65_o> created at line 102
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_67_o> created at line 106
+    Found 4-bit comparator greater for signal <GND_23_o_total_generated[6]_LessThan_69_o> created at line 98
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_71_o> created at line 102
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_73_o> created at line 106
+    Found 4-bit comparator greater for signal <GND_23_o_total_generated[5]_LessThan_75_o> created at line 98
+    Found 4-bit comparator greater for signal <GND_23_o_total_generated[9]_LessThan_77_o> created at line 102
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_79_o> created at line 106
+    Found 4-bit comparator greater for signal <GND_23_o_total_generated[4]_LessThan_81_o> created at line 98
+    Found 4-bit comparator greater for signal <GND_23_o_total_generated[8]_LessThan_83_o> created at line 102
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_85_o> created at line 106
+    Found 3-bit comparator greater for signal <PWR_22_o_percent_solar[6]_LessThan_87_o> created at line 122
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_90_o> created at line 126
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_92_o> created at line 130
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_94_o> created at line 122
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_96_o> created at line 126
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_98_o> created at line 130
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_100_o> created at line 122
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_102_o> created at line 126
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_104_o> created at line 130
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_106_o> created at line 122
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_108_o> created at line 126
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_110_o> created at line 130
+    Found 3-bit comparator greater for signal <PWR_22_o_total_consumption[12]_LessThan_112_o> created at line 145
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_115_o> created at line 149
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_117_o> created at line 153
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_119_o> created at line 145
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_121_o> created at line 149
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_123_o> created at line 153
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_125_o> created at line 145
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_127_o> created at line 149
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_129_o> created at line 153
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_131_o> created at line 145
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_133_o> created at line 149
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_135_o> created at line 153
+    Found 4-bit comparator greater for signal <GND_23_o_total_consumption[9]_LessThan_137_o> created at line 145
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_139_o> created at line 149
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_141_o> created at line 153
+    Found 4-bit comparator greater for signal <GND_23_o_total_consumption[8]_LessThan_143_o> created at line 145
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_145_o> created at line 149
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_147_o> created at line 153
+    Found 4-bit comparator greater for signal <GND_23_o_total_consumption[7]_LessThan_149_o> created at line 145
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_151_o> created at line 149
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_153_o> created at line 153
+    Found 4-bit comparator greater for signal <GND_23_o_total_consumption[6]_LessThan_155_o> created at line 145
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_157_o> created at line 149
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_159_o> created at line 153
+    Found 4-bit comparator greater for signal <GND_23_o_total_consumption[5]_LessThan_161_o> created at line 145
+    Found 4-bit comparator greater for signal <GND_23_o_total_consumption[9]_LessThan_163_o> created at line 149
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_165_o> created at line 153
+    Found 4-bit comparator greater for signal <GND_23_o_total_consumption[4]_LessThan_167_o> created at line 145
+    Found 4-bit comparator greater for signal <GND_23_o_total_consumption[8]_LessThan_169_o> created at line 149
+    Found 4-bit comparator greater for signal <GND_23_o_GND_23_o_LessThan_171_o> created at line 153
     WARNING:Xst:2404 -  FFs/Latches <SSEGCL<1:4>> (without init value) have a constant value of 1 in block <BCD_to_SSD>.
     Summary:
 	inferred  84 Adder/Subtractor(s).
@@ -992,300 +992,3 @@ INFO:Xst:2261 - The FF/Latch <sampleInputs0/counter_consumption_29> in Unit <Top
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block TopLevel, actual ratio is 25.
-FlipFlop sampleInputs0/consumption_in_4 has been replicated 2 time(s)
-
-Final Macro Processing ...
-
-=========================================================================
-Final Register Report
-
-Macro Statistics
-# Registers                                            : 209
- Flip-Flops                                            : 209
-
-=========================================================================
-
-=========================================================================
-*                           Partition Report                            *
-=========================================================================
-
-Partition Implementation Status
--------------------------------
-
-  No Partitions were found in this design.
-
--------------------------------
-
-=========================================================================
-*                            Design Summary                             *
-=========================================================================
-
-Top Level Output File Name         : TopLevel.ngc
-
-Primitive and Black Box Usage:
-------------------------------
-# BELS                             : 3023
-#      GND                         : 1
-#      INV                         : 38
-#      LUT1                        : 129
-#      LUT2                        : 70
-#      LUT3                        : 189
-#      LUT4                        : 355
-#      LUT5                        : 433
-#      LUT6                        : 555
-#      MUXCY                       : 671
-#      MUXF7                       : 6
-#      VCC                         : 1
-#      XORCY                       : 575
-# FlipFlops/Latches                : 209
-#      FD                          : 60
-#      FDE                         : 11
-#      FDR                         : 113
-#      FDRE                        : 25
-# Clock Buffers                    : 3
-#      BUFG                        : 2
-#      BUFGP                       : 1
-# IO Buffers                       : 31
-#      OBUF                        : 31
-
-Device utilization summary:
----------------------------
-
-Selected Device : 6slx16csg324-2 
-
-
-Slice Logic Utilization: 
- Number of Slice Registers:             209  out of  18224     1%  
- Number of Slice LUTs:                 1769  out of   9112    19%  
-    Number used as Logic:              1769  out of   9112    19%  
-
-Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1793
-   Number with an unused Flip Flop:    1584  out of   1793    88%  
-   Number with an unused LUT:            24  out of   1793     1%  
-   Number of fully used LUT-FF pairs:   185  out of   1793    10%  
-   Number of unique control sets:        10
-
-IO Utilization: 
- Number of IOs:                          32
- Number of bonded IOBs:                  32  out of    232    13%  
-
-Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
-
----------------------------
-Partition Resource Summary:
----------------------------
-
-  No Partitions were found in this design.
-
----------------------------
-
-
-=========================================================================
-Timing Report
-
-NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
-      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
-      GENERATED AFTER PLACE-and-ROUTE.
-
-Clock Information:
-------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 56    |
-clock0/CLK_halfsec                 | BUFG                   | 114   |
-clock0/CLK_SSD                     | BUFG                   | 39    |
------------------------------------+------------------------+-------+
-
-Asynchronous Control Signals Information:
-----------------------------------------
-No asynchronous control signals found in this design
-
-Timing Summary:
----------------
-Speed Grade: -2
-
-   Minimum period: 11.546ns (Maximum Frequency: 86.610MHz)
-   Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: 5.996ns
-   Maximum combinational path delay: No path found
-
-Timing Details:
----------------
-All values displayed in nanoseconds (ns)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 5.315ns (frequency: 188.141MHz)
-  Total number of paths / destination ports: 2341 / 112
--------------------------------------------------------------------------
-Delay:               5.315ns (Levels of Logic = 2)
-  Source:            clock0/div_ssd_7 (FF)
-  Destination:       clock0/div_ssd_26 (FF)
-  Source Clock:      clk rising
-  Destination Clock: clk rising
-
-  Data Path: clock0/div_ssd_7 to clock0/div_ssd_26
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDR:C->Q              4   0.525   1.259  clock0/div_ssd_7 (clock0/div_ssd_7)
-     LUT6:I0->O            1   0.254   1.112  clock0/div_ssd[26]_GND_13_o_equal_15_o<26>1 (clock0/div_ssd[26]_GND_13_o_equal_15_o<26>)
-     LUT5:I0->O           28   0.254   1.452  clock0/div_ssd[26]_GND_13_o_equal_15_o<26>6 (clock0/div_ssd[26]_GND_13_o_equal_15_o)
-     FDR:R                     0.459          clock0/CLK_SSD
-    ----------------------------------------
-    Total                      5.315ns (1.492ns logic, 3.823ns route)
-                                       (28.1% logic, 71.9% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'clock0/CLK_halfsec'
-  Clock period: 11.546ns (frequency: 86.610MHz)
-  Total number of paths / destination ports: 365319 / 232
--------------------------------------------------------------------------
-Delay:               11.546ns (Levels of Logic = 20)
-  Source:            sampleInputs0/consumption_in_5 (FF)
-  Destination:       sum0/battery_sum_10 (FF)
-  Source Clock:      clock0/CLK_halfsec rising
-  Destination Clock: clock0/CLK_halfsec rising
-
-  Data Path: sampleInputs0/consumption_in_5 to sum0/battery_sum_10
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q              14   0.525   1.557  sampleInputs0/consumption_in_5 (sampleInputs0/consumption_in_5)
-     LUT5:I0->O           11   0.254   1.039  sum0/GND_16_o_PWR_16_o_div_2/o<2>111 (sum0/GND_16_o_PWR_16_o_div_2/o<2>11)
-     LUT6:I5->O           18   0.254   1.235  sum0/GND_16_o_PWR_16_o_div_2/o<2>12 (sum0/GND_16_o_PWR_16_o_div_2/o<2>12)
-     LUT6:I5->O            2   0.254   0.834  sum0/GND_16_o_PWR_16_o_div_2/Madd_a[12]_GND_17_o_add_25_OUT[12:0]_cy<7>11_SW0 (N74)
-     LUT6:I4->O            4   0.250   0.804  sum0/GND_16_o_PWR_16_o_div_2/o<1>1 (sum0/n0075<1>)
-     LUT6:I5->O            2   0.254   0.834  sum0/GND_16_o_PWR_16_o_div_2/o<0>115 (sum0/GND_16_o_PWR_16_o_div_2/o<0>117)
-     LUT6:I4->O            1   0.250   0.000  sum0/Msub_n0077_lut<0> (sum0/Msub_n0077_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  sum0/Msub_n0077_cy<0> (sum0/Msub_n0077_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  sum0/Msub_n0077_cy<1> (sum0/Msub_n0077_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  sum0/Msub_n0077_cy<2> (sum0/Msub_n0077_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  sum0/Msub_n0077_cy<3> (sum0/Msub_n0077_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  sum0/Msub_n0077_cy<4> (sum0/Msub_n0077_cy<4>)
-     XORCY:CI->O           7   0.206   0.910  sum0/Msub_n0077_xor<5> (sum0/n0077<5>)
-     LUT5:I4->O            1   0.254   0.000  sum0/Madd_GND_16_o_GND_16_o_add_13_OUT_lut<5> (sum0/Madd_GND_16_o_GND_16_o_add_13_OUT_lut<5>)
-     MUXCY:S->O            1   0.215   0.000  sum0/Madd_GND_16_o_GND_16_o_add_13_OUT_cy<5> (sum0/Madd_GND_16_o_GND_16_o_add_13_OUT_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  sum0/Madd_GND_16_o_GND_16_o_add_13_OUT_cy<6> (sum0/Madd_GND_16_o_GND_16_o_add_13_OUT_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  sum0/Madd_GND_16_o_GND_16_o_add_13_OUT_cy<7> (sum0/Madd_GND_16_o_GND_16_o_add_13_OUT_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  sum0/Madd_GND_16_o_GND_16_o_add_13_OUT_cy<8> (sum0/Madd_GND_16_o_GND_16_o_add_13_OUT_cy<8>)
-     MUXCY:CI->O           0   0.023   0.000  sum0/Madd_GND_16_o_GND_16_o_add_13_OUT_cy<9> (sum0/Madd_GND_16_o_GND_16_o_add_13_OUT_cy<9>)
-     XORCY:CI->O           1   0.206   0.682  sum0/Madd_GND_16_o_GND_16_o_add_13_OUT_xor<10> (sum0/GND_16_o_GND_16_o_add_13_OUT<10>)
-     LUT6:I5->O            1   0.254   0.000  sum0/current_source[1]_GND_16_o_wide_mux_18_OUT<10> (sum0/current_source[1]_GND_16_o_wide_mux_18_OUT<10>)
-     FDE:D                     0.074          sum0/battery_sum_10
-    ----------------------------------------
-    Total                     11.546ns (3.651ns logic, 7.895ns route)
-                                       (31.6% logic, 68.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'clock0/CLK_SSD'
-  Clock period: 7.687ns (frequency: 130.090MHz)
-  Total number of paths / destination ports: 261 / 39
--------------------------------------------------------------------------
-Delay:               7.687ns (Levels of Logic = 5)
-  Source:            ssd0/display_FSM_FFd12 (FF)
-  Destination:       ssd0/SSEGHex_6 (FF)
-  Source Clock:      clock0/CLK_SSD rising
-  Destination Clock: clock0/CLK_SSD rising
-
-  Data Path: ssd0/display_FSM_FFd12 to ssd0/SSEGHex_6
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q              16   0.525   1.637  ssd0/display_FSM_FFd12 (ssd0/display_FSM_FFd12)
-     LUT6:I0->O            2   0.254   1.181  ssd0/Mmux_display[3]_consumption_dig[8]_wide_mux_195_OUT<3>21 (ssd0/Mmux_display[3]_consumption_dig[8]_wide_mux_195_OUT<3>2)
-     LUT6:I0->O            1   0.254   1.137  ssd0/Mmux_display[3]_consumption_dig[8]_wide_mux_195_OUT<5>42 (ssd0/Mmux_display[3]_consumption_dig[8]_wide_mux_195_OUT<5>44)
-     LUT6:I0->O            2   0.254   1.181  ssd0/Mmux_display[3]_consumption_dig[8]_wide_mux_195_OUT<5>46 (ssd0/Mmux_display[3]_consumption_dig[8]_wide_mux_195_OUT<5>4)
-     LUT6:I0->O            1   0.254   0.682  ssd0/Mmux_display[3]_consumption_dig[8]_wide_mux_195_OUT<6>16 (ssd0/Mmux_display[3]_consumption_dig[8]_wide_mux_195_OUT<6>17)
-     LUT2:I1->O            1   0.254   0.000  ssd0/Mmux_display[3]_consumption_dig[8]_wide_mux_195_OUT<6>17 (ssd0/display[3]_consumption_dig[8]_wide_mux_195_OUT<6>)
-     FD:D                      0.074          ssd0/SSEGHex_6
-    ----------------------------------------
-    Total                      7.687ns (1.869ns logic, 5.818ns route)
-                                       (24.3% logic, 75.7% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clock0/CLK_SSD'
-  Total number of paths / destination ports: 23 / 23
--------------------------------------------------------------------------
-Offset:              4.118ns (Levels of Logic = 1)
-  Source:            ssd0/SSEGHex_6 (FF)
-  Destination:       SSEGHex<6> (PAD)
-  Source Clock:      clock0/CLK_SSD rising
-
-  Data Path: ssd0/SSEGHex_6 to SSEGHex<6>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q               1   0.525   0.681  ssd0/SSEGHex_6 (ssd0/SSEGHex_6)
-     OBUF:I->O                 2.912          SSEGHex_6_OBUF (SSEGHex<6>)
-    ----------------------------------------
-    Total                      4.118ns (3.437ns logic, 0.681ns route)
-                                       (83.5% logic, 16.5% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clock0/CLK_halfsec'
-  Total number of paths / destination ports: 4 / 2
--------------------------------------------------------------------------
-Offset:              5.996ns (Levels of Logic = 2)
-  Source:            switch0/current_source_1 (FF)
-  Destination:       RedLed (PAD)
-  Source Clock:      clock0/CLK_halfsec rising
-
-  Data Path: switch0/current_source_1 to RedLed
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDR:C->Q             32   0.525   1.628  switch0/current_source_1 (switch0/current_source_1)
-     LUT2:I0->O            1   0.250   0.681  led0/Mram_RedLed11 (RedLed_OBUF)
-     OBUF:I->O                 2.912          RedLed_OBUF (RedLed)
-    ----------------------------------------
-    Total                      5.996ns (3.687ns logic, 2.309ns route)
-                                       (61.5% logic, 38.5% route)
-
-=========================================================================
-
-Cross Clock Domains Report:
---------------------------
-
-Clock to Setup on destination clock clk
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-clk            |    5.315|         |         |         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock clock0/CLK_SSD
-------------------+---------+---------+---------+---------+
-                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------+---------+---------+---------+---------+
-clock0/CLK_SSD    |    7.687|         |         |         |
-clock0/CLK_halfsec|  107.271|         |         |         |
-------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock clock0/CLK_halfsec
-------------------+---------+---------+---------+---------+
-                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock      |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------+---------+---------+---------+---------+
-clock0/CLK_halfsec|   11.546|         |         |         |
-------------------+---------+---------+---------+---------+
-
-=========================================================================
-
-
-Total REAL time to Xst completion: 58.00 secs
-Total CPU time to Xst completion: 58.29 secs
- 
---> 
-
-Total memory usage is 294264 kilobytes
-
-Number of errors   :    0 (   0 filtered)
-Number of warnings :   33 (   0 filtered)
-Number of infos    :   38 (   0 filtered)
-

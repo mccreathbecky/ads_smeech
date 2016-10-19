@@ -55,7 +55,6 @@ BEGIN
    
    BEGIN
    
-   -- equivalent of temp(11 downto 0) := binIN
    temp_battery      := "000000000" & percent_battery;
    temp_generated    := "000" & total_generated;
    temp_solar        := "000000000" & percent_solar;        
@@ -336,23 +335,23 @@ BEGIN
                display <= dp0dg1;
             
             WHEN dp0dg1 =>
-               SSEGD1(0) <= '0';    -- turn on DIG1, DISPLAY0
+               SSEGD0(1) <= '0';    -- turn on DIG1, DISPLAY0
                SSEGHex <= battery_dig(26 downto 18);
                display <= dp0dg2;
 
             WHEN dp0dg2 => 
-               SSEGD2(0) <= '0';    -- turn on DIG2, DISPLAY0
+               SSEGD0(2) <= '0';    -- turn on DIG2, DISPLAY0
                SSEGHex <= battery_dig(17 downto 9);
                display <= dp0dg3;
             
             WHEN dp0dg3 =>
-               SSEGD3(0) <= '0';    -- turn on DIG3, DISPLAY0
+               SSEGD0(3) <= '0';    -- turn on DIG3, DISPLAY0
                SSEGHex <= battery_dig(8 downto 0);
                display <= dp1dg0;
       
       ------------------------------
             WHEN dp1dg0 =>
-               SSEGD0(1) <= '0'; -- eg turn on DIG0, DISPLAY0
+               SSEGD1(0) <= '0'; -- eg turn on DIG0, DISPLAY0
                SSEGHex <= generated_dig(35 downto 27); 
                display <= dp1dg1;
             
@@ -362,24 +361,24 @@ BEGIN
                display <= dp1dg2;
 
             WHEN dp1dg2 => 
-               SSEGD2(1) <= '0';    -- turn on DIG2, DISPLAY0
+               SSEGD1(2) <= '0';    -- turn on DIG2, DISPLAY0
                SSEGHex <= generated_dig(17 downto 9);
                display <= dp1dg3;
             
             WHEN dp1dg3 =>
-               SSEGD3(1) <= '0';    -- turn on DIG3, DISPLAY0
+               SSEGD1(3) <= '0';    -- turn on DIG3, DISPLAY0
                SSEGHex <= generated_dig(8 downto 0);
                display <= dp2dg0;
                
                
       ------------------------------
             WHEN dp2dg0 =>
-               SSEGD0(2) <= '0'; -- eg turn on DIG0, DISPLAY0
+               SSEGD2(0) <= '0'; -- eg turn on DIG0, DISPLAY0
                SSEGHex <= solar_dig(35 downto 27); 
                display <= dp2dg1;
             
             WHEN dp2dg1 =>
-               SSEGD1(2) <= '0';    -- turn on DIG1, DISPLAY0
+               SSEGD2(1) <= '0';    -- turn on DIG1, DISPLAY0
                SSEGHex <= solar_dig(26 downto 18);
                display <= dp2dg2;
 
@@ -389,24 +388,24 @@ BEGIN
                display <= dp2dg3;
             
             WHEN dp2dg3 =>
-               SSEGD3(2) <= '0';    -- turn on DIG3, DISPLAY0
+               SSEGD2(3) <= '0';    -- turn on DIG3, DISPLAY0
                SSEGHex <= solar_dig(8 downto 0);
                display <= dp3dg0;
                
                
                ------------------------------
             WHEN dp3dg0 =>
-               SSEGD0(3) <= '0'; -- eg turn on DIG0, DISPLAY0
+               SSEGD3(0) <= '0'; -- eg turn on DIG0, DISPLAY0
                SSEGHex <= consumption_dig(35 downto 27); 
                display <= dp3dg1;
             
             WHEN dp3dg1 =>
-               SSEGD1(3) <= '0';    -- turn on DIG1, DISPLAY0
+               SSEGD3(1) <= '0';    -- turn on DIG1, DISPLAY0
                SSEGHex <= consumption_dig(26 downto 18);
                display <= dp3dg2;
 
             WHEN dp3dg2 => 
-               SSEGD2(3) <= '0';    -- turn on DIG2, DISPLAY0
+               SSEGD3(2) <= '0';    -- turn on DIG2, DISPLAY0
                SSEGHex <= consumption_dig(17 downto 9);
                display <= dp3dg3;
             
