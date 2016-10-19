@@ -19,3 +19,4 @@ xst -intstyle ise -ifn "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/u
 xst -intstyle ise -ifn "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel.xst" -ofn "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel.syr" 
 xst -intstyle ise -ifn "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel.xst" -ofn "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel.syr" 
 xst -intstyle ise -ifn "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel.xst" -ofn "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel.syr" 
+xst -intstyle ise -ifn "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel.xst" -ofn "C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel.syr" 

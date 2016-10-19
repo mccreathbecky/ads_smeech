@@ -5,16 +5,13 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Range is empty (null range)
+<msg type="error" file="HDLCompiler" num="1314" delta="unknown" >"C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 49: Formal port/generic &lt;<arg fmt="%s" index="1">clk_samplerate</arg>&gt; is not declared in &lt;<arg fmt="%s" index="2">toplevel</arg>&gt;
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="220" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Assignment ignored
+<msg type="error" file="HDLCompiler" num="432" delta="unknown" >"C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 48: Formal &lt;<arg fmt="%s" index="1">consumption_in</arg>&gt; has no actual or default value.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="746" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Range is empty (null range)
-</msg>
-
-<msg type="warning" file="HDLCompiler" num="220" delta="unknown" >"N:/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Assignment ignored
+<msg type="error" file="HDLCompiler" num="854" delta="unknown" >"C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_TB.vhd" Line 8: Unit &lt;<arg fmt="%s" index="1">behavior</arg>&gt; ignored due to previous errors.
 </msg>
 
 </messages>

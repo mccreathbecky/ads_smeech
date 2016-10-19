@@ -22,6 +22,10 @@ entity BCD_to_SSD is
 end BCD_to_SSD;
 
 architecture Behavioral of BCD_to_SSD is
+
+   TYPE display_type IS (dp0dg1, dp0dg1, dp0dg2, dp0dg3, dp1dg1, dp1dg1, dp1dg2, dp1dg3,dp2dg1, dp2dg1, dp2dg2, dp2dg3,dp3dg0, dp3dg1, dp3dg2, dp3dg3); 
+   SIGNAL display : display_type := dp0dg1;
+   
    -- a constant used when cycling through the digits and displays
    CONSTANT wait_time : time := 0.001sec;
 
@@ -49,12 +53,14 @@ BEGIN
    VARIABLE temp_solar        : STD_LOGIC_VECTOR (15 DOWNTO 0) := "000000000" & percent_solar;        
    VARIABLE temp_consumption  : STD_LOGIC_VECTOR (15 DOWNTO 0) := "000" & total_consumption;
 	VARIABLE bcd 					: STD_LOGIC_VECTOR (15 DOWNTO 0) := (others => '0');
- 
+	
+
+   
    BEGIN
       -- STEP 1: convert each to 16 bit BCD [WILL] 
      --**********************************************************************--
 	bcd := (others => '0');
-	 temp_battery(15 downto 0) := bcd_battery;
+	
 	 
 	 for i in 0 to 15 loop
     
@@ -71,14 +77,14 @@ BEGIN
       end if;
 	
 	  
-	  bcd:= bcd(15 downto 0) & temp_battery(15);
+	  bcd:= bcd(14 downto 0) & temp_battery(15);
 	  temp_battery := temp_battery(14 downto 0) & '0';
 	  
 	  end loop;
 	  
 	--**********************************************************************--
 	 bcd := (others => '0');
-	 temp_generated(15 downto 0) := bcd_generated;
+	
 	 
 	 for i in 0 to 15 loop
     
@@ -95,7 +101,7 @@ BEGIN
       end if;
 	
 	  
-	  bcd:= bcd(15 downto 0) & temp_generated(15);
+	  bcd:= bcd(14 downto 0) & temp_generated(15);
 	  temp_generated := temp_generated(14 downto 0) & '0';
 	  
 	  end loop;
@@ -119,7 +125,7 @@ BEGIN
       end if;
 	
 	  
-	  bcd:= bcd(15 downto 0) & temp_solar(15);
+	  bcd:= bcd(14 downto 0) & temp_solar(15);
 	  temp_solar := temp_solar(14 downto 0) & '0';
 	  
 	  end loop;  
@@ -143,7 +149,7 @@ BEGIN
       end if;
 	
 	  
-	  bcd:= bcd(15 downto 0) & temp_consumption(15);
+	  bcd:= bcd(14 downto 0) & temp_consumption(15);
 	  temp_consumption := temp_consumption(14 downto 0) & '0';
 	  
 	  end loop;
@@ -310,110 +316,105 @@ BEGIN
        
    END PROCESS;
    
- 
-   -- should loop through the four digits of battery_dig and output them
-   display_four_digits_hardcoded : PROCESS
+   
+   display_fsm : PROCESS (fsm_clock)
    BEGIN
-      -- inverse logic - set all to 0/off
-      SSEGD0 <= "1111"; 
-      SSEGD1 <= "1111";
-      SSEGD2 <= "1111";
-      SSEGD3 <= "1111";
-      SSEGCL <= "1111";    --[not used] - for colons
-   
-      --**********************************************************************--
-   
-      SSEGD0(0) <= '0'; -- eg turn on DIG0, DISPLAY0
-      SSEGHex <= battery_dig(35 downto 27);          
-      wait for wait_time;
+      IF fsm_clock'EVENT AND fsm_clock = '1' THEN
+         -- inverse logic - set all to 0/off
+         SSEGD0 <= "1111"; 
+         SSEGD1 <= "1111";
+         SSEGD2 <= "1111";
+         SSEGD3 <= "1111";
+         SSEGCL <= "1111";    --[not used] - for colons
       
-      SSEGD0(0) <= '1';    -- turn off previous display
-      SSEGD1(0) <= '0';    -- turn on DIG1, DISPLAY0
-      SSEGHex <= battery_dig(26 downto 18);
-      wait for wait_time;
+         CASE display IS
+            WHEN dp0dg0 =>
+               SSEGD0(0) <= '0'; -- eg turn on DIG0, DISPLAY0
+               SSEGHex <= battery_dig(35 downto 27); 
+               display <= dp0dg1;
+            
+            WHEN dp0dg1 =>
+               SSEGD1(0) <= '0';    -- turn on DIG1, DISPLAY0
+               SSEGHex <= battery_dig(26 downto 18);
+               display <= dp0dg2;
+
+            WHEN dp0dg2 => 
+               SSEGD2(0) <= '0';    -- turn on DIG2, DISPLAY0
+               SSEGHex <= battery_dig(17 downto 9);
+               display <= dp0dg3;
+            
+            WHEN dp0dg3 =>
+               SSEGD3(0) <= '0';    -- turn on DIG3, DISPLAY0
+               SSEGHex <= battery_dig(8 downto 0);
+               display <= dp1dg0;
       
-      SSEGD1(0) <= '1';    -- turn off previous display
-      SSEGD2(0) <= '0';    -- turn on DIG2, DISPLAY0
-      SSEGHex <= battery_dig(17 downto 9);
-      wait for wait_time;
+      ------------------------------
+            WHEN dp1dg0 =>
+               SSEGD0(1) <= '0'; -- eg turn on DIG0, DISPLAY0
+               SSEGHex <= generated_dig(35 downto 27); 
+               display <= dp1dg1;
+            
+            WHEN dp1dg1 =>
+               SSEGD1(1) <= '0';    -- turn on DIG1, DISPLAY0
+               SSEGHex <= generated_dig(26 downto 18);
+               display <= dp1dg2;
+
+            WHEN dp1dg2 => 
+               SSEGD2(1) <= '0';    -- turn on DIG2, DISPLAY0
+               SSEGHex <= generated_dig(17 downto 9);
+               display <= dp1dg3;
+            
+            WHEN dp1dg3 =>
+               SSEGD3(1) <= '0';    -- turn on DIG3, DISPLAY0
+               SSEGHex <= generated_dig(8 downto 0);
+               display <= dp2dg0;
+               
+               
+      ------------------------------
+            WHEN dp2dg0 =>
+               SSEGD0(2) <= '0'; -- eg turn on DIG0, DISPLAY0
+               SSEGHex <= solar_dig(35 downto 27); 
+               display <= dp2dg1;
+            
+            WHEN dp2dg1 =>
+               SSEGD1(2) <= '0';    -- turn on DIG1, DISPLAY0
+               SSEGHex <= solar_dig(26 downto 18);
+               display <= dp2dg2;
+
+            WHEN dp2dg2 => 
+               SSEGD2(2) <= '0';    -- turn on DIG2, DISPLAY0
+               SSEGHex <= solar_dig(17 downto 9);
+               display <= dp2dg3;
+            
+            WHEN dp2dg3 =>
+               SSEGD3(2) <= '0';    -- turn on DIG3, DISPLAY0
+               SSEGHex <= solar_dig(8 downto 0);
+               display <= dp3dg0;
+               
+               
+               ------------------------------
+            WHEN dp3dg0 =>
+               SSEGD0(3) <= '0'; -- eg turn on DIG0, DISPLAY0
+               SSEGHex <= consumption_dig(35 downto 27); 
+               display <= dp3dg1;
+            
+            WHEN dp3dg1 =>
+               SSEGD1(3) <= '0';    -- turn on DIG1, DISPLAY0
+               SSEGHex <= consumption_dig(26 downto 18);
+               display <= dp3dg2;
+
+            WHEN dp3dg2 => 
+               SSEGD2(3) <= '0';    -- turn on DIG2, DISPLAY0
+               SSEGHex <= consumption_dig(17 downto 9);
+               display <= dp3dg3;
+            
+            WHEN dp3dg3 =>
+               SSEGD3(3) <= '0';    -- turn on DIG3, DISPLAY0
+               SSEGHex <= consumption_dig(8 downto 0);
+               display <= dp0dg0;
+      END CASE;
       
-      SSEGD2(0) <= '1';    -- turn off previous display
-      SSEGD3(0) <= '0';    -- turn on DIG3, DISPLAY0
-      SSEGHex <= battery_dig(8 downto 0);
-      wait for wait_time;
-      
-      SSEGD3(0) <= '1';     --turn off previous display
-		
-		
-		---**********************************************************************--
-		SSEGD0(1) <= '0'; -- eg turn on DIG0, DISPLAY1
-      SSEGHex <= generated_dig(35 downto 27);          
-      wait for wait_time;
-      
-      SSEGD0(1) <= '1';    -- turn off previous display
-      SSEGD1(1) <= '0';    -- turn on DIG1, DISPLAY1
-      SSEGHex <= generated_dig(26 downto 18);
-      wait for wait_time;
-      
-      SSEGD1(1) <= '1';    -- turn off previous display
-      SSEGD2(1) <= '0';    -- turn on DIG2, DISPLAY1
-      SSEGHex <= generated_dig(17 downto 9);
-      wait for wait_time;
-      
-      SSEGD2(1) <= '1';    -- turn off previous display
-      SSEGD3(1) <= '0';    -- turn on DIG3, DISPLAY1
-      SSEGHex <= generated_dig(8 downto 0);
-      wait for wait_time;
-      
-      SSEGD3(1) <= '1';     --turn off previous display
-		
-		---**********************************************************************--
-		SSEGD0(2) <= '0'; -- eg turn on DIG0, DISPLAY2
-      SSEGHex <= solar_dig(35 downto 27);          
-      wait for wait_time;
-      
-      SSEGD0(2) <= '1';    -- turn off previous display
-      SSEGD1(2) <= '0';    -- turn on DIG1, DISPLAY2
-      SSEGHex <= solar_dig(26 downto 18);
-      wait for wait_time;
-      
-      SSEGD1(2) <= '1';    -- turn off previous display
-      SSEGD2(2) <= '0';    -- turn on DIG2, DISPLAY2
-      SSEGHex <= solar_dig(17 downto 9);
-      wait for wait_time;
-      
-      SSEGD2(2) <= '1';    -- turn off previous display
-      SSEGD3(2) <= '0';    -- turn on DIG3, DISPLAY2
-      SSEGHex <= solar_dig(8 downto 0);
-      wait for wait_time;
-      
-      SSEGD3(2) <= '1';     --turn off previous display
-		
-		---**********************************************************************--
-		
-		SSEGD0(3) <= '0'; -- eg turn on DIG0, DISPLAY3
-      SSEGHex <= consumption_dig(35 downto 27);          
-      wait for wait_time;
-      
-      SSEGD0(3) <= '1';    -- turn off previous display
-      SSEGD1(3) <= '0';    -- turn on DIG1, DISPLAY3
-      SSEGHex <= consumption_dig(26 downto 18);
-      wait for wait_time;
-      
-      SSEGD1(3) <= '1';    -- turn off previous display
-      SSEGD2(3) <= '0';    -- turn on DIG2, DISPLAY3
-      SSEGHex <= consumption_dig(17 downto 9);
-      wait for wait_time;
-      
-      SSEGD2(3) <= '1';    -- turn off previous display
-      SSEGD3(3) <= '0';    -- turn on DIG3, DISPLAY3
-      SSEGHex <= consumption_dig(8 downto 0);
-      wait for wait_time;
-      
-      SSEGD3(3) <= '1';     --turn off previous display
-      wait for wait_time;
-      --**********************************************************************--
-      
+   END IF;
       
    END PROCESS; 
  
