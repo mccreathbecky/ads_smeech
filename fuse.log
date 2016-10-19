@@ -32,11 +32,10 @@ Compiling architecture behavioral of entity Sum_Monitoring [sum_monitoring_defau
 Compiling architecture behavioral of entity BCD_to_SSD [bcd_to_ssd_default]
 Compiling architecture behavioral of entity LED_Display [led_display_default]
 Compiling architecture behavioral of entity SampleInputs [sampleinputs_default]
-Compiling architecture behavioral of entity clockdivide [clockdivide_default]
 Compiling architecture behavioral of entity toplevel
 Time Resolution for simulation is 1ps.
-Waiting for 8 sub-compilation(s) to finish...
-Compiled 24 VHDL Units
+Waiting for 7 sub-compilation(s) to finish...
+Compiled 22 VHDL Units
 Built simulation executable C:/Users/mccre/OneDrive/Documents/2016/Uni/ADS/Project/usb_smeech/TopLevel_isim_beh.exe
-Fuse Memory Usage: 36940 KB
-Fuse CPU Usage: 921 ms
+Fuse Memory Usage: 37356 KB
+Fuse CPU Usage: 827 ms

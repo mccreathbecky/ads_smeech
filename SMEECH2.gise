@@ -112,7 +112,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1476845662" xil_pn:in_ck="-1357762440017488054" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1476845662">
+    <transform xil_pn:end_ts="1476848284" xil_pn:in_ck="8919336926512474208" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1476848284">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ControlUnit.vhd"/>
@@ -120,7 +120,6 @@
       <outfile xil_pn:name="LED_Display_TB.vhd"/>
       <outfile xil_pn:name="SSD.vhd"/>
       <outfile xil_pn:name="SampleInputs.vhd"/>
-      <outfile xil_pn:name="SampleInputs_TB.vhd"/>
       <outfile xil_pn:name="Sum_Monitoring.vhd"/>
       <outfile xil_pn:name="Switching_Comp.vhd"/>
       <outfile xil_pn:name="Switching_Comp_TB.vhd"/>
@@ -142,7 +141,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1476845667" xil_pn:in_ck="-1357762440017488054" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1476845667">
+    <transform xil_pn:end_ts="1476848287" xil_pn:in_ck="8919336926512474208" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1476848287">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ControlUnit.vhd"/>
@@ -150,7 +149,6 @@
       <outfile xil_pn:name="LED_Display_TB.vhd"/>
       <outfile xil_pn:name="SSD.vhd"/>
       <outfile xil_pn:name="SampleInputs.vhd"/>
-      <outfile xil_pn:name="SampleInputs_TB.vhd"/>
       <outfile xil_pn:name="Sum_Monitoring.vhd"/>
       <outfile xil_pn:name="Switching_Comp.vhd"/>
       <outfile xil_pn:name="Switching_Comp_TB.vhd"/>
@@ -160,7 +158,7 @@
       <outfile xil_pn:name="clockdivide_TB.vhd"/>
       <outfile xil_pn:name="sum_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1476845673" xil_pn:in_ck="-1357762440017488054" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="21587719104645807" xil_pn:start_ts="1476845667">
+    <transform xil_pn:end_ts="1476848292" xil_pn:in_ck="8919336926512474208" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="21587719104645807" xil_pn:start_ts="1476848287">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="TopLevel_beh.prj"/>
@@ -170,7 +168,7 @@
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1476845673" xil_pn:in_ck="832681810849536064" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="4537826066620426110" xil_pn:start_ts="1476845673">
+    <transform xil_pn:end_ts="1476848293" xil_pn:in_ck="832681810849536064" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="4537826066620426110" xil_pn:start_ts="1476848292">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="TopLevel_isim_beh.wdb"/>

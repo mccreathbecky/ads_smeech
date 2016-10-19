@@ -7,7 +7,6 @@ ENTITY TopLevel IS
     PORT (-- CLK_sampleRate  : IN     STD_LOGIC;
           -- solar_in        : IN     STD_LOGIC_VECTOR (9 DOWNTO 0);
           -- consumption_in  : IN     STD_LOGIC_VECTOR (10 DOWNTO 0);
-           CLK             : IN     STD_LOGIC;
            GreenLed        : OUT    STD_LOGIC;
            RedLed	         : OUT    STD_LOGIC;
 			  SSEGHex 			: OUT STD_LOGIC_VECTOR(8 DOWNTO 0);   
@@ -45,10 +44,14 @@ ARCHITECTURE Behavioral OF TopLevel IS
    SIGNAL toSSD_totalConsumption : STD_LOGIC_VECTOR (12 DOWNTO 0);
    SIGNAL toSSD_totalGenerated    : STD_LOGIC_VECTOR (12 DOWNTO 0); 
    
-   
-   
+   -- SSD Clock
+   SIGNAL SSD_Clock : STD_LOGIC;
+   -- a constant used when cycling through the digits and displays
+   CONSTANT SSD_CLOCK_PERIOD : time := 0.001sec;
    
 BEGIN
+
+   
    switch0  : Monitoring_Comp    PORT MAP(CLK_sampleRate, 
                                           solar_in, 
                                           toSwitch_battery, 
@@ -65,8 +68,7 @@ BEGIN
                                           toSSD_totalConsumption,
                                           toSSD_totalGenerated);
    
-   ssd0     : BCD_to_SSD         PORT MAP(toSum_clk, 
-                                          CLK,
+   ssd0     : BCD_to_SSD         PORT MAP(SSD_Clock,
                                           toSSD_percentBattery,
                                           toSSD_totalGenerated,
                                           toSSD_percentSolar,
@@ -85,9 +87,14 @@ BEGIN
    sampleInputs0 : SampleInputs  PORT MAP(CLK_SampleRate,
                                           solar_in,
                                           consumption_in);
-   
-   clockdivide0 : clockdivide    PORT MAP(CLK,
-                                          CLK_SampleRate);
+                                          
+   SSD_CLOCK_PROCESS : PROCESS
+   BEGIN
+   	SSD_Clock <= '0';
+		wait for SSD_CLOCK_PERIOD/2;
+		SSD_Clock <= '1';
+		wait for SSD_CLOCK_PERIOD/2;
+   END PROCESS;
                                        
 END Behavioral;
 
